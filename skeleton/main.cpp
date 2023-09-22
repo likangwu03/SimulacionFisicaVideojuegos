@@ -10,6 +10,8 @@
 
 #include <iostream>
 
+#include "Particle.h"
+
 std::string display_text = "This is a test";
 
 
@@ -29,6 +31,8 @@ PxPvd*                  gPvd        = NULL;
 PxDefaultCpuDispatcher*	gDispatcher = NULL;
 PxScene*				gScene      = NULL;
 ContactReportCallback gContactReportCallback;
+
+Particle* p;
 
 
 // Initialize physics engine
@@ -54,6 +58,9 @@ void initPhysics(bool interactive)
 	sceneDesc.filterShader = contactReportFilterShader;
 	sceneDesc.simulationEventCallback = &gContactReportCallback;
 	gScene = gPhysics->createScene(sceneDesc);
+
+	p = new Particle(Vector3(0),Vector3(5,0,0));
+
 	}
 
 
@@ -64,8 +71,10 @@ void stepPhysics(bool interactive, double t)
 {
 	PX_UNUSED(interactive);
 
+	p->integrate(t);
 	gScene->simulate(t);
 	gScene->fetchResults(true);
+
 }
 
 // Function to clean data
@@ -74,6 +83,7 @@ void cleanupPhysics(bool interactive)
 {
 	PX_UNUSED(interactive);
 
+	delete p;
 	// Rigid Body ++++++++++++++++++++++++++++++++++++++++++
 	gScene->release();
 	gDispatcher->release();
