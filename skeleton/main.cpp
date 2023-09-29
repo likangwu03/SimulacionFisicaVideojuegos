@@ -10,7 +10,7 @@
 
 #include <iostream>
 
-#include "Particle.h"
+#include "P1.h"
 
 std::string display_text = "This is a test";
 
@@ -32,7 +32,8 @@ PxDefaultCpuDispatcher*	gDispatcher = NULL;
 PxScene*				gScene      = NULL;
 ContactReportCallback gContactReportCallback;
 
-Particle* p;
+GameManager* game;
+
 
 
 // Initialize physics engine
@@ -59,7 +60,9 @@ void initPhysics(bool interactive)
 	sceneDesc.simulationEventCallback = &gContactReportCallback;
 	gScene = gPhysics->createScene(sceneDesc);
 
-	p = new Particle(Vector3(0),Vector3(5,0,0));
+	//p = new Particle(Vector3(0),Vector3(0,0,0),Vector3(0,10,0));
+	game = new P1();
+	
 
 	}
 
@@ -71,7 +74,10 @@ void stepPhysics(bool interactive, double t)
 {
 	PX_UNUSED(interactive);
 
-	p->integrate(t);
+	game->update(t);
+	//p->integrate(t);
+	//proyectil->integrate(t);
+
 	gScene->simulate(t);
 	gScene->fetchResults(true);
 
@@ -83,7 +89,7 @@ void cleanupPhysics(bool interactive)
 {
 	PX_UNUSED(interactive);
 
-	delete p;
+	delete game;
 	// Rigid Body ++++++++++++++++++++++++++++++++++++++++++
 	gScene->release();
 	gDispatcher->release();
@@ -100,18 +106,19 @@ void cleanupPhysics(bool interactive)
 void keyPress(unsigned char key, const PxTransform& camera)
 {
 	PX_UNUSED(camera);
+	game->keyPress(key);
+	//switch(toupper(key))
+	//{
+	////case 'B': break;
+	////case ' ':	break;
+	//case ' ':
+	//{
+	//	break;
+	//}
+	//default:
 
-	switch(toupper(key))
-	{
-	//case 'B': break;
-	//case ' ':	break;
-	case ' ':
-	{
-		break;
-	}
-	default:
-		break;
-	}
+	//	break;
+	//}
 }
 
 void onCollision(physx::PxActor* actor1, physx::PxActor* actor2)
