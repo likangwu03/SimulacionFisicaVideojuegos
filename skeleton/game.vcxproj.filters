@@ -7,32 +7,77 @@
     <ClCompile Include="Render\Render.cpp">
       <Filter>Render</Filter>
     </ClCompile>
-    <ClCompile Include="RenderUtils.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="callbacks.cpp" />
-    <ClCompile Include="Particle.cpp" />
-    <ClCompile Include="Proyectil.cpp" />
     <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="P1.cpp" />
+    <ClCompile Include="callbacks.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderUtils.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>P1</Filter>
+    </ClCompile>
+    <ClCompile Include="Proyectil.cpp">
+      <Filter>P1</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneP1.cpp">
+      <Filter>P1</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="core.hpp" />
     <ClInclude Include="Render\Camera.h">
       <Filter>Render</Filter>
     </ClInclude>
     <ClInclude Include="Render\Render.h">
       <Filter>Render</Filter>
     </ClInclude>
-    <ClInclude Include="RenderUtils.hpp" />
-    <ClInclude Include="callbacks.hpp" />
-    <ClInclude Include="Particle.h" />
-    <ClInclude Include="Proyectil.h" />
     <ClInclude Include="GameManager.h" />
-    <ClInclude Include="P1.h" />
+    <ClInclude Include="callbacks.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="core.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderUtils.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>P1</Filter>
+    </ClInclude>
+    <ClInclude Include="Proyectil.h">
+      <Filter>P1</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneP1.h">
+      <Filter>P1</Filter>
+    </ClInclude>
+    <ClInclude Include="def.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
       <UniqueIdentifier>{d04b4f9f-5a69-465e-8070-25c6d0bcd3c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{0f3a7ce9-50b7-4d07-b0cd-964e7ab2cb3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="P1">
+      <UniqueIdentifier>{75127805-39bc-4ff1-8c0b-4a291d268b22}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

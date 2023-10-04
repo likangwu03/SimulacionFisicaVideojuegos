@@ -1,22 +1,25 @@
 #pragma once
 #include <PxPhysics.h>
-using namespace physx;
-
 #include "core.hpp"
 #include "RenderUtils.hpp"
-class Particle
+
+#include "Object.h"
+
+using namespace physx;
+class Particle:public Object
 {
 public:
-	Particle(Vector3 Pos, Vector3 Vel,Vector3 ace=Vector3());
+	Particle(Vector3 Pos, Vector3 Vel,Vector3 ace=Vector3(),double damping= 0.998);
 	~Particle();
 
-	virtual void integrate(double t);
+	void integrate(double t) override;
+
 protected:
 	Vector3 vel;
 	Vector3 a;
 	PxTransform pos;
 	RenderItem* renderItem;
 
-	const double damping = 0.998;
+	double damping_;
 };
 
