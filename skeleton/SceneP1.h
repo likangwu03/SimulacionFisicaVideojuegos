@@ -9,8 +9,8 @@ public:
 	virtual void keyPress(unsigned char key);
 	virtual void init();
 public:
-	const double PISTOL_REAL_MASS = 0.005;
-	const double PISTOL_REAL_VEL = 500;
+	const double PISTOL_REAL_MASS = 0.01;
+	const double PISTOL_REAL_VEL = 380;
 
 private:
 	void shoot();

@@ -14,5 +14,4 @@ void Proyectil::integrate(double t)
 	if (cont > lifeTime) {
 		setAlive(false);
 	}
-	//vel += gravedad * t;
 }
