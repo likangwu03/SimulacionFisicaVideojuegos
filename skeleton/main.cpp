@@ -33,7 +33,7 @@ PxScene*				gScene      = NULL;
 ContactReportCallback gContactReportCallback;
 
 Scene* scene;
-Particle* p;
+//Particle* p;
 
 
 // Initialize physics engine
@@ -60,8 +60,8 @@ void initPhysics(bool interactive)
 	sceneDesc.simulationEventCallback = &gContactReportCallback;
 	gScene = gPhysics->createScene(sceneDesc);
 
-	p = new Particle(Vector3(0),Vector3(0,0,0),Vector3(0,10,0));
-	//scene = new SceneP1();
+	//p = new Particle(Vector3(0),Vector3(0,0,0),Vector3(0,10,0));
+	scene = new SceneP1();
 	
 
 	}
@@ -74,11 +74,12 @@ void stepPhysics(bool interactive, double t)
 {
 	PX_UNUSED(interactive);
 
-	//scene->integrate(t);
-	if (p != nullptr) {
+	scene->integrate(t);
+	scene->refresh();
+	/*if (p != nullptr) {
 
 	p->integrate(t);
-	}
+	}*/
 	//proyectil->integrate(t);
 
 	gScene->simulate(t);
@@ -92,7 +93,7 @@ void cleanupPhysics(bool interactive)
 {
 	PX_UNUSED(interactive);
 
-	//delete scene;
+	delete scene;
 	// Rigid Body ++++++++++++++++++++++++++++++++++++++++++
 	gScene->release();
 	gDispatcher->release();
@@ -109,18 +110,18 @@ void cleanupPhysics(bool interactive)
 void keyPress(unsigned char key, const PxTransform& camera)
 {
 	PX_UNUSED(camera);
-	//scene->keyPress(key);
-	switch (toupper(key))
-	{
-		//case 'B': break;
-		//case ' ':	break;
-	case ' ':
-	{
-		delete p;
-		p = nullptr;
-		break;
-	}
-	}
+	scene->keyPress(key);
+	//switch (toupper(key))
+	//{
+	//	//case 'B': break;
+	//	//case ' ':	break;
+	//case ' ':
+	//{
+	//	delete p;
+	//	p = nullptr;
+	//	break;
+	//}
+	//}
 	//default:
 
 	//	break;
