@@ -43,7 +43,7 @@ void Scene::refresh() {
 }
 
 
-void Scene::integrate(double t) {
+void Scene::update(double t) {
 	for (auto& ents : objsByGroup_) {
 		for (auto& ent : ents) {
 			ent->integrate(t);

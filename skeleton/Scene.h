@@ -34,7 +34,7 @@ public:
 
 	void refresh();
 
-	virtual void integrate(double t);
+	virtual void update(double t);
 
 	virtual void keyPress(unsigned char key);
 

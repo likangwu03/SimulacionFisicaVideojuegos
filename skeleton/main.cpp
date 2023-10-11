@@ -74,7 +74,7 @@ void stepPhysics(bool interactive, double t)
 {
 	PX_UNUSED(interactive);
 
-	scene->integrate(t);
+	scene->update(t);
 	scene->refresh();
 	/*if (p != nullptr) {
 

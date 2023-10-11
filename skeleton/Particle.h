@@ -14,12 +14,18 @@ public:
 
 	void integrate(double t) override;
 
+	inline Vector3 getPosition() { return pos.p; }
+	inline Vector3 getVelocity() { return vel; }
+	
+
 protected:
 	Vector3 vel;
 	Vector3 a;
 	PxTransform pos;
 	RenderItem* renderItem;
-
 	double damping_;
+
+	double _duration;
+	
 };
 
