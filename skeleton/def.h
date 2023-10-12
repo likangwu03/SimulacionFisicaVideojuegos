@@ -1,6 +1,8 @@
 #pragma once
 #define P1
 
+#include "RenderUtils.hpp"
+
 namespace SFV {
 
 #ifdef P1
@@ -20,7 +22,22 @@ namespace SFV {
 		_LAST_GRP_ID
 	};
 	constexpr grpId_type maxGroupId = _LAST_GRP_ID;
+
+	using particle_type = unsigned int;
+	enum ParticleType : particle_type
+	{
+		_particle_default,
+		_particle_P1,
+		_LAST_PARTUCLE_TYPE
+	};
+	constexpr particle_type maxParticleType = _LAST_PARTUCLE_TYPE;
+
+#pragma region parameter
+	const Vector3 GRAVITY = { 0.0f, -9.8f, 0.0f };
+	const double DAMPING = 0.998;
+	const double DEFAULT_DURATION = 5;
+
+#pragma endregion
+
 #endif // P1
-
-
 }

@@ -34,6 +34,7 @@
     </ClCompile>
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="ParticleGenerator.cpp" />
+    <ClCompile Include="Fountain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -72,6 +73,7 @@
     </ClInclude>
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="ParticleGenerator.h" />
+    <ClInclude Include="Fountain.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
