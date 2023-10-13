@@ -8,7 +8,7 @@ _vel(Vel),_accel(accel),_duration(duration),_damping(damping), _type(type),_cont
 
 	if (type == ParticleType::_particle_default) {
 		PxSphereGeometry a;
-		a.radius = 5;
+		a.radius = 1;
 		PxShape* shape = CreateShape(a);
 		renderItem = new RenderItem(shape, &_pos, Vector4(0.1, 1, 1, 1));
 		RegisterRenderItem(renderItem);

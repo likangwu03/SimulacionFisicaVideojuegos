@@ -38,8 +38,8 @@ void SceneP1::init()
 void SceneP1::shoot()
 {
 
-	if (objsByGroup_[SFV::_grp_GENERAL].size() < numP) {
+	//if (objsByGroup_[SFV::_grp_GENERAL].size() < numP) {
 		Proyectil* aux= new Proyectil(cam->getTransform().p, cam->getDir()* PISTOL_VEL, g, PISTOL_MASS);
 		addObject(aux, SFV::_grp_GENERAL);
-	}
+	//}
 }

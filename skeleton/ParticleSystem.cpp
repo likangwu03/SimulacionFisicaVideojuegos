@@ -3,7 +3,9 @@
 class ParticleSystem;
 ParticleSystem::ParticleSystem(Scene* scene, const Vector3& g):System(scene),_gravity(g)
 {
-	ParticleGenerator* generator_aux=new GaussianParticleGenerator(this,3, Vector3(), Vector3(), 0.01);
+	Vector3 p_aux = Vector3(0);
+	Vector3 v_aux = Vector3(0);
+	ParticleGenerator* generator_aux=new GaussianParticleGenerator(this,3, p_aux, Vector3(0), 0.01);
 	_particle_generators.push_back(generator_aux);
 }
 

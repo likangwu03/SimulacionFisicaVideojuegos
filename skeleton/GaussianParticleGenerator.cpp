@@ -9,7 +9,7 @@ GaussianParticleGenerator::GaussianParticleGenerator(ParticleSystem* system,int 
 		_model_particle->removeRenderItem();
 	}*/
 	gen = std::mt19937(rd());
-	d = std::normal_distribution<>(5, 2);
+	d = std::normal_distribution<>(0, 5);
 }
 
 std::list<Particle*> GaussianParticleGenerator::generateParticles()
@@ -18,7 +18,7 @@ std::list<Particle*> GaussianParticleGenerator::generateParticles()
 	for (int i = 0; i < _n_particles; ++i) {
 		Vector3 v_aux = Vector3(d(gen),30, d(gen));
 
-		Particle* p = new Particle(_origin, v_aux);
+		Particle* p = new Particle(_origin, v_aux,_gravity);
 
 
 		lista.push_back(p);
