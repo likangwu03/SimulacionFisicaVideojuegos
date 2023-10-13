@@ -3,7 +3,7 @@
 #include "def.h"
 #include <array>
 #include <vector>
-
+#include "System.h"
 #include "RenderUtils.hpp"
 using namespace std;
 
@@ -13,6 +13,8 @@ protected:
 	array<Object*, SFV::maxHdlrId> hdlrs_;
 	array<vector<Object*>, SFV::maxGroupId> objsByGroup_;
 	Camera* cam;
+	vector<System*> systems;
+	
 
 public:
 	Scene();
@@ -46,6 +48,8 @@ public:
 		return hdlrs_[hId];
 	}
 	inline std::vector<Object*>* getGroup(SFV::grpId grp) { return &objsByGroup_[grp]; }
+
+	void addSystem(System* s);
 };
 
 

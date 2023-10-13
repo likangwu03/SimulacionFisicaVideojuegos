@@ -37,6 +37,7 @@ namespace SFV {
 	const double DAMPING = 0.998;
 	const double DEFAULT_DURATION = 5;
 
+	
 #pragma endregion
 
 #endif // P1

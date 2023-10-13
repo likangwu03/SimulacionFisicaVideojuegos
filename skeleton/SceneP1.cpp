@@ -8,8 +8,12 @@ SceneP1::SceneP1():Scene()
 	
 	PISTOL_g = 9.8 * PISTOL_VEL/ PISTOL_REAL_VEL ;
 
-
 	g = Vector3(0, -PISTOL_g, 0);
+
+	auto s=new ParticleSystem(this);
+	addSystem(s);
+
+
 }
 
 void SceneP1::keyPress(unsigned char key)

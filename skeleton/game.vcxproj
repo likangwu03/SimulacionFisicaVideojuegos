@@ -256,6 +256,7 @@
     <ClCompile Include="callbacks.cpp" />
     <ClCompile Include="Fountain.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GaussianParticleGenerator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ParticleGenerator.cpp" />
@@ -274,6 +275,7 @@
     <ClInclude Include="def.h" />
     <ClInclude Include="Fountain.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GaussianParticleGenerator.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ParticleGenerator.h" />
     <ClInclude Include="ParticleSystem.h" />
@@ -284,6 +286,7 @@
     <ClInclude Include="Render\Camera.h" />
     <ClInclude Include="Render\Render.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="System.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

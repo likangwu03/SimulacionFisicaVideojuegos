@@ -1,14 +1,17 @@
 #include "ParticleSystem.h"
-
-
-ParticleSystem::ParticleSystem(const Vector3& g):_gravity(g)
+#include "Scene.h"
+class ParticleSystem;
+ParticleSystem::ParticleSystem(Scene* scene, const Vector3& g):System(scene),_gravity(g)
 {
-
+	ParticleGenerator* generator_aux=new GaussianParticleGenerator(this,3, Vector3(), Vector3(), 0.01);
+	_particle_generators.push_back(generator_aux);
 }
 
 void ParticleSystem::update(double t)
 {
-
+	for (ParticleGenerator* p : _particle_generators) {
+		p->update(t);
+	}
 
 	auto it = _particles.begin();
 	while (it != _particles.end()) {
@@ -19,5 +22,13 @@ void ParticleSystem::update(double t)
 		else {
 			++it;
 		}
+	}
+}
+
+
+void ParticleSystem::addParticles(std::list<Particle*>& lista) {
+	for (auto p : lista) {
+		_particles.push_back(p);
+		_scene->addObject(p);
 	}
 }

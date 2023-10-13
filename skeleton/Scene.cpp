@@ -44,6 +44,10 @@ void Scene::refresh() {
 
 
 void Scene::update(double t) {
+	for (System* sys : systems) {
+		sys->update(t);
+	}
+
 	for (auto& ents : objsByGroup_) {
 		for (auto& ent : ents) {
 			ent->integrate(t);
@@ -57,4 +61,9 @@ void Scene::keyPress(unsigned char key) {
 			ent->keyPress(key);
 		}
 	}
+}
+
+
+void Scene::addSystem(System* s) {
+	systems.push_back(s);
 }

@@ -1,10 +1,10 @@
 #include "Fountain.h"
-
+/*
 Fountain::Fountain(std::string name, Vector3 pos,  Vector3 vel, Vector3 g, Particle* p):ParticleGenerator()
 {
 	_name = name;
 	_origin = pos;
-	_mean_velocity = vel;
+	_velocity = vel;
 	_model_particle = p;
 	_gravity = g;
 	if (_model_particle == nullptr) {
@@ -12,7 +12,7 @@ Fountain::Fountain(std::string name, Vector3 pos,  Vector3 vel, Vector3 g, Parti
 		_model_particle->removeRenderItem();
 	}
 }
-
+*/
 std::list<Particle*> Fountain::generateParticles()
 {
 	std::list<Particle*> lista;

@@ -2,9 +2,11 @@
 #include "Particle.h"
 #include <list>
 #include <random>
+class ParticleSystem;
 class ParticleGenerator
 {
 public:
+	ParticleGenerator(ParticleSystem* system,int n_particles = 3,Vector3 pos= { 0.0f, 0.0f, 0.0f }, Vector3 velocity= { 0.0f, 0.0f, 0.0f },double frequency=0.1f,Vector3 gravity=SFV::GRAVITY);
 	virtual std::list<Particle*> generateParticles() = 0;
 
 
@@ -12,10 +14,10 @@ public:
 	inline void setFrequency(double f) { _frequency = f; }
 
 	inline void setMeanVelocity(const Vector3& v) {
-		_mean_velocity = v;
+		_velocity = v;
 	}
 	inline Vector3 getMeanVelocity() const {
-		return _mean_velocity;
+		return _velocity;
 	}
 	inline void setMeanDuration(double new_duration) {
 		_model_particle->setDuration(new_duration);
@@ -27,11 +29,13 @@ public:
 		_model_particle->removeRenderItem();
 	}
 	inline void setNParticles(int n_p) { _n_particles = n_p; }
+
+	virtual void update(double t) = 0;
+
 protected:
 	int _n_particles = 3; // Number of particles for each generateParticles call(TODO: add randomness ? ? )
-	double _generation_prob = 1.0; // IF 1.0 --> always produces particles
 	Particle* _model_particle = nullptr; // Has the attributes of the particle that will be generated!(damping, lifetime, etc.)
-	Vector3 _origin, _mean_velocity;
+	Vector3 _origin, _velocity;
 
 	/*
 	std::mt19937 _mt;
@@ -60,5 +64,8 @@ protected:
 	std::string _name;
 	Vector3 _gravity;
 	double _frequency;
+	double _cont;
+
+	ParticleSystem* _system;
 };
 

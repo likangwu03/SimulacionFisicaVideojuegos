@@ -2,6 +2,9 @@
 #include "Scene.h"
 #include <vector>
 #include "Proyectil.h"
+#include "ParticleSystem.h"
+
+
 class SceneP1 :public Scene
 {
 public:
