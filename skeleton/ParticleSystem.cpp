@@ -5,7 +5,7 @@ ParticleSystem::ParticleSystem(Scene* scene, const Vector3& g):System(scene),_gr
 {
 	Vector3 p_aux = Vector3(0);
 	Vector3 v_aux = Vector3(0);
-	ParticleGenerator* generator_aux=new GaussianParticleGenerator(this,3, p_aux, Vector3(0), 0.01);
+	ParticleGenerator* generator_aux=new GaussianParticleGenerator(this,3, p_aux, Vector3(0,30,0), 0.01);
 	_particle_generators.push_back(generator_aux);
 }
 

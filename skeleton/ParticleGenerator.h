@@ -58,7 +58,7 @@ protected:
 
 	std::random_device rd;
 	std::mt19937 gen;
-	std::normal_distribution<> d;
+	//std::normal_distribution<> d;
 
 
 	std::string _name;

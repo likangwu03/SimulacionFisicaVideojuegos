@@ -27,5 +27,5 @@ std::list<Particle*> Fountain::generateParticles()
 void Fountain::ini_rnd()
 {
 	gen= std::mt19937(rd());
-	d= std::normal_distribution<>(5, 2);
+	
 }

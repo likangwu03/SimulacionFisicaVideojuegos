@@ -52,6 +52,6 @@ void Particle::integrate(double t)
 
 Particle* Particle::clone()
 {
-	Particle* p = new Particle(_pos.p, _vel, _accel, _duration, _damping, _type);
+	Particle* p = new Particle(_pos.p, _vel, _accel, 1 / _inv_masa, _duration, _damping, _type);
 	return p;
 }

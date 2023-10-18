@@ -10,7 +10,12 @@ public:
 
 	void update(double t) override;
 
-private:
-	void ini_rnd();
+protected:
+	std::vector< std::normal_distribution<float>> normal_distributions;
+	
+	void addNormalDistrinution(float mean,float deviation);
+
+	void setDeviationVel(float deviation);
+	
 };
 

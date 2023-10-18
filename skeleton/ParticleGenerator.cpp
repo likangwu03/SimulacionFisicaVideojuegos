@@ -4,5 +4,5 @@ ParticleGenerator::ParticleGenerator(ParticleSystem* system,int n_particles, Vec
 	_system(system),_n_particles(n_particles),
 _origin(pos), _velocity(velocity), _frequency(frequency), _gravity(gravity),_cont(0)
 {
-
+	gen = std::mt19937(rd());
 }
