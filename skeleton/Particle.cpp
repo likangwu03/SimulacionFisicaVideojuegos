@@ -1,12 +1,25 @@
 #include "Particle.h"
 
+Particle::Particle(ParticleInfor info):Object(), _vel(info.Vel), _accel(info.accel), _duration(info.duration),
+_damping(info.damping), _type(info.type),_inv_masa(1/info.masa), _cont(0), renderItem(nullptr) {
+	_pos = physx::PxTransform(info.Pos);
 
-Particle::Particle(Vector3 Pos, Vector3 Vel, Vector3 accel, double duration,double damping, ParticleType type):Object(),
-_vel(Vel),_accel(accel),_duration(duration),_damping(damping), _type(type),_cont(0), renderItem(nullptr)
+	if (_type == ParticleType::_particle_default) {
+		PxSphereGeometry a;
+		a.radius = 1;
+		PxShape* shape = CreateShape(a);
+		renderItem = new RenderItem(shape, &_pos, Vector4(0.1, 1, 1, 1));
+		RegisterRenderItem(renderItem);
+	}
+
+}
+
+Particle::Particle(Vector3 Pos, Vector3 Vel, Vector3 accel,double masa, double duration,double damping, ParticleType type):Object(),
+_vel(Vel),_accel(accel),_duration(duration),_damping(damping), _type(type), _inv_masa(1 / masa), _cont(0), renderItem(nullptr)
 {
 	_pos = physx::PxTransform(Pos);
 
-	if (type == ParticleType::_particle_default) {
+	if (_type == ParticleType::_particle_default) {
 		PxSphereGeometry a;
 		a.radius = 1;
 		PxShape* shape = CreateShape(a);

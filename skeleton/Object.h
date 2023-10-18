@@ -2,7 +2,7 @@
 class Scene;
 class Object
 {
-private:
+protected:
 	bool alive_;
 	Scene* scene_;
 

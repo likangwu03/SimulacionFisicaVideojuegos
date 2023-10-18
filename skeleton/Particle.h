@@ -8,7 +8,22 @@ using namespace physx;
 class Particle :public Object
 {
 public:
-	Particle(Vector3 Pos, Vector3 Vel, Vector3 accel = Vector3(), double duration = DEFAULT_DURATION, double damping = SFV::DAMPING, ParticleType type = ParticleType::_particle_default);
+	struct ParticleInfor {
+		Vector3 Pos;
+		Vector3 Vel;
+		Vector3 accel = Vector3(0);
+		double duration = DEFAULT_DURATION;
+		double damping = SFV::DAMPING;
+		ParticleType type = ParticleType::_particle_default;
+		double masa = 1;
+	};
+
+
+	Particle(ParticleInfor info);
+
+
+
+	Particle(Vector3 Pos, Vector3 Vel, Vector3 accel = Vector3(0), double masa=1, double duration = DEFAULT_DURATION, double damping = SFV::DAMPING, ParticleType type = ParticleType::_particle_default);
 	~Particle();
 
 	void integrate(double t) override;
@@ -42,5 +57,9 @@ protected:
 
 	double _duration;
 	double _cont;
+
+	double _inv_masa;
+
+	Vector3 _force;
 };
 
