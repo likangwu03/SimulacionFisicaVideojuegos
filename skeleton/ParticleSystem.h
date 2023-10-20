@@ -6,6 +6,7 @@
 #include "ParticleGenerator.h"
 #include <list>
 #include "GaussianParticleGenerator.h"
+#include "Fountain.h"
 class Scene;
 class ParticleSystem:public System {
 
@@ -24,4 +25,6 @@ public:
 	void update(double t) override;
 
 	void addParticles(std::list<Particle*>& lista);
+
+	void addParticle(Particle* p);
 };

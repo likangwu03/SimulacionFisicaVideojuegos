@@ -7,10 +7,12 @@ using namespace SFV;
 using namespace physx;
 class Particle :public Object
 {
+
 public:
+
 	struct ParticleInfor {
-		Vector3 Pos;
-		Vector3 Vel;
+		Vector3 Pos= Vector3(0);
+		Vector3 Vel= Vector3(0);
 		Vector3 accel = Vector3(0);
 		double duration = DEFAULT_DURATION;
 		double damping = SFV::DAMPING;

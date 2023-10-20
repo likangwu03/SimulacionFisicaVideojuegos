@@ -37,6 +37,8 @@
     <ClCompile Include="Fountain.cpp" />
     <ClCompile Include="GaussianParticleGenerator.cpp" />
     <ClCompile Include="UniformParticleGenerator.cpp" />
+    <ClCompile Include="Fireword.cpp" />
+    <ClCompile Include="FireworkSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -81,6 +83,8 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="UniformParticleGenerator.h" />
+    <ClInclude Include="Fireword.h" />
+    <ClInclude Include="FireworkSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

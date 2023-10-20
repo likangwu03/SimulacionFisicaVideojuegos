@@ -1,14 +1,11 @@
 #pragma once
-#include "ParticleGenerator.h"
+#include "GaussianParticleGenerator.h"
 
-class Fountain: public ParticleGenerator
+class Fountain: public GaussianParticleGenerator
 {
 public:
-	Fountain(std::string name, Vector3 pos,  Vector3 vel,Vector3 g, Particle* p=nullptr);
+	Fountain(std::string name,ParticleSystem* system,int n_particles, Vector3 pos,  Vector3 vel, double frequency, Particle* p=nullptr, Vector3 g=SFV::GRAVITY);
 
 	virtual std::list<Particle*> generateParticles();
-
-private:
-	void ini_rnd();
 };
 

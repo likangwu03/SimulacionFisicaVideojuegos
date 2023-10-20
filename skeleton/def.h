@@ -6,6 +6,14 @@
 namespace SFV {
 
 #ifdef P1
+	using system_type = unsigned int;
+	enum SystemId : system_type
+	{
+		_sys_PARTICLE,
+		_LAST_SYS_ID
+	};
+	constexpr system_type maxSystemId = _LAST_SYS_ID;
+
 	using hdlrId_type = unsigned int;
 	enum hdlrId : hdlrId_type
 	{

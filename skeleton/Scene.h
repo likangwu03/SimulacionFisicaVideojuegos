@@ -12,8 +12,9 @@ class Scene
 protected:
 	array<Object*, SFV::maxHdlrId> hdlrs_;
 	array<vector<Object*>, SFV::maxGroupId> objsByGroup_;
+	array<vector<Object*>, SFV::maxGroupId> objsAux_;
 	Camera* cam;
-	vector<System*> systems;
+	vector<System*> systems= vector<System*>(SFV::maxSystemId,nullptr);
 	
 
 public:
@@ -27,6 +28,10 @@ public:
 		}
 	}
 
+	System* getSystem(int type) {
+		return systems[type];
+	}
+
 	void addObject(Object* obj,SFV::grpId_type gId = SFV::_grp_GENERAL);
 
 
@@ -37,6 +42,8 @@ public:
 	void refresh();
 
 	virtual void update(double t);
+
+	void addAux();
 
 	virtual void keyPress(unsigned char key);
 

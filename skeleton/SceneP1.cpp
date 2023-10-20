@@ -22,7 +22,8 @@ void SceneP1::keyPress(unsigned char key)
 	{
 	case ' ':
 	{
-		shoot();
+		firework();
+		//shoot();
 		break;
 	}
 	default:
@@ -43,3 +44,13 @@ void SceneP1::shoot()
 		addObject(aux, SFV::_grp_GENERAL);
 	//}
 }
+
+void SceneP1::firework()
+{
+	Particle::ParticleInfor infor;
+	infor.Vel = Vector3(0, 10, 0);
+	Fireword* f = new Fireword(3, infor);
+
+	((ParticleSystem*)getSystem(1))->addParticle(f);
+}
+
