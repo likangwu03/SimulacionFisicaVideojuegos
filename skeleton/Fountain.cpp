@@ -15,7 +15,7 @@ Fountain::Fountain(std::string name, Vector3 pos,  Vector3 vel, Vector3 g, Parti
 */
 Fountain::Fountain(std::string name, ParticleSystem* system, int n_particles, Vector3 pos, Vector3 vel, double frequency, Particle* p, Vector3 g):GaussianParticleGenerator(system,n_particles,pos,vel,frequency,p,g)
 {
-	addNormalDistrinution(7, 3);
+	addNormalDistribution(7, 3);
 	setDeviationVel(10);
 }
 

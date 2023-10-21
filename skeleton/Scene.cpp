@@ -79,5 +79,9 @@ void Scene::keyPress(unsigned char key) {
 
 
 void Scene::addSystem(System* s) {
-	systems.push_back(s);
+	if (systems[s->getType()] != nullptr) {
+		delete systems[s->getType()];
+		systems[s->getType()] = nullptr;
+	}
+	systems[s->getType()] = s;
 }

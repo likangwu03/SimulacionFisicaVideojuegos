@@ -9,6 +9,7 @@ public:
 	ParticleGenerator(ParticleSystem* system,int n_particles = 3,Vector3 pos= { 0.0f, 0.0f, 0.0f }, Vector3 velocity= { 0.0f, 0.0f, 0.0f },double frequency=0.1f,Vector3 gravity=SFV::GRAVITY);
 	virtual std::list<Particle*> generateParticles() = 0;
 
+	~ParticleGenerator();
 
 	inline void setOrigin(const Vector3& p) { _origin = p; }
 	inline void setFrequency(double f) { _frequency = f; }
@@ -37,28 +38,8 @@ protected:
 	Particle* _model_particle = nullptr; // Has the attributes of the particle that will be generated!(damping, lifetime, etc.)
 	Vector3 _origin, _velocity;
 
-	/*
-	std::mt19937 _mt;
-	std::uniform_real_distribution<double> _u{ 0,1 };
-	*/
-
-	/*
-	std::random_device rd;  // Will be used to obtain a seed for the random number engine
-	std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
-	std::uniform_real_distribution<> dis(1.0, 2.0);
-	*/
-
-	//generar números aleatorios con media 5 y desviación estándar 2:
-	//std::random_device rd;
-    //std::mt19937 gen(rd());
-    //std::normal_distribution<> d(5, 2);
-
-	//dis(gen) para conseguir numero 
-
-
 	std::random_device rd;
 	std::mt19937 gen;
-	//std::normal_distribution<> d;
 
 
 	std::string _name;

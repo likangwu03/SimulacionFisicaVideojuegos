@@ -1,7 +1,7 @@
 #include "ParticleSystem.h"
 #include "Scene.h"
 class ParticleSystem;
-ParticleSystem::ParticleSystem(Scene* scene, const Vector3& g):System(scene),_gravity(g)
+ParticleSystem::ParticleSystem(Scene* scene, const Vector3& g):System(scene,SFV::SystemId::_sys_PARTICLE),_gravity(g)
 {
 	/*Vector3 p_aux = Vector3(0);
 	Vector3 v_aux = Vector3(0);

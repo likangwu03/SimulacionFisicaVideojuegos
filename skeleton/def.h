@@ -43,7 +43,7 @@ namespace SFV {
 #pragma region parameter
 	const Vector3 GRAVITY = { 0.0f, -9.8f, 0.0f };
 	const double DAMPING = 0.998;
-	const double DEFAULT_DURATION = 5;
+	const double DEFAULT_DURATION = 3;
 
 	
 #pragma endregion

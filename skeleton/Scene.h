@@ -14,6 +14,8 @@ protected:
 	array<vector<Object*>, SFV::maxGroupId> objsByGroup_;
 	array<vector<Object*>, SFV::maxGroupId> objsAux_;
 	Camera* cam;
+
+
 	vector<System*> systems= vector<System*>(SFV::maxSystemId,nullptr);
 	
 

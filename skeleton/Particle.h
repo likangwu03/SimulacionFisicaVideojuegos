@@ -13,7 +13,7 @@ public:
 	struct ParticleInfor {
 		Vector3 Pos= Vector3(0);
 		Vector3 Vel= Vector3(0);
-		Vector3 accel = Vector3(0);
+		Vector3 accel = SFV::GRAVITY;
 		double duration = DEFAULT_DURATION;
 		double damping = SFV::DAMPING;
 		ParticleType type = ParticleType::_particle_default;

@@ -13,7 +13,7 @@ public:
 protected:
 	std::vector< std::normal_distribution<float>> normal_distributions;
 	
-	void addNormalDistrinution(float mean,float deviation);
+	void addNormalDistribution(float mean,float deviation);
 
 	void setDeviationVel(float deviation);
 	

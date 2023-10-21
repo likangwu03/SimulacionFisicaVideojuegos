@@ -8,7 +8,7 @@ GaussianParticleGenerator::GaussianParticleGenerator(ParticleSystem* system,int 
 		_model_particle = new Particle(pos, vel, _gravity);
 		_model_particle->removeRenderItem();
 	}
-	addNormalDistrinution(0, 15);
+	addNormalDistribution(0, 15);
 }
 
 std::list<Particle*> GaussianParticleGenerator::generateParticles()
@@ -36,10 +36,9 @@ void GaussianParticleGenerator::update(double t) {
 	}
 }
 
-void GaussianParticleGenerator::addNormalDistrinution(float mean, float deviation)
+void GaussianParticleGenerator::addNormalDistribution(float mean, float deviation)
 {
 	std::normal_distribution<float> aux(mean, deviation);
-
 	normal_distributions.push_back(aux);
 
 }

@@ -6,3 +6,8 @@ _origin(pos), _velocity(velocity), _frequency(frequency), _gravity(gravity),_con
 {
 	gen = std::mt19937(rd());
 }
+
+ParticleGenerator::~ParticleGenerator()
+{
+	delete _model_particle;
+}
