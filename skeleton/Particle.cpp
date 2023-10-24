@@ -48,6 +48,10 @@ void Particle::integrate(double t)
 
 	// Update position
 	_pos.p += _vel*t;
+
+	if (_cont > _duration) {
+		setAlive(false);
+	}
 }
 
 Particle* Particle::clone()

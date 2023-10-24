@@ -1,5 +1,6 @@
 #include "FireworkSystem.h"
 #include "ParticleSystem.h"
+#include "Scene.h"
 FireworkSystem::FireworkSystem(std::string name, ParticleSystem* system, int n_particles, Vector3 pos, Vector3 vel, double frequency, Fireword* p, Vector3 g) :GaussianParticleGenerator(system, n_particles, pos, vel, frequency, p, g)
 {
 	fireword = p;
@@ -8,9 +9,7 @@ FireworkSystem::FireworkSystem(std::string name, ParticleSystem* system, int n_p
 
 void FireworkSystem::generate()
 {
-	auto l = generateParticles();
-	_system->addParticles(l);
-	
+	generateParticles();
 }
 
 
@@ -23,6 +22,7 @@ std::list<Particle*> FireworkSystem::generateParticles()
 		Particle* p = (Fireword*)fireword->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
+		_scene->addObject(p);
 		lista.push_back(p);
 	}
 	return lista;

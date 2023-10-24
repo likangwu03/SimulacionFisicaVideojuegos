@@ -5,6 +5,7 @@ ParticleGenerator::ParticleGenerator(ParticleSystem* system,int n_particles, Vec
 _origin(pos), _velocity(velocity), _frequency(frequency), _gravity(gravity),_cont(0)
 {
 	gen = std::mt19937(rd());
+	_scene = system->getScene();
 }
 
 ParticleGenerator::~ParticleGenerator()

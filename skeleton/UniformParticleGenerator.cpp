@@ -1,6 +1,6 @@
 #include "UniformParticleGenerator.h"
 #include "ParticleSystem.h"
-
+#include "Scene.h"
 UniformParticleGenerator::UniformParticleGenerator(ParticleSystem* system, int n_particle, Vector3 pos, Vector3 vel, double frequency, Particle* p, Vector3 g)
 	:ParticleGenerator(system, n_particle, pos, vel, frequency, g)
 {
@@ -20,6 +20,7 @@ std::list<Particle*> UniformParticleGenerator::generateParticles()
 		Particle* p = _model_particle->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
+		_scene->addObject(p);
 		lista.push_back(p);
 	}
 	return lista;
@@ -31,8 +32,7 @@ void UniformParticleGenerator::update(double t) {
 	_cont += t;
 	if (_cont > _frequency) {
 		_cont = 0;
-		std::list<Particle*> lista = generateParticles();
-		_system->addParticles(lista);
+		generateParticles();
 	}
 }
 

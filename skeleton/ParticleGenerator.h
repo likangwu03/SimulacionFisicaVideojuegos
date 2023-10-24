@@ -48,5 +48,7 @@ protected:
 	double _cont;
 
 	ParticleSystem* _system;
+
+	Scene* _scene;
 };
 

@@ -51,7 +51,6 @@ void SceneP1::firework()
 	infor.Vel = Vector3(0, 25, 0);
 	infor.duration = 1;
 	Fireword* f = new Fireword(3,4, infor);
-
-	((ParticleSystem*)getSystem(SFV::SystemId::_sys_PARTICLE))->addParticle(f);
+	addObject(f);
 }
 

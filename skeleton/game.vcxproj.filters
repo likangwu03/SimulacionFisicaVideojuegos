@@ -14,9 +14,6 @@
     <ClCompile Include="RenderUtils.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="Particle.cpp">
-      <Filter>P1</Filter>
-    </ClCompile>
     <ClCompile Include="Proyectil.cpp">
       <Filter>P1</Filter>
     </ClCompile>
@@ -34,11 +31,23 @@
     </ClCompile>
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="ParticleGenerator.cpp" />
-    <ClCompile Include="Fountain.cpp" />
     <ClCompile Include="GaussianParticleGenerator.cpp" />
     <ClCompile Include="UniformParticleGenerator.cpp" />
     <ClCompile Include="Fireword.cpp" />
     <ClCompile Include="FireworkSystem.cpp" />
+    <ClCompile Include="SceneP2.cpp">
+      <Filter>P2</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemP2.cpp">
+      <Filter>P2</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>P1</Filter>
+    </ClCompile>
+    <ClCompile Include="Fountain.cpp">
+      <Filter>P2</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnParticle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -57,9 +66,6 @@
     <ClInclude Include="RenderUtils.hpp">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="Particle.h">
-      <Filter>P1</Filter>
-    </ClInclude>
     <ClInclude Include="Proyectil.h">
       <Filter>P1</Filter>
     </ClInclude>
@@ -77,7 +83,6 @@
     </ClInclude>
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="ParticleGenerator.h" />
-    <ClInclude Include="Fountain.h" />
     <ClInclude Include="GaussianParticleGenerator.h" />
     <ClInclude Include="System.h">
       <Filter>base</Filter>
@@ -85,6 +90,19 @@
     <ClInclude Include="UniformParticleGenerator.h" />
     <ClInclude Include="Fireword.h" />
     <ClInclude Include="FireworkSystem.h" />
+    <ClInclude Include="SceneP2.h">
+      <Filter>P2</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemP2.h">
+      <Filter>P2</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>P1</Filter>
+    </ClInclude>
+    <ClInclude Include="Fountain.h">
+      <Filter>P2</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnParticle.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -95,6 +113,9 @@
     </Filter>
     <Filter Include="P1">
       <UniqueIdentifier>{75127805-39bc-4ff1-8c0b-4a291d268b22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="P2">
+      <UniqueIdentifier>{6293fc92-8d29-4449-af4b-111dc1df2e80}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

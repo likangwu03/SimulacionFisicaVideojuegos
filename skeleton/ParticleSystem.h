@@ -12,7 +12,6 @@ class ParticleSystem:public System {
 
 protected:
 	Vector3 _gravity;
-	std::vector <Particle*> _particles;
 	std::list <ParticleGenerator*> _particle_generators;
 
 public:
@@ -24,7 +23,7 @@ public:
 	// Integrates the particles and checks for its lifetime, setc!
 	void update(double t) override;
 
-	void addParticles(std::list<Particle*>& lista);
-
-	void addParticle(Particle* p);
+	void addGenerator(ParticleGenerator* g) {
+		_particle_generators.push_back(g);
+	}
 };

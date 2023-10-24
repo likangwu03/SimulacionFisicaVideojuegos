@@ -16,4 +16,6 @@ public:
 	SFV::system_type getType() {
 		return _type;
 	}
+
+	Scene* getScene() { return _scene; }
 };
