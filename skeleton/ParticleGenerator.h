@@ -33,6 +33,14 @@ public:
 
 	virtual void update(double t) = 0;
 
+	template <typename Valor>
+	void setModel(Valor p) {
+		if (_model_particle != nullptr) {
+			delete _model_particle;
+		}
+		_model_particle = p;
+	}
+
 protected:
 	int _n_particles = 3; // Number of particles for each generateParticles call(TODO: add randomness ? ? )
 	Particle* _model_particle = nullptr; // Has the attributes of the particle that will be generated!(damping, lifetime, etc.)

@@ -1,4 +1,5 @@
 #include "Fountain.h"
+#include "Scene.h"
 /*
 Fountain::Fountain(std::string name, Vector3 pos,  Vector3 vel, Vector3 g, Particle* p):ParticleGenerator()
 {
@@ -28,6 +29,9 @@ std::list<Particle*> Fountain::generateParticles()
 		Particle* p = _model_particle->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
+
+		_scene->addObject(p);
+
 		lista.push_back(p);
 	}
 	return lista;

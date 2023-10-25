@@ -5,6 +5,7 @@
 #include "ParticleSystem.h"
 #include "Fireword.h"
 #include "TurnParticle.h"
+#include "CircleGenerator.h"
 
 class SceneP2 :public Scene
 {

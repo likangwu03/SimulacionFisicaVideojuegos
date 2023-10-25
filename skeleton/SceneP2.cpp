@@ -11,7 +11,7 @@ void SceneP2::keyPress(unsigned char key)
 	{
 	case ' ':
 	{
-		//firework();
+		firework();
 		shoot();
 		break;
 	}

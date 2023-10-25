@@ -6,6 +6,7 @@ Fireword::Fireword(int num, int gen,ParticleInfor infor) :Particle(infor)
 	p = nullptr;
 	_num = num;
 	_gen = gen;
+	sys = nullptr;
 }
 
 Fireword::~Fireword()

@@ -5,6 +5,7 @@ FireworkSystem::FireworkSystem(std::string name, ParticleSystem* system, int n_p
 {
 	fireword = p;
 	//setDeviationVel(10);
+	//setModel(p);
 }
 
 void FireworkSystem::generate()
@@ -19,7 +20,7 @@ std::list<Particle*> FireworkSystem::generateParticles()
 	for (int i = 0; i < _n_particles; ++i) {
 		Vector3 v_aux = _velocity + Vector3(normal_distributions[0](gen), normal_distributions[0](gen), normal_distributions[0](gen));
 		
-		Particle* p = (Fireword*)fireword->clone();
+		Fireword* p = (Fireword*)_model_particle->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
 		_scene->addObject(p);

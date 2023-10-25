@@ -7,6 +7,7 @@
 #include <list>
 #include "GaussianParticleGenerator.h"
 #include "Fountain.h"
+#include "CircleGenerator.h"
 class Scene;
 class ParticleSystem:public System {
 
