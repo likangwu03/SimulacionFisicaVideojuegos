@@ -20,7 +20,6 @@ public:
 
 private:
 	void shoot();
-	void firework();
 protected:
 	int numP ;
 	Vector3 g;

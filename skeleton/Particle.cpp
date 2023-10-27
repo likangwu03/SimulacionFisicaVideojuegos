@@ -11,6 +11,20 @@ _damping(info.damping), _type(info.type),_inv_masa(1/info.masa), _cont(0), rende
 		renderItem = new RenderItem(shape, &_pos, Vector4(0.1, 1, 1, 1));
 		RegisterRenderItem(renderItem);
 	}
+	else if (_type == ParticleType::_particle_F1) {
+		PxSphereGeometry a;
+		a.radius = 0.5;
+		PxShape* shape = CreateShape(a);
+		renderItem = new RenderItem(shape, &_pos, Vector4(1, 0.8, 0, 1));
+		RegisterRenderItem(renderItem);
+	}
+	else if (_type == ParticleType::_particle_F2) {
+		PxSphereGeometry a;
+		a.radius = 0.3;
+		PxShape* shape = CreateShape(a);
+		renderItem = new RenderItem(shape, &_pos, Vector4(0.8, 0, 0, 1));
+		RegisterRenderItem(renderItem);
+	}
 
 }
 
@@ -24,6 +38,20 @@ _vel(Vel),_accel(accel),_duration(duration),_damping(damping), _type(type), _inv
 		a.radius = 1;
 		PxShape* shape = CreateShape(a);
 		renderItem = new RenderItem(shape, &_pos, Vector4(0.1, 1, 1, 1));
+		RegisterRenderItem(renderItem);
+	}
+	else if (_type == ParticleType::_particle_F1) {
+		PxSphereGeometry a;
+		a.radius = 0.5;
+		PxShape* shape = CreateShape(a);
+		renderItem = new RenderItem(shape, &_pos, Vector4(1, 0.8, 0, 1));
+		RegisterRenderItem(renderItem);
+	}
+	else if (_type == ParticleType::_particle_F2) {
+		PxSphereGeometry a;
+		a.radius = 0.3;
+		PxShape* shape = CreateShape(a);
+		renderItem = new RenderItem(shape, &_pos, Vector4(0.8, 0, 0, 1));
 		RegisterRenderItem(renderItem);
 	}
 

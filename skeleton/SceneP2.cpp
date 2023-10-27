@@ -10,14 +10,32 @@ void SceneP2::keyPress(unsigned char key)
 	switch (toupper(key))
 	{
 	case ' ':
-	{
-		firework();
 		shoot();
 		break;
-	}
-	default:
-
+	case '1':
+		firework(1);
 		break;
+	case '2':
+		firework(2);
+		break;
+	case '3':
+		firework(3);
+	case '4':
+		firework(4);
+		break;
+	case '5':
+		firework2(1);
+		break;
+	case '6':
+		firework2(2);
+		break;
+	case '7':
+		firework2(3);
+	case '8':
+		firework2(4);
+		break;
+
+
 	}
 }
 
@@ -33,12 +51,25 @@ void SceneP2::shoot()
 	addObject(f);
 }
 
-void SceneP2::firework()
+void SceneP2::firework(int t)
 {
 	Particle::ParticleInfor infor;
-	infor.Vel = Vector3(0, 25, 0);
+	infor.Vel = Vector3(0, 20, 0);
 	infor.duration = 1;
-	Fireword* f = new Fireword(3, 4, infor);
+	infor.type = _particle_F1;
+	//infor.accel = Vector3(0);
+	Fireword* f = new Fireword(12, 1,t, infor);
+	addObject(f);
+}
+
+void SceneP2::firework2(int t)
+{
+	Particle::ParticleInfor infor;
+	infor.Vel = Vector3(0, 20, 0);
+	infor.duration = 1;
+	infor.type = _particle_F2;
+	//infor.accel = Vector3(0);
+	Fireword* f = new Fireword(12, 2, t, infor);
 	addObject(f);
 }
 

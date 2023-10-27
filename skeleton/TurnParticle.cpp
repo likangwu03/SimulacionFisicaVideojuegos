@@ -18,6 +18,7 @@ void TurnParticle::integrate(double t)
 	_vel += _accel * t;
 	_vel *= powf(_damping, t);
 
+	radios += t * _vel.z;
 
 	float aux_y = _vel.y * t;
 	_pos.p.y += aux_y;

@@ -1,11 +1,12 @@
 #include "Fireword.h"
 #include "FireworkSystem.h"
 #include "Scene.h"
-Fireword::Fireword(int num, int gen,ParticleInfor infor) :Particle(infor)
+Fireword::Fireword(int num, int gen,int type,ParticleInfor infor) :Particle(infor)
 {
 	p = nullptr;
 	_num = num;
 	_gen = gen;
+	t = type;
 	sys = nullptr;
 }
 
@@ -13,15 +14,32 @@ Fireword::~Fireword()
 {
 	if (_gen > 0) {
 		createFirewordSystem();
-		sys->generate();
-		delete sys;
+		switch (t)
+		{
+		case 1:
+			sys->generateParticles1();
+			break;
+		case 2:
+			sys->generateParticles2();
+			break;
+		case 3:
+			sys->generateParticles3();
+			break;
+		case 4:
+			sys->generateParticles4();
+			break;
+	
+		}
+		
 	}
+	delete sys;
 }
 
 void Fireword::createFirewordSystem()
 {
-	p = clone();
+	p = (Fireword*)clone();
 	p->removeRenderItem();
+	p->_gen--;
 	sys = new FireworkSystem(" ", (ParticleSystem*)scene_->getSystem(SFV::SystemId::_sys_PARTICLE),_num, _pos.p,_vel,0,(Fireword *) p);
 }
 
@@ -35,6 +53,6 @@ Particle* Fireword::clone()
 	i.Pos = _pos.p;
 	i.type = _type;
 	i.Vel = _vel;
-	Particle* aux = new Fireword(_num, _gen - 1, i);
+	Particle* aux = new Fireword(_num, _gen,t, i);
 	return aux;
 }

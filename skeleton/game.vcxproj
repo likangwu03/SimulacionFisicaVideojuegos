@@ -257,6 +257,7 @@
     <ClCompile Include="CircleGenerator.cpp" />
     <ClCompile Include="Fireword.cpp" />
     <ClCompile Include="FireworkSystem.cpp" />
+    <ClCompile Include="FireworkSystem2.cpp" />
     <ClCompile Include="Fountain.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GaussianParticleGenerator.cpp" />
@@ -273,6 +274,7 @@
     <ClCompile Include="Render\Render.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneP2.cpp" />
+    <ClCompile Include="TornadoSystem.cpp" />
     <ClCompile Include="TurnParticle.cpp" />
     <ClCompile Include="UniformParticleGenerator.cpp" />
   </ItemGroup>
@@ -283,6 +285,7 @@
     <ClInclude Include="def.h" />
     <ClInclude Include="Fireword.h" />
     <ClInclude Include="FireworkSystem.h" />
+    <ClInclude Include="FireworkSystem2.h" />
     <ClInclude Include="Fountain.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GaussianParticleGenerator.h" />
@@ -299,6 +302,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneP2.h" />
     <ClInclude Include="System.h" />
+    <ClInclude Include="TornadoSystem.h" />
     <ClInclude Include="TurnParticle.h" />
     <ClInclude Include="UniformParticleGenerator.h" />
   </ItemGroup>

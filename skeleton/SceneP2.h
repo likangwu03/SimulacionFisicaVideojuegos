@@ -15,6 +15,7 @@ public:
 
 private:
 	void shoot();
-	void firework();
+	void firework(int t);
+	void firework2(int t);
 };
 
