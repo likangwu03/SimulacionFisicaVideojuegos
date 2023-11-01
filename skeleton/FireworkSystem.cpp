@@ -23,7 +23,8 @@ void FireworkSystem::generateParticles1()
 		Fireword* p = (Fireword*)fireword->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-		_scene->addObject(p);
+		_system->addParticle(p);
+		//_scene->addObject(p);
 	}
 }
 
@@ -35,7 +36,7 @@ void FireworkSystem::generateParticles2()
 		Fireword* p = (Fireword*)fireword->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-		_scene->addObject(p);
+		_system->addParticle(p);
 	}
 }
 
@@ -49,7 +50,7 @@ void FireworkSystem::generateParticles3()
 		Fireword* p = (Fireword*)fireword->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-		_scene->addObject(p);
+		_system->addParticle(p);
 	}
 	for (int i = 0; i < _n_particles; ++i) {
 		float d = angulo(gen);
@@ -59,7 +60,7 @@ void FireworkSystem::generateParticles3()
 		Fireword* p = (Fireword*)fireword->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-		_scene->addObject(p);
+		_system->addParticle(p);
 	}
 }
 

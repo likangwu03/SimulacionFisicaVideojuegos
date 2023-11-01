@@ -34,6 +34,24 @@ Fireword::~Fireword()
 	}
 	delete sys;
 }
+/*
+void Fireword::integrate(double t)
+{
+		_cont += t;
+
+		_vel += _accel * t;
+
+		// Impose drag (damping)
+		_vel *= powf(_damping, t);
+
+		// Update position
+		_pos.p += _vel * t;
+
+		if (_cont > _duration) {
+			setAlive(false);
+		}
+}
+*/
 
 void Fireword::createFirewordSystem()
 {

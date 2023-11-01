@@ -15,6 +15,7 @@ class ParticleSystem:public System {
 protected:
 	Vector3 _gravity;
 	std::list <ParticleGenerator*> _particle_generators;
+	std::list <Particle*> _particles;
 
 public:
 	// Creates a void system with a det. gravity
@@ -28,4 +29,8 @@ public:
 	void addGenerator(ParticleGenerator* g) {
 		_particle_generators.push_back(g);
 	}
+
+	void addParticles(std::list<Particle*>& lista);
+	void refresh();
+	void addParticle(Particle* p);
 };

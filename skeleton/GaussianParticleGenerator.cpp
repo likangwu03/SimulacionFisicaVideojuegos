@@ -22,8 +22,6 @@ std::list<Particle*> GaussianParticleGenerator::generateParticles()
 		p->setPos(_origin);
 		p->setVel(v_aux);
 
-		_scene->addObject(p);
-
 		lista.push_back(p);
 	}
 	return lista;
@@ -35,7 +33,7 @@ void GaussianParticleGenerator::update(double t) {
 	_cont += t;
 	if (_cont > _frequency) {
 		_cont = 0;
-		generateParticles();
+		_system->addParticles(generateParticles());
 	}
 }
 

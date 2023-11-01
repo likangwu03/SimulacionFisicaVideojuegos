@@ -10,6 +10,7 @@ public:
 	void generateParticles2();
 	void generateParticles3();
 	void generateParticles4();
+
 protected:
 	Fireword* fireword;
 	std::uniform_real_distribution<float> angulo;

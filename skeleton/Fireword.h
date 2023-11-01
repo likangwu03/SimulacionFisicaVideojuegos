@@ -9,6 +9,10 @@ public:
 	~Fireword();
 	Particle* clone() override;
 	int getGen() { return _gen; }
+
+
+	//virtual void integrate(double t);
+
 protected:
 	virtual void createFirewordSystem();
 	FireworkSystem* sys;

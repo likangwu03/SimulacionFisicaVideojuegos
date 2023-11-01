@@ -1,7 +1,10 @@
 #include "Particle.h"
 
 Particle::Particle(ParticleInfor info):Object(), _vel(info.Vel), _accel(info.accel), _duration(info.duration),
-_damping(info.damping), _type(info.type),_inv_masa(1/info.masa), _cont(0), renderItem(nullptr) {
+_damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr) {
+	if (info.masa == 0)_inv_masa = 0;
+	else _inv_masa = (1 / info.masa);
+
 	_pos = physx::PxTransform(info.Pos);
 
 	if (_type == ParticleType::_particle_default) {
@@ -77,9 +80,7 @@ void Particle::integrate(double t)
 	// Update position
 	_pos.p += _vel*t;
 
-	if (_cont > _duration) {
-		setAlive(false);
-	}
+
 }
 
 Particle* Particle::clone()

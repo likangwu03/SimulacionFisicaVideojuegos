@@ -20,9 +20,7 @@ std::list<Particle*> TornadoSystem::generateParticles()
 		infor.Pos = _origin;
 		int grado = uniform_distributions[1](gen);
 		TurnParticle* f = new TurnParticle(0, grado, 180, infor);
-		
-
-		_scene->addObject(f);
+	
 
 		lista.push_back(f);
 	}

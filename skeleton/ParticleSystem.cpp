@@ -23,5 +23,32 @@ void ParticleSystem::update(double t)
 	for (ParticleGenerator* p : _particle_generators) {
 		p->update(t);
 	}
+	refresh();
 }
 
+void ParticleSystem::addParticles(std::list<Particle*>& lista) {
+	for (auto p : lista) {
+		_particles.push_back(p);
+		_scene->addObject(p);
+	}
+
+}
+
+void ParticleSystem::refresh() {
+	auto it = _particles.begin();
+	while (it != _particles.end()) {
+		if ((*it)->getTime() > (*it)->getDuration()) {
+			(*it)->setAlive(false);
+			it = _particles.erase(it);
+		}
+		else {
+			++it;
+		}
+	}
+}
+
+void ParticleSystem::addParticle(Particle* p)
+{
+	_particles.push_back(p);
+	_scene->addObject(p);
+}
