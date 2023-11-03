@@ -1,5 +1,5 @@
 #include "TornadoSystem.h"
-
+#include "ParticleSystem.h"
 #include "Scene.h"
 
 TornadoSystem::TornadoSystem(std::string name, ParticleSystem* system, int n_particles, Vector3 pos, Vector3 vel, double frequency, Particle* p, Vector3 g) :UniformParticleGenerator(system, n_particles, pos, vel, frequency, p, g)
@@ -8,9 +8,8 @@ TornadoSystem::TornadoSystem(std::string name, ParticleSystem* system, int n_par
 	//setUniformDistribution(0, 2 * SFV::M_PI);
 }
 
-std::list<Particle*> TornadoSystem::generateParticles()
+void TornadoSystem::generateParticles()
 {
-	std::list<Particle*> lista;
 	for (int i = 0; i < _n_particles; ++i) {
 
 		Particle::ParticleInfor infor;
@@ -20,10 +19,7 @@ std::list<Particle*> TornadoSystem::generateParticles()
 		infor.Pos = _origin;
 		int grado = uniform_distributions[1](gen);
 		TurnParticle* f = new TurnParticle(0, grado, 180, infor);
-	
-
-		lista.push_back(f);
+		_system->addParticle(f);
 	}
-	return lista;
 }
 

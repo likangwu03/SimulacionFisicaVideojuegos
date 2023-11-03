@@ -18,14 +18,14 @@ _damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr) {
 		PxSphereGeometry a;
 		a.radius = 0.5;
 		PxShape* shape = CreateShape(a);
-		renderItem = new RenderItem(shape, &_pos, Vector4(1, 0.8, 0, 1));
+		renderItem = new RenderItem(shape, &_pos, Vector4(0.5, 0.8, 0, 1));
 		RegisterRenderItem(renderItem);
 	}
 	else if (_type == ParticleType::_particle_F2) {
 		PxSphereGeometry a;
 		a.radius = 0.3;
 		PxShape* shape = CreateShape(a);
-		renderItem = new RenderItem(shape, &_pos, Vector4(0.8, 0, 0, 1));
+		renderItem = new RenderItem(shape, &_pos, Vector4(0.9, 0.1, 0.1, 1));
 		RegisterRenderItem(renderItem);
 	}
 

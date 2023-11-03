@@ -58,7 +58,8 @@ void Fireword::createFirewordSystem()
 	p = (Fireword*)clone();
 	p->removeRenderItem();
 	p->_gen--;
-	sys = new FireworkSystem(" ", (ParticleSystem*)scene_->getSystem(SFV::SystemId::_sys_PARTICLE),_num, _pos.p,_vel,0,(Fireword *) p);
+	p->setContext(scene_);
+	sys = new FireworkSystem(" ", (ParticleSystem*)scene_->getSystem("ParticleSystem"), _num, _pos.p, _vel, 0, (Fireword*)p);
 }
 
 Particle* Fireword::clone()

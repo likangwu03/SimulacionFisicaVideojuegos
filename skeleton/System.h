@@ -3,7 +3,7 @@
 class Scene;
 class System {
 public:
-	System(Scene* scene, SFV::system_type type) {
+	System(Scene* scene, SFV::system_type type= SFV::_sys_DEFAULT) {
 		_type = type;
 		_scene = scene;
 	}

@@ -30,7 +30,11 @@ public:
 		_particle_generators.push_back(g);
 	}
 
-	void addParticles(std::list<Particle*>& lista);
+	template <typename Valor>
+	void addParticles(std::list<Valor*>& lista);
+
 	void refresh();
+
+	//template <typename Valor>
 	void addParticle(Particle* p);
 };

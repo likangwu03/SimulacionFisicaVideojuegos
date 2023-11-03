@@ -5,6 +5,7 @@
 #include <vector>
 #include "System.h"
 #include "RenderUtils.hpp"
+#include <unordered_map>
 using namespace std;
 
 class Scene
@@ -15,8 +16,8 @@ protected:
 	array<vector<Object*>, SFV::maxGroupId> objsAux_;
 	Camera* cam;
 
-
-	vector<System*> systems= vector<System*>(SFV::maxSystemId,nullptr);
+	unordered_map<string,System*> systemsHdlrs;
+	vector<System*> systems;
 	
 
 public:
@@ -30,12 +31,16 @@ public:
 		}
 	}
 
-	System* getSystem(int type) {
-		return systems[type];
+	System* getSystem(string id);
+
+	void addSystem(System* s);
+
+	inline void setSystemHandler(System* s, string id) {
+		if (systemsHdlrs.count(id)) delete systemsHdlrs[id];
+		systemsHdlrs[id] = s;
 	}
 
 	void addObject(Object* obj,SFV::grpId_type gId = SFV::_grp_GENERAL);
-
 
 	const auto& getObjects(SFV::grpId_type gId = SFV::_grp_GENERAL);
 
@@ -58,7 +63,7 @@ public:
 	}
 	inline std::vector<Object*>* getGroup(SFV::grpId grp) { return &objsByGroup_[grp]; }
 
-	void addSystem(System* s);
+	
 };
 
 

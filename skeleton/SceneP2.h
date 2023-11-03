@@ -17,5 +17,7 @@ private:
 	void shoot();
 	void firework(int t);
 	void firework2(int t);
+
+	ParticleSystem* s;
 };
 

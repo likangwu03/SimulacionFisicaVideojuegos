@@ -45,7 +45,7 @@ void Scene::refresh() {
 
 void Scene::update(double t) {
 	for (System* sys : systems) {
-		if(sys!=nullptr)sys->update(t);
+		sys->update(t);
 	}
 
 	for (auto& ents : objsByGroup_) {
@@ -79,9 +79,10 @@ void Scene::keyPress(unsigned char key) {
 
 
 void Scene::addSystem(System* s) {
-	if (systems[s->getType()] != nullptr) {
-		delete systems[s->getType()];
-		systems[s->getType()] = nullptr;
-	}
-	systems[s->getType()] = s;
+	systems.push_back(s);
+}
+
+System* Scene::getSystem(string id) {
+	if (systemsHdlrs.count(id))return systemsHdlrs[id];
+	else return nullptr;
 }

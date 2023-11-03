@@ -26,7 +26,8 @@ void ParticleSystem::update(double t)
 	refresh();
 }
 
-void ParticleSystem::addParticles(std::list<Particle*>& lista) {
+template <typename Valor>
+void ParticleSystem::addParticles(std::list<Valor*>& lista) {
 	for (auto p : lista) {
 		_particles.push_back(p);
 		_scene->addObject(p);
@@ -46,7 +47,7 @@ void ParticleSystem::refresh() {
 		}
 	}
 }
-
+//template <typename Valor>
 void ParticleSystem::addParticle(Particle* p)
 {
 	_particles.push_back(p);

@@ -7,7 +7,7 @@ class CircleGenerator : public GaussianParticleGenerator
 public:
 	CircleGenerator(std::string name, ParticleSystem* system, int n_particles, Vector3 pos, Vector3 vel, double frequency, Particle* p = nullptr, Vector3 g = SFV::GRAVITY);
 
-	virtual std::list<Particle*> generateParticles();
+	void generateParticles() override;
 protected:
 	std::uniform_real_distribution<float> angulo;
 };

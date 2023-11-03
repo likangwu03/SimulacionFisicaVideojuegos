@@ -1,8 +1,9 @@
 #include "SceneP2.h"
 SceneP2::SceneP2() :Scene()
 {
-	auto s = new ParticleSystem(this);
+	s = new ParticleSystem(this);
 	addSystem(s);
+	setSystemHandler(s, "ParticleSystem");
 }
 
 void SceneP2::keyPress(unsigned char key)
@@ -48,7 +49,8 @@ void SceneP2::shoot()
 	infor.accel = Vector3(0);
 	//infor.Pos = Vector3(0, 150, 100);
 	TurnParticle* f = new TurnParticle(10, 0,180, infor);
-	addObject(f);
+	//addObject(f);
+	s->addParticle(f);
 }
 
 void SceneP2::firework(int t)
@@ -59,7 +61,8 @@ void SceneP2::firework(int t)
 	infor.type = _particle_F1;
 	//infor.accel = Vector3(0);
 	Fireword* f = new Fireword(12, 1,t, infor);
-	addObject(f);
+	//addObject(f);
+	s->addParticle(f);
 }
 
 void SceneP2::firework2(int t)
@@ -70,6 +73,7 @@ void SceneP2::firework2(int t)
 	infor.type = _particle_F2;
 	//infor.accel = Vector3(0);
 	Fireword* f = new Fireword(12, 2, t, infor);
-	addObject(f);
+	//addObject(f);
+	s->addParticle(f);
 }
 

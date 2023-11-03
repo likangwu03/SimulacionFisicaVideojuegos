@@ -12,19 +12,16 @@ GaussianParticleGenerator::GaussianParticleGenerator(ParticleSystem* system,int 
 	addNormalDistribution(0, 15);
 }
 
-std::list<Particle*> GaussianParticleGenerator::generateParticles()
+
+void GaussianParticleGenerator::generateParticles()
 {
-	std::list<Particle*> lista;
 	for (int i = 0; i < _n_particles; ++i) {
 		Vector3 v_aux = _velocity + Vector3(normal_distributions[0](gen), normal_distributions[0](gen), normal_distributions[0](gen));
-
 		Particle* p = _model_particle->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-
-		lista.push_back(p);
+		_system->addParticle(p);
 	}
-	return lista;
 }
 
 
@@ -33,7 +30,7 @@ void GaussianParticleGenerator::update(double t) {
 	_cont += t;
 	if (_cont > _frequency) {
 		_cont = 0;
-		_system->addParticles(generateParticles());
+		generateParticles();
 	}
 }
 
