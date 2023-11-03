@@ -1,13 +1,14 @@
 #include "SceneP2.h"
 SceneP2::SceneP2() :Scene()
 {
-	s = new ParticleSystem(this);
+	s = new ParticleSystemP2(this);
 	addSystem(s);
 	setSystemHandler(s, "ParticleSystem");
 }
 
 void SceneP2::keyPress(unsigned char key)
 {
+	s->keyPress(key);
 	switch (toupper(key))
 	{
 	case ' ':

@@ -6,6 +6,7 @@
 #include "Fireword.h"
 #include "TurnParticle.h"
 #include "CircleGenerator.h"
+#include "ParticleSystemP2.h"
 
 class SceneP2 :public Scene
 {
@@ -18,6 +19,6 @@ private:
 	void firework(int t);
 	void firework2(int t);
 
-	ParticleSystem* s;
+	ParticleSystemP2* s;
 };
 

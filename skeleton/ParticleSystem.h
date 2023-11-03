@@ -14,7 +14,7 @@ class ParticleSystem:public System {
 
 protected:
 	Vector3 _gravity;
-	std::list <ParticleGenerator*> _particle_generators;
+	std::vector <ParticleGenerator*> _particle_generators;
 	std::list <Particle*> _particles;
 
 public:

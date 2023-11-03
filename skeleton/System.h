@@ -18,4 +18,6 @@ public:
 	}
 
 	Scene* getScene() { return _scene; }
+
+	virtual void keyPress(unsigned char key) {};
 };
