@@ -137,6 +137,8 @@
     <ClInclude Include="TurnParticle.h">
       <Filter>particle</Filter>
     </ClInclude>
+    <ClInclude Include="ForceGenerator.h" />
+    <ClInclude Include="ParticleForceRegistry.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

@@ -68,7 +68,7 @@ Particle* Fireword::clone()
 	i.accel = _accel;
 	i.damping = _damping;
 	i.duration = _duration;
-	i.masa = 1 / _inv_masa;
+	i.masa = 1 / _inv_mass;
 	i.Pos = _pos.p;
 	i.type = _type;
 	i.Vel = _vel;

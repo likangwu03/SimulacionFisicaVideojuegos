@@ -49,6 +49,13 @@ public:
 	}
 
 
+	inline void addForce(const Vector3& f); inline void addForce(Vector3 f) {
+		_force += f;
+	}
+	inline void clearForce() {
+		_force *= 0.0;
+	}
+
 protected:
 	ParticleType _type;
 	Vector3 _vel;
@@ -60,7 +67,7 @@ protected:
 	double _duration;
 	double _cont;
 
-	double _inv_masa;
+	double _inv_mass;
 
 	Vector3 _force;
 };

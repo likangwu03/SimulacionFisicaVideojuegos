@@ -1,9 +1,9 @@
 #include "Particle.h"
 
 Particle::Particle(ParticleInfor info):Object(), _vel(info.Vel), _accel(info.accel), _duration(info.duration),
-_damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr) {
-	if (info.masa == 0)_inv_masa = 0;
-	else _inv_masa = (1 / info.masa);
+_damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr), _force(Vector3(0)) {
+	if (info.masa == 0)_inv_mass = 0;
+	else _inv_mass = (1 / info.masa);
 
 	_pos = physx::PxTransform(info.Pos);
 
@@ -32,7 +32,7 @@ _damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr) {
 }
 
 Particle::Particle(Vector3 Pos, Vector3 Vel, Vector3 accel,double masa, double duration,double damping, ParticleType type):Object(),
-_vel(Vel),_accel(accel),_duration(duration),_damping(damping), _type(type), _inv_masa(1 / masa), _cont(0), renderItem(nullptr)
+_vel(Vel),_accel(accel),_duration(duration),_damping(damping), _type(type), _inv_mass(1 / masa), _cont(0), renderItem(nullptr), _force(Vector3(0))
 {
 	_pos = physx::PxTransform(Pos);
 
@@ -72,6 +72,11 @@ void Particle::integrate(double t)
 {
 	_cont += t;
 
+	/*
+	Vector3 resulting_accel = _force * _inv_mass;
+	_vel += resulting_accel * t;
+	*/
+
 	_vel += _accel * t;
 
 	// Impose drag (damping)
@@ -80,11 +85,12 @@ void Particle::integrate(double t)
 	// Update position
 	_pos.p += _vel*t;
 
+	clearForce();
 
 }
 
 Particle* Particle::clone()
 {
-	Particle* p = new Particle(_pos.p, _vel, _accel, 1 / _inv_masa, _duration, _damping, _type);
+	Particle* p = new Particle(_pos.p, _vel, _accel, 1 / _inv_mass, _duration, _damping, _type);
 	return p;
 }

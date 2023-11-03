@@ -283,9 +283,11 @@
     <ClInclude Include="def.h" />
     <ClInclude Include="Fireword.h" />
     <ClInclude Include="FireworkSystem.h" />
+    <ClInclude Include="ForceGenerator.h" />
     <ClInclude Include="Fountain.h" />
     <ClInclude Include="GaussianParticleGenerator.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ParticleForceRegistry.h" />
     <ClInclude Include="ParticleGenerator.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="ParticleSystemP2.h" />
