@@ -34,6 +34,8 @@ public:
 	inline const Vector3 getVelocity() { return _vel; }
 	inline const double getDuration() { return _duration; }
 	inline const double getTime() { return _cont; }
+	inline const double getInvMass() { return _inv_mass; }
+	inline const double getMass() { return _mass; }
 
 	inline void setVel(Vector3 vel) { _vel = vel; }
 	inline void setPos(Vector3 pos) { _pos.p = pos; }
@@ -49,7 +51,7 @@ public:
 	}
 
 
-	inline void addForce(const Vector3& f); inline void addForce(Vector3 f) {
+	inline void addForce(const Vector3& f){
 		_force += f;
 	}
 	inline void clearForce() {
@@ -68,6 +70,7 @@ protected:
 	double _cont;
 
 	double _inv_mass;
+	double _mass;
 
 	Vector3 _force;
 };

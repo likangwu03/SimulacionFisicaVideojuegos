@@ -9,13 +9,19 @@
 #include "Fountain.h"
 #include "CircleGenerator.h"
 #include "TornadoSystem.h"
+
+#include "ParticleForceRegistry.h"
+
 class Scene;
 class ParticleSystem:public System {
-
 protected:
 	Vector3 _gravity;
 	std::vector <ParticleGenerator*> _particle_generators;
 	std::list <Particle*> _particles;
+
+
+	std::list <ForceGenerator*> _forceGenerators;
+	ParticleForceRegistry particleForceRegistry;
 
 public:
 	// Creates a void system with a det. gravity

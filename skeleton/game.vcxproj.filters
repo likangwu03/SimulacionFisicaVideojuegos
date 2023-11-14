@@ -65,6 +65,8 @@
     <ClCompile Include="TurnParticle.cpp">
       <Filter>particle</Filter>
     </ClCompile>
+    <ClCompile Include="GravityForceGenerator.cpp" />
+    <ClCompile Include="ParticleDragGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -139,6 +141,8 @@
     </ClInclude>
     <ClInclude Include="ForceGenerator.h" />
     <ClInclude Include="ParticleForceRegistry.h" />
+    <ClInclude Include="GravityForceGenerator.h" />
+    <ClInclude Include="ParticleDragGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

@@ -2,6 +2,7 @@
 
 Particle::Particle(ParticleInfor info):Object(), _vel(info.Vel), _accel(info.accel), _duration(info.duration),
 _damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr), _force(Vector3(0)) {
+	_mass = info.masa;
 	if (info.masa == 0)_inv_mass = 0;
 	else _inv_mass = (1 / info.masa);
 
@@ -32,7 +33,7 @@ _damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr), _force(
 }
 
 Particle::Particle(Vector3 Pos, Vector3 Vel, Vector3 accel,double masa, double duration,double damping, ParticleType type):Object(),
-_vel(Vel),_accel(accel),_duration(duration),_damping(damping), _type(type), _inv_mass(1 / masa), _cont(0), renderItem(nullptr), _force(Vector3(0))
+_vel(Vel),_accel(accel),_duration(duration),_damping(damping), _type(type),_mass(masa), _inv_mass(1 / masa), _cont(0), renderItem(nullptr), _force(Vector3(0))
 {
 	_pos = physx::PxTransform(Pos);
 
@@ -91,6 +92,6 @@ void Particle::integrate(double t)
 
 Particle* Particle::clone()
 {
-	Particle* p = new Particle(_pos.p, _vel, _accel, 1 / _inv_mass, _duration, _damping, _type);
+	Particle* p = new Particle(_pos.p, _vel, _accel,_mass, _duration, _damping, _type);
 	return p;
 }

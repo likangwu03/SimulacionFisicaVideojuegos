@@ -1,9 +1,9 @@
 #include "ParticleSystem.h"
 #include "Scene.h"
 
-ParticleSystem::ParticleSystem(Scene* scene, const Vector3& g) :System(scene, SFV::SystemId::_sys_PARTICLE), _gravity(g)
+ParticleSystem::ParticleSystem(Scene* scene, const Vector3& g) :System(scene, SFV::SystemId::_sys_PARTICLE), _gravity(g),
+particleForceRegistry()
 {
-	
 	
 }
 
