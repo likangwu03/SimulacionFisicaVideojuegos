@@ -1,9 +1,10 @@
 #include "ExplosionForceGenerator.h"
 
-ExplosionForceGenerator::ExplosionForceGenerator(Vector3 origin, double radius, double K, double duration)
+ExplosionForceGenerator::ExplosionForceGenerator(Vector3 pos, double radius, double K, double duration)
 {
 }
 
-void ExplosionForceGenerator::updateForce(Particle* particle)
+void ExplosionForceGenerator::updateForce(Particle* particle,double t)
 {
+
 }

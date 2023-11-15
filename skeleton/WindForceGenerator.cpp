@@ -1,9 +1,17 @@
 #include "WindForceGenerator.h"
-WindForceGenerator::WindForceGenerator(double k1, Vector3 windVel, double duration, Vector3 windArea) :ForceGenerator(WindForce, duration), windVel(windVel), k1(k1), airDensity(1.2), dragCoef(0.5), k2(0.1), windArea(windArea) {}
+WindForceGenerator::WindForceGenerator(double k1, Vector3 vel, Vector3 area, Vector3 pos)
+	: _k1(k1),_vel(vel),_area(area),_pos(pos)
+{
 
-void WindForceGenerator::updateForce(Particle* particle)
+}
+
+void WindForceGenerator::updateForce(Particle* particle, double t)
 {
 	if (fabs(particle->getInvMass()) < 1e-10) return;
 
+	Vector3 diff_vel = _vel - particle->getVelocity();
 
+	Vector3 force = _k1 * diff_vel + _k2*abs(diff_vel.magnitude()) * diff_vel;
+
+	particle->addForce(force);
 }

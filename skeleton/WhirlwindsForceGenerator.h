@@ -3,10 +3,10 @@
 class WhirlwindsForceGenerator :public WindForceGenerator
 {
 public:
-	WhirlwindsForceGenerator(double k1, double K , Vector3 origin , double duration);
-	void updateForce(Particle* particle) override;
+	WhirlwindsForceGenerator(double K,double Y, double k1, Vector3 vel, Vector3 area, Vector3 pos);
+	void updateForce(Particle* particle,double t) override;
 protected:
-	Vector3 origin;
-	double K;
+	double _K;
+	double _Y;
 };
 
