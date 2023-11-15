@@ -255,6 +255,7 @@
   <ItemGroup>
     <ClCompile Include="callbacks.cpp" />
     <ClCompile Include="CircleGenerator.cpp" />
+    <ClCompile Include="ExplosionForceGenerator.cpp" />
     <ClCompile Include="Fireword.cpp" />
     <ClCompile Include="FireworkSystem.cpp" />
     <ClCompile Include="Fountain.cpp" />
@@ -277,12 +278,15 @@
     <ClCompile Include="TornadoSystem.cpp" />
     <ClCompile Include="TurnParticle.cpp" />
     <ClCompile Include="UniformParticleGenerator.cpp" />
+    <ClCompile Include="WhirlwindsForceGenerator.cpp" />
+    <ClCompile Include="WindForceGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="callbacks.hpp" />
     <ClInclude Include="CircleGenerator.h" />
     <ClInclude Include="core.hpp" />
     <ClInclude Include="def.h" />
+    <ClInclude Include="ExplosionForceGenerator.h" />
     <ClInclude Include="Fireword.h" />
     <ClInclude Include="FireworkSystem.h" />
     <ClInclude Include="ForceGenerator.h" />
@@ -307,6 +311,8 @@
     <ClInclude Include="TornadoSystem.h" />
     <ClInclude Include="TurnParticle.h" />
     <ClInclude Include="UniformParticleGenerator.h" />
+    <ClInclude Include="WhirlwindsForceGenerator.h" />
+    <ClInclude Include="WindForceGenerator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

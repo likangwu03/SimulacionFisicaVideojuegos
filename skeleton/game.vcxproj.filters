@@ -67,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="GravityForceGenerator.cpp" />
     <ClCompile Include="ParticleDragGenerator.cpp" />
+    <ClCompile Include="WindForceGenerator.cpp" />
+    <ClCompile Include="WhirlwindsForceGenerator.cpp" />
+    <ClCompile Include="ExplosionForceGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -143,6 +146,9 @@
     <ClInclude Include="ParticleForceRegistry.h" />
     <ClInclude Include="GravityForceGenerator.h" />
     <ClInclude Include="ParticleDragGenerator.h" />
+    <ClInclude Include="WindForceGenerator.h" />
+    <ClInclude Include="WhirlwindsForceGenerator.h" />
+    <ClInclude Include="ExplosionForceGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

@@ -63,6 +63,7 @@ protected:
 	Vector3 _vel;
 	Vector3 _accel;
 	PxTransform _pos;
+
 	RenderItem* renderItem;
 	double _damping;
 
