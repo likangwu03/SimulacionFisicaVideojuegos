@@ -8,6 +8,7 @@ WhirlwindsForceGenerator::WhirlwindsForceGenerator(double K, double Y, double k1
 
 void WhirlwindsForceGenerator::updateForce(Particle* particle,double t)
 {
+	if (!_active)return;
 	if (fabs(particle->getInvMass()) < 1e-10) return;
 
 	Vector3 particle_pos = particle->getPosition();

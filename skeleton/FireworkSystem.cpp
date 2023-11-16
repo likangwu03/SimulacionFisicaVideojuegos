@@ -3,8 +3,8 @@
 #include "Scene.h"
 FireworkSystem::FireworkSystem(std::string name, ParticleSystem* system, int n_particles, Vector3 pos, Vector3 vel, double frequency, Fireword* p, Vector3 g) :GaussianParticleGenerator(system, n_particles, pos, vel, frequency, p, g)
 {
-	setModel(nullptr);
-	setModel(p);
+	//setModel(nullptr);
+	//setModel(p);
 	fireword = p;
 	setDeviationVel(10);
 	angulo = std::uniform_real_distribution<float>(0, 2 * SFV::M_PI);

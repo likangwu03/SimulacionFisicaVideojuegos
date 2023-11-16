@@ -16,6 +16,8 @@ ParticleSystemP2::ParticleSystemP2(Scene* scene, const Vector3& g):ParticleSyste
 	ParticleGenerator* generator_aux3 = new TornadoSystem("tornado", this, 3, p_aux3, Vector3(0, 10, 0), 0.1);
 	_particle_generators.push_back(generator_aux3);
 	activas.push_back(false);
+
+	
 }
 
 void ParticleSystemP2::update(double t)

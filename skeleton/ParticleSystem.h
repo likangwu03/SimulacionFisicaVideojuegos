@@ -36,8 +36,9 @@ public:
 		_particle_generators.push_back(g);
 	}
 
-	template <typename Valor>
-	void addParticles(std::list<Valor*>& lista);
+	void addForce(ForceGenerator* g);
+
+	void removeForce(ForceGenerator* g);
 
 	void refresh();
 

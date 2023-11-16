@@ -6,7 +6,7 @@ class ParticleSystem;
 class ParticleGenerator
 {
 public:
-	ParticleGenerator(ParticleSystem* system,int n_particles = 3,Vector3 pos= { 0.0f, 0.0f, 0.0f }, Vector3 velocity= { 0.0f, 0.0f, 0.0f },double frequency=0.1f,Vector3 gravity=SFV::GRAVITY);
+	ParticleGenerator(ParticleSystem* system,int n_particles = 3,Vector3 pos= { 0.0f, 0.0f, 0.0f }, Vector3 velocity= { 0.0f, 0.0f, 0.0f },double frequency=0.1f,Vector3 gravity=SFV::GRAVITY, Particle* p=nullptr);
 	
 	virtual void generateParticles() = 0;
 

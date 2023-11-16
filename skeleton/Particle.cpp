@@ -73,12 +73,12 @@ void Particle::integrate(double t)
 {
 	_cont += t;
 
-	/*
+	
 	Vector3 resulting_accel = _force * _inv_mass;
 	_vel += resulting_accel * t;
-	*/
+	
 
-	_vel += _accel * t;
+	//_vel += _accel * t;
 
 	// Impose drag (damping)
 	_vel *= powf(_damping, t);

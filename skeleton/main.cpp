@@ -12,6 +12,7 @@
 
 #include "SceneP1.h"
 #include "SceneP2.h"
+#include "SceneP3.h"
 
 std::string display_text = "This is a test";
 
@@ -62,7 +63,7 @@ void initPhysics(bool interactive)
 	gScene = gPhysics->createScene(sceneDesc);
 
 	//p = new Particle(Vector3(0),Vector3(0,0,0),Vector3(0,10,0));
-	scene = new SceneP2();
+	scene = new SceneP3();
 	
 
 	}

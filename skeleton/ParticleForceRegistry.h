@@ -7,7 +7,7 @@ public:
 	void updateForces(double duration) {
 		for (auto& fg : mapForceGenerator) {
 			for (auto p : fg.second) {
-				fg.first->updateForce(p);
+				fg.first->updateForce(p, duration);
 			}
 		}
 	}
@@ -26,7 +26,10 @@ public:
 					it2->second.erase(it->first);
 				}
 			}
+			it->second.clear();
+			mapParticles.erase(it);
 		}
+
 	}
 
 	void deleteForcesRegistry(ForceGenerator* fg) {
@@ -38,6 +41,8 @@ public:
 					it2->second.erase(it->first);
 				}
 			}
+			it->second.clear();
+			mapForceGenerator.erase(it);
 		}
 	}
 

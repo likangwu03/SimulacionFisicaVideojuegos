@@ -258,6 +258,7 @@
     <ClCompile Include="ExplosionForceGenerator.cpp" />
     <ClCompile Include="Fireword.cpp" />
     <ClCompile Include="FireworkSystem.cpp" />
+    <ClCompile Include="ForceGenerator.cpp" />
     <ClCompile Include="Fountain.cpp" />
     <ClCompile Include="GaussianParticleGenerator.cpp" />
     <ClCompile Include="GravityForceGenerator.cpp" />
@@ -267,6 +268,7 @@
     <ClCompile Include="ParticleGenerator.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="ParticleSystemP2.cpp" />
+    <ClCompile Include="ParticleSystemP3.cpp" />
     <ClCompile Include="SceneP1.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="Proyectil.cpp" />
@@ -275,6 +277,7 @@
     <ClCompile Include="Render\Render.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneP2.cpp" />
+    <ClCompile Include="SceneP3.cpp" />
     <ClCompile Include="TornadoSystem.cpp" />
     <ClCompile Include="TurnParticle.cpp" />
     <ClCompile Include="UniformParticleGenerator.cpp" />
@@ -299,6 +302,7 @@
     <ClInclude Include="ParticleGenerator.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="ParticleSystemP2.h" />
+    <ClInclude Include="ParticleSystemP3.h" />
     <ClInclude Include="SceneP1.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="Proyectil.h" />
@@ -307,6 +311,7 @@
     <ClInclude Include="Render\Render.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneP2.h" />
+    <ClInclude Include="SceneP3.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="TornadoSystem.h" />
     <ClInclude Include="TurnParticle.h" />
