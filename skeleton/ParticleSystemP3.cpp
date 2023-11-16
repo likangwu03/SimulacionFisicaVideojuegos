@@ -3,7 +3,7 @@
 ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSystem(scene, g)
 {
 	Particle::ParticleInfor p1_infor;
-	p1_infor.duration = 10;
+	p1_infor.duration = 15;
 	Particle* p1 = new Particle(p1_infor);
 
 	Vector3 p_aux = Vector3(0);
@@ -23,7 +23,7 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 
 
 	Particle::ParticleInfor p2_infor;
-	p2_infor.duration = 10;
+	p2_infor.duration = 15;
 	p2_infor.Vel = { 0,0,0 };
 	Particle* p2 = new Particle(p2_infor);
 
