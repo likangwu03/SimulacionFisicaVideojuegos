@@ -11,5 +11,7 @@ protected:
 	Vector3 _vel; 
 	Vector3 _area;
 	Vector3 _pos;
+
+	bool inArea(Vector3 pos);
 };
 

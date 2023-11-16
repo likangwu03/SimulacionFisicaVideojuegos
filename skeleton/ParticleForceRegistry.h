@@ -17,7 +17,7 @@ public:
 		mapParticles[p].insert(fg);
 	}
 
-	void deletePArticleRegistry(Particle* p) {
+	void deleteParticleRegistry(Particle* p) {
 		auto it=mapParticles.find(p);
 		if (it != mapParticles.end()) {
 			for (auto f : it->second) {

@@ -11,6 +11,16 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 	_particle_generators.push_back(generator_aux);
 	activas.push_back(false);
 
+	p1_infor.Pos = Vector3(100, 0, 0);
+	p1 = new Particle(p1_infor);
+
+	p1_infor.Pos = Vector3(-100, 0, 0);
+	p1 = new Particle(p1_infor);
+	p1_infor.Pos = Vector3(0, 100, 0);
+	p1 = new Particle(p1_infor);
+	p1_infor.Pos = Vector3(0, -100, 0);
+	p1 = new Particle(p1_infor);
+
 
 	Particle::ParticleInfor p2_infor;
 	p2_infor.duration = 10;
@@ -28,13 +38,13 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 	_particle_generators.push_back(generator_aux3);
 	activas.push_back(false);
 
-	whirlwinds = new WhirlwindsForceGenerator(1, 100, 2, { 0,0,0 }, { 100,100,100 }, { 0,0,0 });
+	whirlwinds = new WhirlwindsForceGenerator(1, 10, 2, { 0,0,0 }, { 100,200,100 }, { 0,0,0 });
 	addForce(whirlwinds);
 
 	gravity = new GravityForceGenerator();
 	addForce(gravity);
 
-	wind = new WindForceGenerator(2, { 0,0,10 }, { 0,0,0 }, { 0,0,0 });
+	wind = new WindForceGenerator(2, { 0,0,10 }, { 100,100,100 }, { 0,0,0 });
 	addForce(wind);
 }
 
@@ -91,6 +101,6 @@ void ParticleSystemP3::keyPress(unsigned char key)
 
 void ParticleSystemP3::createExplosion()
 {
-	ExplosionForceGenerator* explosion = new ExplosionForceGenerator({ 0,50,0 }, 500, 5, 1);
+	ExplosionForceGenerator* explosion = new ExplosionForceGenerator({ 0,50,0 }, 100, 10000, 1);
 	addForce(explosion);
 }

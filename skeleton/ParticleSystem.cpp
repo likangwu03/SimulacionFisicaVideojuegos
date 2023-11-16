@@ -47,7 +47,7 @@ void ParticleSystem::refresh() {
 		if ((*it)->getTime() > (*it)->getDuration()) {
 			(*it)->setAlive(false);
 
-			particleForceRegistry.deletePArticleRegistry(*it);
+			particleForceRegistry.deleteParticleRegistry(*it);
 
 			it = _particles.erase(it);
 		}
