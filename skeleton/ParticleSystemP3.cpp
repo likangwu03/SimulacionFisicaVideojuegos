@@ -44,7 +44,7 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 
 
 	Vector3 p_aux3 = Vector3(0, 0, 0);
-	ParticleGenerator* generator_aux3 = new Fountain_mass("fountain:mass", this, 3, p_aux3, Vector3(0, 8, 0), 0.01, p3);
+	ParticleGenerator* generator_aux3 = new Fountain_mass("fountain_mass", this, 3, p_aux3, Vector3(0, 8, 0), 0.01, p3);
 	_particle_generators.push_back(generator_aux3);
 	activas.push_back(false);
 

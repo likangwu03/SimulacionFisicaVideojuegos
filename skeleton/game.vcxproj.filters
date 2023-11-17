@@ -33,49 +33,66 @@
       <Filter>P2</Filter>
     </ClCompile>
     <ClCompile Include="CircleGenerator.cpp">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClCompile>
     <ClCompile Include="TornadoSystem.cpp">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClCompile>
     <ClCompile Include="UniformParticleGenerator.cpp">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClCompile>
     <ClCompile Include="GaussianParticleGenerator.cpp">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClCompile>
     <ClCompile Include="FireworkSystem.cpp">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClCompile>
     <ClCompile Include="Fountain.cpp">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClCompile>
     <ClCompile Include="ParticleGenerator.cpp">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClCompile>
     <ClCompile Include="Particle.cpp">
-      <Filter>particle</Filter>
+      <Filter>Particles</Filter>
     </ClCompile>
     <ClCompile Include="Proyectil.cpp">
-      <Filter>particle</Filter>
+      <Filter>Particles</Filter>
     </ClCompile>
     <ClCompile Include="Fireword.cpp">
-      <Filter>particle</Filter>
+      <Filter>Particles</Filter>
     </ClCompile>
     <ClCompile Include="TurnParticle.cpp">
-      <Filter>particle</Filter>
+      <Filter>Particles</Filter>
     </ClCompile>
-    <ClCompile Include="GravityForceGenerator.cpp" />
-    <ClCompile Include="ParticleDragGenerator.cpp" />
-    <ClCompile Include="WindForceGenerator.cpp" />
-    <ClCompile Include="WhirlwindsForceGenerator.cpp" />
-    <ClCompile Include="ExplosionForceGenerator.cpp" />
     <ClCompile Include="SceneP3.cpp">
       <Filter>P3</Filter>
     </ClCompile>
-    <ClCompile Include="ParticleSystemP3.cpp" />
-    <ClCompile Include="ForceGenerator.cpp" />
-    <ClCompile Include="Fountain_mass.cpp" />
+    <ClCompile Include="ParticleSystemP3.cpp">
+      <Filter>P3</Filter>
+    </ClCompile>
+    <ClCompile Include="Fountain_mass.cpp">
+      <Filter>Generator</Filter>
+    </ClCompile>
+    <ClCompile Include="WhirlwindsForceGenerator.cpp">
+      <Filter>Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="WindForceGenerator.cpp">
+      <Filter>Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplosionForceGenerator.cpp">
+      <Filter>Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="ForceGenerator.cpp">
+      <Filter>Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="GravityForceGenerator.cpp">
+      <Filter>Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleDragGenerator.cpp">
+      <Filter>Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="SpringForceGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -116,50 +133,67 @@
       <Filter>P2</Filter>
     </ClInclude>
     <ClInclude Include="CircleGenerator.h">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClInclude>
     <ClInclude Include="TornadoSystem.h">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClInclude>
     <ClInclude Include="UniformParticleGenerator.h">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClInclude>
     <ClInclude Include="GaussianParticleGenerator.h">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClInclude>
     <ClInclude Include="FireworkSystem.h">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClInclude>
     <ClInclude Include="Fountain.h">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClInclude>
     <ClInclude Include="ParticleGenerator.h">
-      <Filter>P2_generator</Filter>
+      <Filter>Generator</Filter>
     </ClInclude>
     <ClInclude Include="Particle.h">
-      <Filter>particle</Filter>
+      <Filter>Particles</Filter>
     </ClInclude>
     <ClInclude Include="Proyectil.h">
-      <Filter>particle</Filter>
+      <Filter>Particles</Filter>
     </ClInclude>
     <ClInclude Include="Fireword.h">
-      <Filter>particle</Filter>
+      <Filter>Particles</Filter>
     </ClInclude>
     <ClInclude Include="TurnParticle.h">
-      <Filter>particle</Filter>
+      <Filter>Particles</Filter>
     </ClInclude>
-    <ClInclude Include="ForceGenerator.h" />
     <ClInclude Include="ParticleForceRegistry.h" />
-    <ClInclude Include="GravityForceGenerator.h" />
-    <ClInclude Include="ParticleDragGenerator.h" />
-    <ClInclude Include="WindForceGenerator.h" />
-    <ClInclude Include="WhirlwindsForceGenerator.h" />
-    <ClInclude Include="ExplosionForceGenerator.h" />
     <ClInclude Include="SceneP3.h">
       <Filter>P3</Filter>
     </ClInclude>
-    <ClInclude Include="ParticleSystemP3.h" />
-    <ClInclude Include="Fountain_mass.h" />
+    <ClInclude Include="SpringForceGenerator.h" />
+    <ClInclude Include="ParticleSystemP3.h">
+      <Filter>P3</Filter>
+    </ClInclude>
+    <ClInclude Include="Fountain_mass.h">
+      <Filter>Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="WhirlwindsForceGenerator.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="WindForceGenerator.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplosionForceGenerator.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="ForceGenerator.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="GravityForceGenerator.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleDragGenerator.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -171,17 +205,20 @@
     <Filter Include="P1">
       <UniqueIdentifier>{75127805-39bc-4ff1-8c0b-4a291d268b22}</UniqueIdentifier>
     </Filter>
-    <Filter Include="P2_generator">
-      <UniqueIdentifier>{0f5bc6a4-0345-455f-bc21-be1e8b4b0b52}</UniqueIdentifier>
-    </Filter>
     <Filter Include="P2">
       <UniqueIdentifier>{6293fc92-8d29-4449-af4b-111dc1df2e80}</UniqueIdentifier>
     </Filter>
-    <Filter Include="particle">
-      <UniqueIdentifier>{390f77b7-84ab-48dd-84d9-62cdcc26086a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="P3">
       <UniqueIdentifier>{d9b574aa-6112-46fb-952b-82d7b2fdcc95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Forces">
+      <UniqueIdentifier>{30fd5f32-6d99-4d4c-912f-88d35e1c2087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particles">
+      <UniqueIdentifier>{390f77b7-84ab-48dd-84d9-62cdcc26086a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generator">
+      <UniqueIdentifier>{0f5bc6a4-0345-455f-bc21-be1e8b4b0b52}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
