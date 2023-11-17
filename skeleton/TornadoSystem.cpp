@@ -1,7 +1,7 @@
 #include "TornadoSystem.h"
 #include "ParticleSystem.h"
 #include "Scene.h"
-
+#include "checkML.h"
 TornadoSystem::TornadoSystem(std::string name, ParticleSystem* system, int n_particles, Vector3 pos, Vector3 vel, double frequency, Particle* p, Vector3 g) :UniformParticleGenerator(system, n_particles, pos, vel, frequency, p, g)
 {
 	addUniformDistribution(0, 360);

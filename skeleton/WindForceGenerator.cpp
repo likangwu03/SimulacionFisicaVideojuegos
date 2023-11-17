@@ -1,4 +1,5 @@
 #include "WindForceGenerator.h"
+#include "checkML.h"
 WindForceGenerator::WindForceGenerator(double k1, Vector3 vel, Vector3 area, Vector3 pos):ForceGenerator(),
 	_k1(k1),_vel(vel),_area(area),_pos(pos)
 {

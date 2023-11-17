@@ -1,7 +1,7 @@
 #include "GaussianParticleGenerator.h"
 #include "ParticleSystem.h"
 #include "Scene.h"
-
+#include "checkML.h"
 GaussianParticleGenerator::GaussianParticleGenerator(ParticleSystem* system,int n_particle, Vector3 pos, Vector3 vel, double frequency , Particle* p,Vector3 g) 
 	:ParticleGenerator(system,n_particle,pos,vel,frequency,g,p)
 {

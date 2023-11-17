@@ -27,7 +27,7 @@ public:
 	// Creates a void system with a det. gravity
 	ParticleSystem(Scene* scene,const Vector3& g = SFV::GRAVITY);
 
-	virtual ~ParticleSystem() {};
+	virtual ~ParticleSystem();
 
 	// Integrates the particles and checks for its lifetime, setc!
 	void update(double t) override;

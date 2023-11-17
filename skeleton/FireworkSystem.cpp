@@ -1,6 +1,7 @@
 #include "FireworkSystem.h"
 #include "ParticleSystem.h"
 #include "Scene.h"
+#include "checkML.h"
 FireworkSystem::FireworkSystem(std::string name, ParticleSystem* system, int n_particles, Vector3 pos, Vector3 vel, double frequency, Fireword* p, Vector3 g) :GaussianParticleGenerator(system, n_particles, pos, vel, frequency, p, g)
 {
 	//setModel(nullptr);

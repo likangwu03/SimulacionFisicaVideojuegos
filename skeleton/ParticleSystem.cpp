@@ -1,10 +1,23 @@
 #include "ParticleSystem.h"
 #include "Scene.h"
-
+#include "checkML.h"
 ParticleSystem::ParticleSystem(Scene* scene, const Vector3& g) :System(scene, SFV::SystemId::_sys_PARTICLE), _gravity(g),
 particleForceRegistry()
 {
-	
+}
+
+ParticleSystem::~ParticleSystem()
+{
+	_particles.clear();
+	for (auto fg : _forceGenerators) {
+		delete fg;
+	}
+	for (auto pg : _particle_generators) {
+		delete pg;
+	}
+
+	particleForceRegistry.clear();
+
 }
 
 void ParticleSystem::update(double t)

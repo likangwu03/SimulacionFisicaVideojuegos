@@ -1,6 +1,7 @@
 #include "Fireword.h"
 #include "FireworkSystem.h"
 #include "Scene.h"
+#include "checkML.h"
 Fireword::Fireword(int num, int gen,int type,ParticleInfor infor) :Particle(infor)
 {
 	p = nullptr;

@@ -1,5 +1,5 @@
 #include "ExplosionForceGenerator.h"
-
+#include "checkML.h"
 
 ExplosionForceGenerator::ExplosionForceGenerator(Vector3 pos, double radius, double K, double duration):ForceGenerator(duration),
 	_pos(pos),_K(K), _maxRadius(radius)

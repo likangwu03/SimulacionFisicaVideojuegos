@@ -45,7 +45,6 @@ public:
 	virtual Particle* clone();
 
 	void removeRenderItem() {
-		DeregisterRenderItem(renderItem);
 		renderItem->release();
 		renderItem = nullptr;
 	}

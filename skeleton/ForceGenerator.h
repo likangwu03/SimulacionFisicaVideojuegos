@@ -3,14 +3,16 @@
 #include <iostream>
 class ForceGenerator {
 protected:
-	//ForceGenerator() {};
 	ForceGenerator(double duration = -1) :_duration(duration) {}
+
 	bool _active = true;
 	std::string _name;
 	double _t = 0.0; // If starting negative --> eternal
 	double _duration = -1e10;
 	bool _alive = true;
 public:
+	virtual ~ForceGenerator(){}
+
 	virtual void updateForce(Particle* particle, double t) = 0;
 
 	inline bool updateTime(double t) {

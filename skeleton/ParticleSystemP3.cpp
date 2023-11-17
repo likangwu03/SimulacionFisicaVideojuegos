@@ -1,5 +1,5 @@
 #include "ParticleSystemP3.h"
-
+#include "checkML.h"
 ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSystem(scene, g)
 {
 	Particle::ParticleInfor p1_infor;
@@ -11,6 +11,7 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 	_particle_generators.push_back(generator_aux);
 	activas.push_back(false);
 
+	/*
 	p1_infor.Pos = Vector3(100, 0, 0);
 	p1 = new Particle(p1_infor);
 
@@ -20,7 +21,7 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 	p1 = new Particle(p1_infor);
 	p1_infor.Pos = Vector3(0, -100, 0);
 	p1 = new Particle(p1_infor);
-
+	*/
 
 	Particle::ParticleInfor p2_infor;
 	p2_infor.duration = 15;
@@ -97,6 +98,11 @@ void ParticleSystemP3::keyPress(unsigned char key)
 		break;
 
 	}
+}
+
+ParticleSystemP3::~ParticleSystemP3()
+{
+	
 }
 
 void ParticleSystemP3::createExplosion()

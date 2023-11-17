@@ -1,5 +1,5 @@
 #include "Particle.h"
-
+#include "checkML.h"
 Particle::Particle(ParticleInfor info):Object(), _vel(info.Vel), _accel(info.accel), _duration(info.duration),
 _damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr), _force(Vector3(0)) {
 	_mass = info.masa;

@@ -10,6 +10,7 @@ public:
 	ParticleSystemP3(Scene* scene, const Vector3& g = SFV::GRAVITY);
 	void update(double t) override;
 	virtual void keyPress(unsigned char key);
+	~ParticleSystemP3();
 protected:
 	std::vector<bool> activas;
 	WhirlwindsForceGenerator* whirlwinds = nullptr;

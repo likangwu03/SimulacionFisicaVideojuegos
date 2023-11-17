@@ -139,6 +139,7 @@ void onCollision(physx::PxActor* actor1, physx::PxActor* actor2)
 
 int main(int, const char*const*)
 {
+	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #ifndef OFFLINE_EXECUTION 
 	extern void renderLoop();
 	renderLoop();
@@ -149,6 +150,5 @@ int main(int, const char*const*)
 		stepPhysics(false);
 	cleanupPhysics(false);
 #endif
-
 	return 0;
 }

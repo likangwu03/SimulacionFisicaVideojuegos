@@ -1,5 +1,5 @@
 #include "WhirlwindsForceGenerator.h"
-
+#include "checkML.h"
 WhirlwindsForceGenerator::WhirlwindsForceGenerator(double K, double Y, double k1, Vector3 vel, Vector3 area, Vector3 pos) :
 	WindForceGenerator(k1, vel, area, pos), _K(K), _Y(Y)
 {
@@ -9,6 +9,7 @@ WhirlwindsForceGenerator::WhirlwindsForceGenerator(double K, double Y, double k1
 void WhirlwindsForceGenerator::updateForce(Particle* particle,double t)
 {
 	if (!_active)return;
+	if (!particle->isAlive())return;
 	if (!inArea(particle->getPosition())) return;
 	if (fabs(particle->getInvMass()) < 1e-10) return;
 

@@ -1,7 +1,7 @@
 #include "ForceGenerator.h"
 #include <unordered_map>
 #include <unordered_set>
-
+#include "checkML.h"
 class ParticleForceRegistry {
 public:
 	void updateForces(double duration) {
@@ -44,6 +44,18 @@ public:
 			it->second.clear();
 			mapForceGenerator.erase(it);
 		}
+	}
+
+	void clear() {
+		for (auto& fg : mapForceGenerator) {
+			fg.second.clear();
+		}
+		mapForceGenerator.clear();
+
+		for (auto& p : mapParticles) {
+			p.second.clear();
+		}
+		mapParticles.clear();
 	}
 
 protected:

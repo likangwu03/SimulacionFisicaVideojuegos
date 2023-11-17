@@ -1,5 +1,5 @@
 #include "Scene.h"
-
+#include "checkML.h"
 
 Scene::Scene() : hdlrs_(), objsByGroup_() {
 	cam = GetCamera();
@@ -12,6 +12,17 @@ Scene::~Scene() {
 		for (auto e : ents)
 			delete e;
 	}
+	
+	for (auto& ents : objsAux_) {
+		for (auto e : ents)
+			delete e;
+	}
+
+
+	for (auto s : systems) {
+		delete s;
+	}
+	
 }
 
 void Scene::addObject(Object* obj, SFV::grpId_type gId) {
