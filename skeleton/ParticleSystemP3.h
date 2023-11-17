@@ -4,6 +4,7 @@
 #include "GravityForceGenerator.h"
 #include "WhirlwindsForceGenerator.h"
 #include "WindForceGenerator.h"
+#include "Fountain_mass.h"
 class ParticleSystemP3 : public ParticleSystem
 {
 public:

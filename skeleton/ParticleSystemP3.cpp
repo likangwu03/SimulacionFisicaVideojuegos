@@ -4,6 +4,7 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 {
 	Particle::ParticleInfor p1_infor;
 	p1_infor.duration = 15;
+	p1_infor.masa = 70;
 	Particle* p1 = new Particle(p1_infor);
 
 	Vector3 p_aux = Vector3(0);
@@ -26,6 +27,7 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 	Particle::ParticleInfor p2_infor;
 	p2_infor.duration = 15;
 	p2_infor.Vel = { 0,0,0 };
+	p2_infor.masa = 70;
 	Particle* p2 = new Particle(p2_infor);
 
 
@@ -34,18 +36,31 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 	_particle_generators.push_back(generator_aux2);
 	activas.push_back(false);
 
-	Vector3 p_aux3 = Vector3(50, 0, 0);
-	ParticleGenerator* generator_aux3 = new TornadoSystem("tornado", this, 3, p_aux3, Vector3(0, 10, 0), 0.1);
+
+	Particle::ParticleInfor p3_infor;
+	p2_infor.duration = 15;
+	p2_infor.Vel = { 0,0,0 };
+	Particle* p3 = new Particle(p3_infor);
+
+
+	Vector3 p_aux3 = Vector3(0, 0, 0);
+	ParticleGenerator* generator_aux3 = new Fountain_mass("fountain:mass", this, 3, p_aux3, Vector3(0, 8, 0), 0.01, p3);
 	_particle_generators.push_back(generator_aux3);
 	activas.push_back(false);
 
-	whirlwinds = new WhirlwindsForceGenerator(1, 10, 2, { 0,0,0 }, { 100,200,100 }, { 0,0,0 });
+	/*
+	Vector3 p_aux3 = Vector3(50, 0, 0);
+	ParticleGenerator* generator_aux3 = new TornadoSystem("tornado", this, 3, p_aux3, Vector3(0, 10, 0), 0.1);
+	_particle_generators.push_back(generator_aux3);*/
+	activas.push_back(false);
+
+	whirlwinds = new WhirlwindsForceGenerator(10, 10, 30, { 0,0,0 }, { 100,200,100 }, { 0,0,0 });
 	addForce(whirlwinds);
 
 	gravity = new GravityForceGenerator();
 	addForce(gravity);
 
-	wind = new WindForceGenerator(2, { 0,0,10 }, { 100,100,100 }, { 0,0,0 });
+	wind = new WindForceGenerator(30, { 0,0,10 }, { 100,100,100 }, { 0,0,0 });
 	addForce(wind);
 }
 
@@ -107,6 +122,6 @@ ParticleSystemP3::~ParticleSystemP3()
 
 void ParticleSystemP3::createExplosion()
 {
-	ExplosionForceGenerator* explosion = new ExplosionForceGenerator({ 0,50,0 }, 100, 10000, 1);
+	ExplosionForceGenerator* explosion = new ExplosionForceGenerator({ 0,50,0 }, 100, 900000, 1);
 	addForce(explosion);
 }

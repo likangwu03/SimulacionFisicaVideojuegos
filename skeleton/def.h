@@ -39,6 +39,7 @@ namespace SFV {
 		_particle_P1,
 		_particle_F1,
 		_particle_F2,
+		_particle_mass,
 		_LAST_PARTUCLE_TYPE
 	};
 	constexpr particle_type maxParticleType = _LAST_PARTUCLE_TYPE;

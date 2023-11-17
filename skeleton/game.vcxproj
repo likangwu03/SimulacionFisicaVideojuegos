@@ -260,6 +260,7 @@
     <ClCompile Include="FireworkSystem.cpp" />
     <ClCompile Include="ForceGenerator.cpp" />
     <ClCompile Include="Fountain.cpp" />
+    <ClCompile Include="Fountain_mass.cpp" />
     <ClCompile Include="GaussianParticleGenerator.cpp" />
     <ClCompile Include="GravityForceGenerator.cpp" />
     <ClCompile Include="main.cpp" />
@@ -294,6 +295,7 @@
     <ClInclude Include="FireworkSystem.h" />
     <ClInclude Include="ForceGenerator.h" />
     <ClInclude Include="Fountain.h" />
+    <ClInclude Include="Fountain_mass.h" />
     <ClInclude Include="GaussianParticleGenerator.h" />
     <ClInclude Include="GravityForceGenerator.h" />
     <ClInclude Include="Object.h" />

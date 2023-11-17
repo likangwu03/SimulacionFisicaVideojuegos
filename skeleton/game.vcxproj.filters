@@ -75,6 +75,7 @@
     </ClCompile>
     <ClCompile Include="ParticleSystemP3.cpp" />
     <ClCompile Include="ForceGenerator.cpp" />
+    <ClCompile Include="Fountain_mass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -158,6 +159,7 @@
       <Filter>P3</Filter>
     </ClInclude>
     <ClInclude Include="ParticleSystemP3.h" />
+    <ClInclude Include="Fountain_mass.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

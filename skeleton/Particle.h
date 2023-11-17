@@ -57,6 +57,12 @@ public:
 		_force *= 0.0;
 	}
 
+	inline void setMass(double m) {
+		_mass = m;
+		if (m == 0)_inv_mass = 0;
+		else _inv_mass = (1 / m);
+	}
+
 protected:
 	ParticleType _type;
 	Vector3 _vel;
@@ -73,5 +79,7 @@ protected:
 	double _mass;
 
 	Vector3 _force;
+
+	virtual void createRender();
 };
 
