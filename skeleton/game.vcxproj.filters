@@ -93,6 +93,9 @@
       <Filter>Forces</Filter>
     </ClCompile>
     <ClCompile Include="SpringForceGenerator.cpp" />
+    <ClCompile Include="AnchoredSpringFG.cpp" />
+    <ClCompile Include="SceneP4.cpp" />
+    <ClCompile Include="ParticleSystemP4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -194,6 +197,9 @@
     <ClInclude Include="ParticleDragGenerator.h">
       <Filter>Forces</Filter>
     </ClInclude>
+    <ClInclude Include="AnchoredSpringFG.h" />
+    <ClInclude Include="SceneP4.h" />
+    <ClInclude Include="ParticleSystemP4.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

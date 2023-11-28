@@ -13,6 +13,8 @@
 #include "SceneP1.h"
 #include "SceneP2.h"
 #include "SceneP3.h"
+#include "SceneP4.h"
+
 
 std::string display_text = "This is a test";
 

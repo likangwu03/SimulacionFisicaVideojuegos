@@ -27,7 +27,7 @@ void ParticleSystem::update(double t)
 	}
 
 	for (auto fg : _forceGenerators) {
-		if (fg->updateTime(t)) {
+		if (!fg->updateTime(t)) {
 			fg->setActive(false);
 		}
 	}
@@ -57,7 +57,7 @@ void ParticleSystem::removeForce(ForceGenerator* g)
 void ParticleSystem::refresh() {
 	auto it = _particles.begin();
 	while (it != _particles.end()) {
-		if ((*it)->getTime() > (*it)->getDuration()) {
+		if ((*it)->getTime() > (*it)->getDuration() && (*it)->getDuration()>0) {
 			(*it)->setAlive(false);
 
 			particleForceRegistry.deleteParticleRegistry(*it);
