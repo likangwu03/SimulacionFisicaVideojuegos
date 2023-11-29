@@ -34,7 +34,7 @@ Particle::~Particle()
 void Particle::integrate(double t)
 {
 	_cont += t;
-
+	//_pos.p += _vel * t;
 	
 	Vector3 resulting_accel = _force * _inv_mass;
 	_vel += resulting_accel * t;

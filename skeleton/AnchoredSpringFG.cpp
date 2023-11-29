@@ -8,7 +8,7 @@ AnchoredSpringFG::AnchoredSpringFG(double k, double resting, const Vector3& anch
 	infor.Vel = { 0,0,0 };
 	infor.masa = 0;
 	infor.accel = { 0,0,0 };
-	_other = new Particle(infor);
+	_other = new BoxParticle(infor);
 }
 
 AnchoredSpringFG::~AnchoredSpringFG()

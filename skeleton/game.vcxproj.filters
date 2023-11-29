@@ -96,6 +96,9 @@
     <ClCompile Include="AnchoredSpringFG.cpp" />
     <ClCompile Include="SceneP4.cpp" />
     <ClCompile Include="ParticleSystemP4.cpp" />
+    <ClCompile Include="BoxParticle.cpp" />
+    <ClCompile Include="BuoyancyForceGenerator.cpp" />
+    <ClCompile Include="ElasticWireFG.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -200,6 +203,10 @@
     <ClInclude Include="AnchoredSpringFG.h" />
     <ClInclude Include="SceneP4.h" />
     <ClInclude Include="ParticleSystemP4.h" />
+    <ClInclude Include="BoxParticle.h" />
+    <ClInclude Include="BuoyancyForceGenerator.h" />
+    <ClInclude Include="checkML.h" />
+    <ClInclude Include="ElasticWireFG.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

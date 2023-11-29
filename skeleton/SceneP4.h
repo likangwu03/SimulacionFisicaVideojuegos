@@ -5,5 +5,8 @@ class SceneP4 :public Scene
 {
 public:
 	SceneP4();
+	virtual void keyPress(unsigned char key);
+protected:
+	ParticleSystemP4* s;
 };
 
