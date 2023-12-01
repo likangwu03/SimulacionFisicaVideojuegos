@@ -92,13 +92,27 @@
     <ClCompile Include="ParticleDragGenerator.cpp">
       <Filter>Forces</Filter>
     </ClCompile>
-    <ClCompile Include="SpringForceGenerator.cpp" />
-    <ClCompile Include="AnchoredSpringFG.cpp" />
-    <ClCompile Include="SceneP4.cpp" />
-    <ClCompile Include="ParticleSystemP4.cpp" />
-    <ClCompile Include="BoxParticle.cpp" />
-    <ClCompile Include="BuoyancyForceGenerator.cpp" />
-    <ClCompile Include="ElasticWireFG.cpp" />
+    <ClCompile Include="BoxParticle.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="AnchoredSpringFG.cpp">
+      <Filter>Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="BuoyancyForceGenerator.cpp">
+      <Filter>Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="ElasticWireFG.cpp">
+      <Filter>Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="SpringForceGenerator.cpp">
+      <Filter>Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneP4.cpp">
+      <Filter>P4</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemP4.cpp">
+      <Filter>P4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -175,7 +189,6 @@
     <ClInclude Include="SceneP3.h">
       <Filter>P3</Filter>
     </ClInclude>
-    <ClInclude Include="SpringForceGenerator.h" />
     <ClInclude Include="ParticleSystemP3.h">
       <Filter>P3</Filter>
     </ClInclude>
@@ -200,13 +213,28 @@
     <ClInclude Include="ParticleDragGenerator.h">
       <Filter>Forces</Filter>
     </ClInclude>
-    <ClInclude Include="AnchoredSpringFG.h" />
-    <ClInclude Include="SceneP4.h" />
-    <ClInclude Include="ParticleSystemP4.h" />
-    <ClInclude Include="BoxParticle.h" />
-    <ClInclude Include="BuoyancyForceGenerator.h" />
     <ClInclude Include="checkML.h" />
-    <ClInclude Include="ElasticWireFG.h" />
+    <ClInclude Include="BoxParticle.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="AnchoredSpringFG.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="BuoyancyForceGenerator.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="ElasticWireFG.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="SpringForceGenerator.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneP4.h">
+      <Filter>P4</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemP4.h">
+      <Filter>P4</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -232,6 +260,9 @@
     </Filter>
     <Filter Include="Generator">
       <UniqueIdentifier>{0f5bc6a4-0345-455f-bc21-be1e8b4b0b52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="P4">
+      <UniqueIdentifier>{42b084e5-a65f-4fa2-9aae-f2506cd26f45}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

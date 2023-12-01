@@ -1,7 +1,7 @@
 #include "Scene.h"
 #include "checkML.h"
 
-Scene::Scene() : hdlrs_(), objsByGroup_() {
+Scene::Scene(PxData data) : hdlrs_(), objsByGroup_(),_data(data) {
 	cam = GetCamera();
 	for (auto& groupEntities : objsByGroup_) {
 		groupEntities.reserve(100);

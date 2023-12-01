@@ -2,9 +2,9 @@
 #include "Scene.h";
 ParticleSystemP4::ParticleSystemP4(Scene* scene, const Vector3& g) :ParticleSystem(scene, g)
 {
-	MuelleDemo();
-	comaElastica();
-	//bateria(5);
+	//MuelleDemo();
+	//comaElastica();
+	bateria(5);
 	//flotacion();
 	whirlwinds = new WhirlwindsForceGenerator(1, 10, 30, { 0,0,0 }, { 100,200,100 }, { 0,-50,0 });
 	addForce(whirlwinds);

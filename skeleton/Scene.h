@@ -7,22 +7,28 @@
 #include "RenderUtils.hpp"
 #include <unordered_map>
 #include "checkML.h"
+using namespace physx;
 using namespace std;
 
 class Scene
 {
+public:
+	struct PxData {
+		PxPhysics* gPhysics=nullptr;
+		PxScene* gScene= nullptr;
+	};
 protected:
 	array<Object*, SFV::maxHdlrId> hdlrs_;
 	array<vector<Object*>, SFV::maxGroupId> objsByGroup_;
 	array<vector<Object*>, SFV::maxGroupId> objsAux_;
 	Camera* cam;
-
 	unordered_map<string,System*> systemsHdlrs;
 	vector<System*> systems;
-	
+
+	PxData _data;
 
 public:
-	Scene();
+	Scene(PxData data=PxData());
 	virtual ~Scene();
 
 	inline void removeAllObjects() {
@@ -64,7 +70,10 @@ public:
 	}
 	inline std::vector<Object*>* getGroup(SFV::grpId grp) { return &objsByGroup_[grp]; }
 
-	
+
+
+	PxPhysics* getPhysics() { return _data.gPhysics; }
+	PxScene* getGScene() { return _data.gScene; }
 };
 
 

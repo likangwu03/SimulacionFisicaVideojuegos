@@ -36,6 +36,8 @@ PxDefaultCpuDispatcher* gDispatcher = NULL;
 PxScene* gScene = NULL;
 ContactReportCallback gContactReportCallback;
 
+
+
 Scene* scene;
 //Particle* p;
 
@@ -63,8 +65,9 @@ void initPhysics(bool interactive)
 	sceneDesc.filterShader = contactReportFilterShader;
 	sceneDesc.simulationEventCallback = &gContactReportCallback;
 	gScene = gPhysics->createScene(sceneDesc);
-
 	//p = new Particle(Vector3(0),Vector3(0,0,0),Vector3(0,10,0));
+
+	Scene::PxData data = { gPhysics,gScene };
 	scene = new SceneP4();
 
 
