@@ -90,7 +90,7 @@ void Camera::handleMotion(int x, int y)
 	PxQuat qy(PxPi * dy / 180.0f, viewY);
 	mDir = qy.rotate(mDir);
 
-	mDir.normalize();
+	mDir.normalize(); 
 
 	mMouseX = x;
 	mMouseY = y;

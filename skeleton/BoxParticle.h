@@ -3,7 +3,7 @@
 class BoxParticle :public Particle
 {
 public:
-	BoxParticle(ParticleInfor infor,float w=1, float h=1,float p=1,Vector4 color=Vector4(1,1,1,0));
+	BoxParticle(ParticleInfor infor,float w=1, float h=1,float p=1,Vector4 color=Vector4(1,1,1,1));
 
 
 protected:

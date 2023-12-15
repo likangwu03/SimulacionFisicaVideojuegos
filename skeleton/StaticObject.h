@@ -10,9 +10,6 @@ public:
 	struct ObjectInfor {
 		Vector3 pos = Vector3(0);
 		Vector3 tam = Vector3(10);
-		double duration = -1;
-		double masa = 10;
-		int type;
 		Scene* scene=nullptr;
 		PxPhysics* gPhysics = nullptr;
 		PxScene* gScene = nullptr;
@@ -20,7 +17,6 @@ public:
 	};
 
 	StaticObject(ObjectInfor infor );
-	PxRigidStatic* getActor() { return _rb; }
 protected:
 	RenderItem* renderItem;
 	PxRigidStatic* _rb;

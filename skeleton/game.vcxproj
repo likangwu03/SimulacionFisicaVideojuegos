@@ -254,10 +254,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnchoredSpringFG.cpp" />
+    <ClCompile Include="AreaSRGenerator.cpp" />
     <ClCompile Include="BoxParticle.cpp" />
     <ClCompile Include="BuoyancyForceGenerator.cpp" />
     <ClCompile Include="callbacks.cpp" />
     <ClCompile Include="CircleGenerator.cpp" />
+    <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="ElasticWireFG.cpp" />
     <ClCompile Include="ExplosionForceGenerator.cpp" />
     <ClCompile Include="Fireword.cpp" />
@@ -285,15 +287,25 @@
     <ClCompile Include="SceneP2.cpp" />
     <ClCompile Include="SceneP3.cpp" />
     <ClCompile Include="SceneP4.cpp" />
+    <ClCompile Include="sceneP5.cpp" />
+    <ClCompile Include="SolidForceGenerator.cpp" />
+    <ClCompile Include="SolidForceRegistry.cpp" />
+    <ClCompile Include="SolidGenerator.cpp" />
+    <ClCompile Include="SolidSystem.cpp" />
+    <ClCompile Include="SolidSystemP5.cpp" />
     <ClCompile Include="SpringForceGenerator.cpp" />
+    <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="TornadoSystem.cpp" />
     <ClCompile Include="TurnParticle.cpp" />
     <ClCompile Include="UniformParticleGenerator.cpp" />
     <ClCompile Include="WhirlwindsForceGenerator.cpp" />
+    <ClCompile Include="WhirlwindsSolidForceGenerator.cpp" />
     <ClCompile Include="WindForceGenerator.cpp" />
+    <ClCompile Include="WindSolidForceGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnchoredSpringFG.h" />
+    <ClInclude Include="AreaSRGenerator.h" />
     <ClInclude Include="BoxParticle.h" />
     <ClInclude Include="BuoyancyForceGenerator.h" />
     <ClInclude Include="callbacks.hpp" />
@@ -301,6 +313,7 @@
     <ClInclude Include="CircleGenerator.h" />
     <ClInclude Include="core.hpp" />
     <ClInclude Include="def.h" />
+    <ClInclude Include="DynamicObject.h" />
     <ClInclude Include="ElasticWireFG.h" />
     <ClInclude Include="ExplosionForceGenerator.h" />
     <ClInclude Include="Fireword.h" />
@@ -328,13 +341,22 @@
     <ClInclude Include="SceneP2.h" />
     <ClInclude Include="SceneP3.h" />
     <ClInclude Include="SceneP4.h" />
+    <ClInclude Include="sceneP5.h" />
+    <ClInclude Include="SolidForceGenerator.h" />
+    <ClInclude Include="SolidForceRegistry.h" />
+    <ClInclude Include="SolidGenerator.h" />
+    <ClInclude Include="SolidSystem.h" />
+    <ClInclude Include="SolidSystemP5.h" />
     <ClInclude Include="SpringForceGenerator.h" />
+    <ClInclude Include="StaticObject.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="TornadoSystem.h" />
     <ClInclude Include="TurnParticle.h" />
     <ClInclude Include="UniformParticleGenerator.h" />
     <ClInclude Include="WhirlwindsForceGenerator.h" />
+    <ClInclude Include="WhirlwindsSolidForceGenerator.h" />
     <ClInclude Include="WindForceGenerator.h" />
+    <ClInclude Include="WindSolidForceGenerator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

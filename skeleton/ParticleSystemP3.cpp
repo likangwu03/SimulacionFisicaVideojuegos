@@ -62,6 +62,10 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 
 	wind = new WindForceGenerator(30, { 0,0,10 }, { 100,100,100 }, { 0,0,0 });
 	addForce(wind);
+
+	ParticleDragGenerator* drag = new ParticleDragGenerator();
+	drag->setDrag(1, 2);
+	addForce(drag);
 }
 
 void ParticleSystemP3::update(double t)

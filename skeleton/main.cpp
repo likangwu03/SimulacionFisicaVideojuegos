@@ -14,9 +14,10 @@
 #include "SceneP2.h"
 #include "SceneP3.h"
 #include "SceneP4.h"
+#include "sceneP5.h"
 
 
-std::string display_text = "This is a test";
+std::string display_text = "Activa WhirlwindsSolidForceGenerator: tecla 1";
 
 
 using namespace physx;
@@ -68,7 +69,9 @@ void initPhysics(bool interactive)
 	//p = new Particle(Vector3(0),Vector3(0,0,0),Vector3(0,10,0));
 
 	Scene::PxData data = { gPhysics,gScene };
-	scene = new SceneP4();
+	//scene = new SceneP4();
+
+	scene = new sceneP5(data);
 
 
 }

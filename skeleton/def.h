@@ -11,6 +11,7 @@ namespace SFV {
 	{
 		_sys_DEFAULT,
 		_sys_PARTICLE,
+		_sys_SOLID,
 		_LAST_SYS_ID
 	};
 	constexpr system_type maxSystemId = _LAST_SYS_ID;
@@ -28,6 +29,8 @@ namespace SFV {
 	enum grpId : grpId_type {
 		_grp_GENERAL,
 		_grp_TEXTS,
+		_grp_SOLID,
+		_grp_STATIC,
 		_LAST_GRP_ID
 	};
 	constexpr grpId_type maxGroupId = _LAST_GRP_ID;

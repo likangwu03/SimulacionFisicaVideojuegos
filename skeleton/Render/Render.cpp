@@ -29,6 +29,7 @@
 
 #include "Render.h"
 #include <assert.h>
+#include <iostream>
 
 using namespace physx;
 
@@ -58,8 +59,11 @@ void renderGeometry(const PxGeometryHolder& h, bool wireframe =false)
 	{
 	case PxGeometryType::eBOX:			
 		{
+
 			glScalef(h.box().halfExtents.x, h.box().halfExtents.y, h.box().halfExtents.z);
 			glutSolidCube(2.0);
+
+
 		}
 		break;
 	case PxGeometryType::eSPHERE:		
@@ -261,16 +265,24 @@ void setupDefaultWindow(const char *name)
 void setupDefaultRenderState()
 {
 	// Setup default render states
+
+	//_________________________________________________FONDO__________________________________________
 	glClearColor(0.3f, 0.4f, 0.5f, 1.0);
+	//glClearColor(0, 0, 0, 0.0);
+
+
+
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_COLOR_MATERIAL);
-	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
 	//glBlendFunc(GL_ZERO, GL_SRC_COLOR);
-	//glEnable(GL_BLEND);
 
 	// Setup lighting
 	glEnable(GL_LIGHTING);
 	PxReal ambientColor[]	= { 0.0f, 0.1f, 0.2f, 0.0f };
+	//PxReal ambientColor[]	= { 1.0f, 1.0f, 1.0f, 0.0f };
+	//PxReal ambientColor[]	= { 0, 0, 0,0 };
 	PxReal diffuseColor[]	= { 1.0f, 1.0f, 1.0f, 0.0f };		
 	PxReal specularColor[]	= { 0.0f, 0.0f, 0.0f, 0.0f };		
 	PxReal position[]		= { 100.0f, 100.0f, 400.0f, 1.0f };		
@@ -299,7 +311,9 @@ void startRender(const PxVec3& cameraEye, const PxVec3& cameraDir, PxReal clipNe
 	glLoadIdentity();
 	gluLookAt(GLdouble(cameraEye.x), GLdouble(cameraEye.y), GLdouble(cameraEye.z), GLdouble(cameraEye.x + cameraDir.x), GLdouble(cameraEye.y + cameraDir.y), GLdouble(cameraEye.z + cameraDir.z), 0.0, 1.0, 0.0);
 
+	//................................................
 	glColor4f(0.4f, 0.4f, 0.4f, 1.0f);
+	//glColor4f(0.0f, 0.0f, 0.0f, 1.0f);
 
 	assert(glGetError() == GL_NO_ERROR);
 }
@@ -316,7 +330,8 @@ void renderShape(const PxShape& shape, const PxTransform& transform, const PxVec
 	PxMat44 mtx(transform);
 	glMultMatrixf(reinterpret_cast<const float*>(&mtx));
 	assert(glGetError() == GL_NO_ERROR);
-	glColor4f(color.x, color.y, color.z, 1.0f);
+	glColor4f(color.x, color.y, color.z, color.w);
+
 	assert(glGetError() == GL_NO_ERROR);
 	renderGeometry(h, color.w < 0.999f);
 	assert(glGetError() == GL_NO_ERROR);
@@ -329,6 +344,7 @@ void renderShape(const PxShape& shape, const PxTransform& transform, const PxVec
 
 void renderActors(PxRigidActor** actors, const PxU32 numActors, bool shadows, const PxVec4 & color)
 {
+	
 	PxShape* shapes[MAX_NUM_ACTOR_SHAPES];
 	for(PxU32 i=0;i<numActors;i++)
 	{
@@ -351,10 +367,12 @@ void renderActors(PxRigidActor** actors, const PxU32 numActors, bool shadows, co
 			if(sleeping)
 			{
 				PxVec4 darkColor = color * 0.25f;
+				//glColor4f(darkColor.x, darkColor.y, darkColor.z, 1.0f);
 				glColor4f(darkColor.x, darkColor.y, darkColor.z, 1.0f);
 			}
 			else
 				glColor4f(color.x, color.y, color.z, 1.0f);
+				//glColor4f(color.x, color.y, color.z, color.w);
 			renderGeometry(h, color.w < 0.999f);
 			glPopMatrix();
 

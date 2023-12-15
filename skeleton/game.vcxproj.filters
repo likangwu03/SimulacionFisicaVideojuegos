@@ -113,6 +113,35 @@
     <ClCompile Include="ParticleSystemP4.cpp">
       <Filter>P4</Filter>
     </ClCompile>
+    <ClCompile Include="sceneP5.cpp">
+      <Filter>P5</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidSystem.cpp" />
+    <ClCompile Include="SolidGenerator.cpp">
+      <Filter>GeneratorSR</Filter>
+    </ClCompile>
+    <ClCompile Include="WhirlwindsSolidForceGenerator.cpp">
+      <Filter>ForcesSR</Filter>
+    </ClCompile>
+    <ClCompile Include="WindSolidForceGenerator.cpp">
+      <Filter>ForcesSR</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticObject.cpp">
+      <Filter>Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicObject.cpp">
+      <Filter>Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidForceGenerator.cpp">
+      <Filter>ForcesSR</Filter>
+    </ClCompile>
+    <ClCompile Include="AreaSRGenerator.cpp">
+      <Filter>GeneratorSR</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidForceRegistry.cpp" />
+    <ClCompile Include="SolidSystemP5.cpp">
+      <Filter>P5</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -185,7 +214,6 @@
     <ClInclude Include="TurnParticle.h">
       <Filter>Particles</Filter>
     </ClInclude>
-    <ClInclude Include="ParticleForceRegistry.h" />
     <ClInclude Include="SceneP3.h">
       <Filter>P3</Filter>
     </ClInclude>
@@ -235,6 +263,38 @@
     <ClInclude Include="ParticleSystemP4.h">
       <Filter>P4</Filter>
     </ClInclude>
+    <ClInclude Include="sceneP5.h">
+      <Filter>P5</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidSystem.h" />
+    <ClInclude Include="ParticleForceRegistry.h">
+      <Filter>Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidGenerator.h">
+      <Filter>GeneratorSR</Filter>
+    </ClInclude>
+    <ClInclude Include="WhirlwindsSolidForceGenerator.h">
+      <Filter>ForcesSR</Filter>
+    </ClInclude>
+    <ClInclude Include="WindSolidForceGenerator.h">
+      <Filter>ForcesSR</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticObject.h">
+      <Filter>Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicObject.h">
+      <Filter>Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidForceGenerator.h">
+      <Filter>ForcesSR</Filter>
+    </ClInclude>
+    <ClInclude Include="AreaSRGenerator.h">
+      <Filter>GeneratorSR</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidForceRegistry.h" />
+    <ClInclude Include="SolidSystemP5.h">
+      <Filter>P5</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -263,6 +323,18 @@
     </Filter>
     <Filter Include="P4">
       <UniqueIdentifier>{42b084e5-a65f-4fa2-9aae-f2506cd26f45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="P5">
+      <UniqueIdentifier>{64e51334-e756-4d94-b529-7d6484bbaf9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeneratorSR">
+      <UniqueIdentifier>{67ca1ad1-40f7-41c1-ad34-9d11fd27cd99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ForcesSR">
+      <UniqueIdentifier>{2f0e2e74-003f-470d-b5af-d927818697ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solid">
+      <UniqueIdentifier>{1c4c0421-c348-447a-b240-5ffd4e4e8c9e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

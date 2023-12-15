@@ -41,7 +41,6 @@ protected:
 	BoxParticle* p = nullptr;
 
 
-
 	void MuelleDemo();
 
 	void comaElastica();
