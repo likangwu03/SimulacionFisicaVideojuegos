@@ -20,4 +20,8 @@ public:
 	Scene* getScene() { return _scene; }
 
 	virtual void keyPress(unsigned char key) {};
+
+	virtual void handleMouse(int button, int state, int x, int y) {};
+	virtual void handleMotion(int x, int y) {};
+
 };

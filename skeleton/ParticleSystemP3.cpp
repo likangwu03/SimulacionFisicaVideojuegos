@@ -8,7 +8,7 @@ ParticleSystemP3::ParticleSystemP3(Scene* scene, const Vector3& g) :ParticleSyst
 	Particle* p1 = new Particle(p1_infor);
 
 	Vector3 p_aux = Vector3(0);
-	ParticleGenerator* generator_aux = new CircleGenerator("cicle", this, 3, p_aux, Vector3(0, 5, 0), 0.01, p1, Vector3(0));
+	ParticleGenerator* generator_aux = new CircleGenerator("cicle", this, 3, p_aux, Vector3(0, 5, 0), 0.01, p1);
 	_particle_generators.push_back(generator_aux);
 	activas.push_back(false);
 

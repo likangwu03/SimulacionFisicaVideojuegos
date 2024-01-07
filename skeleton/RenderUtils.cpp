@@ -15,6 +15,9 @@ extern void keyPress(unsigned char key, const PxTransform& camera);
 extern PxPhysics* gPhysics;
 extern PxMaterial* gMaterial;
 
+extern void handleMouse(int button, int state, int x, int y);
+extern void handleMotion(int x, int y);
+
 std::vector<const RenderItem*> gRenderItems;
 
 double PCFreq = 0.0;
@@ -50,6 +53,7 @@ namespace
 void motionCallback(int x, int y)
 {
 	sCamera->handleMotion(x, y);
+	handleMotion(x, y);
 }
 
 void keyboardCallback(unsigned char key, int x, int y)
@@ -64,6 +68,7 @@ void keyboardCallback(unsigned char key, int x, int y)
 void mouseCallback(int button, int state, int x, int y)
 {
 	sCamera->handleMouse(button, state, x, y);
+	handleMouse(button, state, x, y);
 }
 
 void idleCallback()
@@ -144,6 +149,9 @@ void renderLoop()
 
 	glutIdleFunc(idleCallback);
 	glutDisplayFunc(renderCallback);
+
+	initPhysics(true);
+
 	glutKeyboardFunc(keyboardCallback);
 	glutMouseFunc(mouseCallback);
 	glutMotionFunc(motionCallback);
@@ -151,7 +159,6 @@ void renderLoop()
 
 	atexit(exitCallback);
 
-	initPhysics(true);
 	glutMainLoop();
 }
 

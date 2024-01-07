@@ -6,7 +6,7 @@ class ParticleSystem;
 class ParticleGenerator
 {
 public:
-	ParticleGenerator(ParticleSystem* system,int n_particles = 3,Vector3 pos= { 0.0f, 0.0f, 0.0f }, Vector3 velocity= { 0.0f, 0.0f, 0.0f },double frequency=0.1f,Vector3 gravity=SFV::GRAVITY, Particle* p=nullptr);
+	ParticleGenerator(ParticleSystem* system,int n_particles = 3,Vector3 pos= { 0.0f, 0.0f, 0.0f }, Vector3 velocity= { 0.0f, 0.0f, 0.0f },double frequency=0.1f, Particle* p=nullptr);
 	
 	virtual void generateParticles() = 0;
 
@@ -34,13 +34,7 @@ public:
 
 	virtual void update(double t) = 0;
 
-	template <typename Valor>
-	void setModel(Valor p) {
-		if (_model_particle != nullptr) {
-			delete _model_particle;
-		}
-		_model_particle = p;
-	}
+	void setActive(bool a) { active = a; }
 
 protected:
 	int _n_particles = 3; // Number of particles for each generateParticles call(TODO: add randomness ? ? )
@@ -49,15 +43,14 @@ protected:
 
 	std::random_device rd;
 	std::mt19937 gen;
-
-
 	std::string _name;
-	Vector3 _gravity;
 	double _frequency;
 	double _cont;
 
 	ParticleSystem* _system;
 
 	Scene* _scene;
+
+	bool active = true;
 };
 

@@ -14,6 +14,7 @@ void AreaSRGenerator::generateSolids()
 {
 	DynamicObject::ObjectInfor infor = _model->getInfor();
 	infor.model = false;
+	infor.default = true;
 	for (int i = 0; i < _nObject; ++i) {
 		infor.pos = Vector3(uniform_distributions[0](gen), uniform_distributions[1](gen), uniform_distributions[2](gen));
 		DynamicObject* obj = _model->createOther(infor);

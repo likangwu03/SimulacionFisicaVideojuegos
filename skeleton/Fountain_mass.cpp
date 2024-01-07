@@ -2,8 +2,8 @@
 #include "Scene.h"
 #include "ParticleSystem.h"
 #include "checkML.h"
-Fountain_mass::Fountain_mass(std::string name, ParticleSystem* system, int n_particles, Vector3 pos, Vector3 vel, double frequency, Particle* p, Vector3 g) :
-	Fountain(name,system,n_particles,pos,vel,frequency,p,g)
+Fountain_mass::Fountain_mass(std::string name, ParticleSystem* system, int n_particles, Vector3 pos, Vector3 vel, double frequency, Particle* p) :
+	Fountain(name,system,n_particles,pos,vel,frequency,p)
 {
 	addNormalDistribution(50, 49);
 }

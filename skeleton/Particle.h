@@ -16,6 +16,7 @@ public:
 		Vector3 accel = SFV::GRAVITY;
 		double duration = DEFAULT_DURATION;
 		double damping = SFV::DAMPING;
+		Vector4 color = Vector4(1);
 		ParticleType type = ParticleType::_particle_default;
 		double masa = 1;
 	};
@@ -79,6 +80,8 @@ protected:
 	double _mass;
 
 	Vector3 _force;
+
+	Vector4 color;
 
 	virtual void createRender();
 };

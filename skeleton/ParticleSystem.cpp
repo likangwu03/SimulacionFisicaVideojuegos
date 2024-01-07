@@ -40,6 +40,7 @@ void ParticleSystem::update(double t)
 void ParticleSystem::addForce(ForceGenerator* g)
 {
 	_forceGenerators.push_back(g);
+	if (!g->needAdd()) return;
 	for (auto p : _particles) {
 		particleForceRegistry.addRegistry(g, p);
 	}
@@ -92,6 +93,6 @@ void ParticleSystem::addParticle(Particle* p)
 	_particles.push_back(p);
 	_scene->addObject(p);
 	for (auto f : _forceGenerators) {
-		particleForceRegistry.addRegistry(f, p);
+		if(f->needAdd())particleForceRegistry.addRegistry(f, p);
 	}
 }

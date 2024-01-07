@@ -2,7 +2,9 @@
 #include "Scene.h"
 SolidSystem::SolidSystem(Scene* scene):System(scene, SFV::SystemId::_sys_SOLID)
 {
-	
+	for (auto obj : *scene->getGroup(SFV::_grp_SOLID)) {
+		_objs.push_back((DynamicObject*)obj);
+	}
 }
 
 SolidSystem::~SolidSystem()
@@ -66,7 +68,7 @@ void SolidSystem::addObj(DynamicObject* o)
 	_objs.push_back(o);
 	_scene->addObject(o);
 	for (auto f : _forceGenerators) {
-		objForceRegistry.addRegistry(f, o);
+		if(f->needAdd())objForceRegistry.addRegistry(f, o);
 	}
 	
 }
@@ -76,6 +78,7 @@ void SolidSystem::addObj(DynamicObject* o)
 void SolidSystem::addForce(SolidForceGenerator* g)
 {
 	_forceGenerators.push_back(g);
+	if (!g->needAdd()) return;
 	for (auto p : _objs) {
 		objForceRegistry.addRegistry(g, p);
 	}

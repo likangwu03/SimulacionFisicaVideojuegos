@@ -9,6 +9,7 @@ class StaticObject :public Object
 public:
 	struct ObjectInfor {
 		Vector3 pos = Vector3(0);
+		PxQuat q = PxQuat(0, PxVec3(1, 0, 0));
 		Vector3 tam = Vector3(10);
 		Scene* scene=nullptr;
 		PxPhysics* gPhysics = nullptr;
@@ -17,10 +18,13 @@ public:
 	};
 
 	StaticObject(ObjectInfor infor );
+
+	~StaticObject();
+
 protected:
 	RenderItem* renderItem;
 	PxRigidStatic* _rb;
 	PxShape* shape;
-
+	ObjectInfor infor;
 };
 

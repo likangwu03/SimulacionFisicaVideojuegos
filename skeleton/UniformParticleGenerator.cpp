@@ -1,13 +1,12 @@
 #include "UniformParticleGenerator.h"
 #include "ParticleSystem.h"
 #include "Scene.h"
-#include "checkML.h"
 
 UniformParticleGenerator::UniformParticleGenerator(ParticleSystem* system, int n_particle, Vector3 pos, Vector3 vel, double frequency, Particle* p, Vector3 g)
-	:ParticleGenerator(system, n_particle, pos, vel, frequency, g,p)
+	:ParticleGenerator(system, n_particle, pos, vel, frequency,p)
 {
 	if (_model_particle == nullptr) {
-		_model_particle = new Particle(pos, vel, _gravity);
+		_model_particle = new Particle(pos, vel);
 		_model_particle->removeRenderItem();
 	}
 	addUniformDistribution(0, 15);

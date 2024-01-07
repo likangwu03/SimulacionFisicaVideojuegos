@@ -3,7 +3,7 @@
 ParticleSystemP2::ParticleSystemP2(Scene* scene, const Vector3& g):ParticleSystem(scene,g)
 {
 	Vector3 p_aux = Vector3(0);
-	ParticleGenerator* generator_aux = new CircleGenerator("cicle", this, 3, p_aux, Vector3(0, 5, 0), 0.01, nullptr, Vector3(0));
+	ParticleGenerator* generator_aux = new CircleGenerator("cicle", this, 3, p_aux, Vector3(0, 5, 0), 0.01, nullptr);
 	_particle_generators.push_back(generator_aux);
 	activas.push_back(false);
 	

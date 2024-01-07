@@ -142,6 +142,33 @@
     <ClCompile Include="SolidSystemP5.cpp">
       <Filter>P5</Filter>
     </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="Floor.cpp">
+      <Filter>Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="ControllerSystem.cpp">
+      <Filter>Proyecto final</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneJuego.cpp">
+      <Filter>Proyecto final</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidSystemPF.cpp">
+      <Filter>Proyecto final</Filter>
+    </ClCompile>
+    <ClCompile Include="LineParticle.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemPF.cpp">
+      <Filter>Proyecto final</Filter>
+    </ClCompile>
+    <ClCompile Include="DragForceGenerator.cpp">
+      <Filter>ForcesSR</Filter>
+    </ClCompile>
+    <ClCompile Include="LineGenerator.cpp">
+      <Filter>Generator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -295,6 +322,33 @@
     <ClInclude Include="SolidSystemP5.h">
       <Filter>P5</Filter>
     </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="Floor.h">
+      <Filter>Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerSystem.h">
+      <Filter>Proyecto final</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneJuego.h">
+      <Filter>Proyecto final</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidSystemPF.h">
+      <Filter>Proyecto final</Filter>
+    </ClInclude>
+    <ClInclude Include="LineParticle.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemPF.h">
+      <Filter>Proyecto final</Filter>
+    </ClInclude>
+    <ClInclude Include="DragForceGenerator.h">
+      <Filter>ForcesSR</Filter>
+    </ClInclude>
+    <ClInclude Include="LineGenerator.h">
+      <Filter>Generator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -335,6 +389,9 @@
     </Filter>
     <Filter Include="Solid">
       <UniqueIdentifier>{1c4c0421-c348-447a-b240-5ffd4e4e8c9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Proyecto final">
+      <UniqueIdentifier>{37b7faca-7d1e-44c1-a527-67d7337ee47b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

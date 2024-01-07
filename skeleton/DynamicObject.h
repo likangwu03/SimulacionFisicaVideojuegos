@@ -9,6 +9,7 @@ class DynamicObject :public Object
 public:
 	struct ObjectInfor {
 		bool model = false;
+		bool default = false;
 		Vector3 pos = Vector3(0);
 		Vector3 tam = Vector3(3);
 		Vector3 vel = Vector3(0);

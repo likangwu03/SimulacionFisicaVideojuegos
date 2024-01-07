@@ -28,7 +28,7 @@ Scene::~Scene() {
 void Scene::addObject(Object* obj, SFV::grpId_type gId) {
 	obj->setAlive(true);
 	obj->setContext(this);
-	objsAux_[gId].push_back(obj);
+	objsByGroup_[gId].push_back(obj);
 }
 
 const auto& Scene::getObjects(SFV::grpId_type gId) {
@@ -65,7 +65,7 @@ void Scene::update(double t) {
 		}
 	}
 
-	addAux();
+	//addAux();
 }
 
 void Scene::addAux()
@@ -81,10 +81,29 @@ void Scene::addAux()
 }
 
 void Scene::keyPress(unsigned char key) {
+
+	for (System* sys : systems) {
+		sys->keyPress(key);
+	}
+
 	for (auto& ents : objsByGroup_) {
 		for (auto& ent : ents) {
 			ent->keyPress(key);
 		}
+	}
+}
+
+void Scene::handleMouse(int button, int state, int x, int y)
+{
+	for (System* sys : systems) {
+		sys->handleMouse(button, state, x, y);
+	}
+}
+
+void Scene::handleMotion(int x, int y)
+{
+	for (System* sys : systems) {
+		sys->handleMotion(x, y);
 	}
 }
 

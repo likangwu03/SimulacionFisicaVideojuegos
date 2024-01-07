@@ -2,11 +2,11 @@
 #include "ParticleSystem.h"
 #include "Scene.h"
 #include "checkML.h"
-GaussianParticleGenerator::GaussianParticleGenerator(ParticleSystem* system,int n_particle, Vector3 pos, Vector3 vel, double frequency , Particle* p,Vector3 g) 
-	:ParticleGenerator(system,n_particle,pos,vel,frequency,g,p)
+GaussianParticleGenerator::GaussianParticleGenerator(ParticleSystem* system,int n_particle, Vector3 pos, Vector3 vel, double frequency , Particle* p) 
+	:ParticleGenerator(system,n_particle,pos,vel,frequency,p)
 {
 	if (_model_particle == nullptr) {
-		_model_particle = new Particle(pos, vel, _gravity);
+		_model_particle = new Particle(pos, vel);
 		_model_particle->removeRenderItem();
 	}
 	addNormalDistribution(0, 15);

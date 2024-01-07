@@ -4,7 +4,7 @@
 class GaussianParticleGenerator : public ParticleGenerator
 {
 public:
-	GaussianParticleGenerator(ParticleSystem* system, int n_particle, Vector3 pos, Vector3 vel, double frequency,  Particle* p = nullptr, Vector3 g=SFV::GRAVITY);
+	GaussianParticleGenerator(ParticleSystem* system, int n_particle, Vector3 pos, Vector3 vel, double frequency,  Particle* p = nullptr);
 
 
 	void generateParticles() override;

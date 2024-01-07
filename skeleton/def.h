@@ -1,17 +1,16 @@
 #pragma once
-#define P1
 
 #include "RenderUtils.hpp"
 
 namespace SFV {
 
-#ifdef P1
 	using system_type = unsigned int;
 	enum SystemId : system_type
 	{
 		_sys_DEFAULT,
 		_sys_PARTICLE,
 		_sys_SOLID,
+		_sys_CTRL,
 		_LAST_SYS_ID
 	};
 	constexpr system_type maxSystemId = _LAST_SYS_ID;
@@ -19,8 +18,7 @@ namespace SFV {
 	using hdlrId_type = unsigned int;
 	enum hdlrId : hdlrId_type
 	{
-		_hdlr_NAME,
-		_hdlr_TEXT,
+		_hdlr_BALL,
 		_LAST_HDLR_ID
 	};
 	constexpr hdlrId_type maxHdlrId = _LAST_HDLR_ID;
@@ -55,5 +53,4 @@ namespace SFV {
 	const float M_PI = 3.14159;
 #pragma endregion
 
-#endif // P1
 }

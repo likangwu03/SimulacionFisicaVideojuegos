@@ -10,6 +10,7 @@ protected:
 	double _t = 0.0; // If starting negative --> eternal
 	double _duration = -1e10;
 	bool _alive = true;
+	bool _add = true;
 public:
 	virtual ~ForceGenerator(){}
 
@@ -26,4 +27,7 @@ public:
 
 	void setAlive(bool a) { _alive = a; }
 	bool isAlive() { return _alive; }
+
+	void setAdd(bool a) { _add = a; }
+	bool needAdd() { return _add; }
 };

@@ -71,6 +71,9 @@ public:
 	inline std::vector<Object*>* getGroup(SFV::grpId grp) { return &objsByGroup_[grp]; }
 
 
+	virtual void handleMouse(int button, int state, int x, int y);
+	virtual void handleMotion(int x, int y);
+
 
 	PxPhysics* getPhysics() { return _data.gPhysics; }
 	PxScene* getGScene() { return _data.gScene; }

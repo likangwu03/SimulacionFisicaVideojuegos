@@ -4,8 +4,8 @@ DynamicObject::DynamicObject(ObjectInfor infor) :Object()
 {
 	_infor = infor;
 
-	if (!infor.model) {
-		create();
+	if (!infor.model && infor.default) {
+		create(); 
 	}
 
 }

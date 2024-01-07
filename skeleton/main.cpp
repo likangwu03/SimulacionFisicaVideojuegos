@@ -15,6 +15,7 @@
 #include "SceneP3.h"
 #include "SceneP4.h"
 #include "sceneP5.h"
+#include "SceneJuego.h"
 
 
 std::string display_text = "Activa WhirlwindsSolidForceGenerator: tecla 1";
@@ -37,11 +38,7 @@ PxDefaultCpuDispatcher* gDispatcher = NULL;
 PxScene* gScene = NULL;
 ContactReportCallback gContactReportCallback;
 
-
-
 Scene* scene;
-//Particle* p;
-
 
 // Initialize physics engine
 void initPhysics(bool interactive)
@@ -56,7 +53,7 @@ void initPhysics(bool interactive)
 
 	gPhysics = PxCreatePhysics(PX_PHYSICS_VERSION, *gFoundation, PxTolerancesScale(), true, gPvd);
 
-	gMaterial = gPhysics->createMaterial(0.5f, 0.5f, 0.6f);
+	gMaterial = gPhysics->createMaterial(0.5, 0.5, 1);
 
 	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
 	PxSceneDesc sceneDesc(gPhysics->getTolerancesScale());
@@ -66,12 +63,11 @@ void initPhysics(bool interactive)
 	sceneDesc.filterShader = contactReportFilterShader;
 	sceneDesc.simulationEventCallback = &gContactReportCallback;
 	gScene = gPhysics->createScene(sceneDesc);
-	//p = new Particle(Vector3(0),Vector3(0,0,0),Vector3(0,10,0));
 
 	Scene::PxData data = { gPhysics,gScene };
 	//scene = new SceneP4();
 
-	scene = new sceneP5(data);
+	scene = new SceneJuego(data);
 
 
 }
@@ -86,15 +82,10 @@ void stepPhysics(bool interactive, double t)
 
 	scene->update(t);
 	scene->refresh();
-	/*if (p != nullptr) {
-
-	p->integrate(t);
-	}*/
-	//proyectil->integrate(t);
 
 	gScene->simulate(t);
 	gScene->fetchResults(true);
-	//scene->refresh();
+
 }
 
 // Function to clean data
@@ -121,21 +112,26 @@ void keyPress(unsigned char key, const PxTransform& camera)
 {
 	PX_UNUSED(camera);
 	scene->keyPress(key);
-	//switch (toupper(key))
-	//{
-	//	//case 'B': break;
-	//	//case ' ':	break;
-	//case ' ':
-	//{
-	//	delete p;
-	//	p = nullptr;
-	//	break;
-	//}
-	//}
-	//default:
 
-	//	break;
-	//}
+	switch (toupper(key))
+	{
+		//case 'B': break;
+		//case ' ':	break;
+	case 'Z':
+	{
+		//shoot();
+
+		break;
+	}
+	case 'X':
+	{
+		//shoot();
+
+		break;
+	}
+	default:
+		break;
+	}
 }
 
 void onCollision(physx::PxActor* actor1, physx::PxActor* actor2)
@@ -143,6 +139,17 @@ void onCollision(physx::PxActor* actor1, physx::PxActor* actor2)
 	PX_UNUSED(actor1);
 	PX_UNUSED(actor2);
 }
+
+void handleMouse(int button, int state, int x, int y)
+{
+	scene->handleMouse(button, state, x, y);
+}
+
+void handleMotion(int x, int y)
+{
+	scene->handleMotion(x, y);
+}
+
 
 
 int main(int, const char* const*)
