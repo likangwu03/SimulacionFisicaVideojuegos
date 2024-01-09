@@ -38,7 +38,7 @@ PxDefaultCpuDispatcher* gDispatcher = NULL;
 PxScene* gScene = NULL;
 ContactReportCallback gContactReportCallback;
 
-Scene* scene;
+SceneJuego* scene;
 
 // Initialize physics engine
 void initPhysics(bool interactive)
@@ -53,7 +53,7 @@ void initPhysics(bool interactive)
 
 	gPhysics = PxCreatePhysics(PX_PHYSICS_VERSION, *gFoundation, PxTolerancesScale(), true, gPvd);
 
-	gMaterial = gPhysics->createMaterial(0.5, 0.5, 1);
+	gMaterial = gPhysics->createMaterial(0.7, 0.7, 1);
 
 	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
 	PxSceneDesc sceneDesc(gPhysics->getTolerancesScale());
@@ -138,6 +138,16 @@ void onCollision(physx::PxActor* actor1, physx::PxActor* actor2)
 {
 	PX_UNUSED(actor1);
 	PX_UNUSED(actor2);
+
+	const string name1 = actor1->getName();
+	const string name2 = actor2->getName();
+	if (name1 == "ball" && name2 == "hole") {
+		PX_UNUSED(actor1);
+		PX_UNUSED(actor2);
+		//StaticRigidBody* p1 = static_cast<StaticRigidBody*>(actor1->userData);
+		scene->NextLevel();
+	}
+
 }
 
 void handleMouse(int button, int state, int x, int y)

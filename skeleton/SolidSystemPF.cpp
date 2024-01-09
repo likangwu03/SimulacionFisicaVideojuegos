@@ -35,5 +35,11 @@ void SolidSystemPF::keyPress(unsigned char key)
 
 }
 
+void SolidSystemPF::createWinds(Vector3 p, Vector3 a, float k1, Vector3 v)
+{
+	WindSolidForceGenerator* wind = new WindSolidForceGenerator(k1, v, a, p);
+	addForce(wind);
+}
+
 
 

@@ -169,6 +169,18 @@
     <ClCompile Include="LineGenerator.cpp">
       <Filter>Generator</Filter>
     </ClCompile>
+    <ClCompile Include="Hole.cpp">
+      <Filter>Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="HoleCollision.cpp">
+      <Filter>Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="Fan.cpp">
+      <Filter>Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="FogGenerator.cpp">
+      <Filter>Generator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -347,6 +359,18 @@
       <Filter>ForcesSR</Filter>
     </ClInclude>
     <ClInclude Include="LineGenerator.h">
+      <Filter>Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="Hole.h">
+      <Filter>Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="HoleCollision.h">
+      <Filter>Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="Fan.h">
+      <Filter>Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="FogGenerator.h">
       <Filter>Generator</Filter>
     </ClInclude>
   </ItemGroup>

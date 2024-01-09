@@ -19,6 +19,7 @@ public:
 		Vector4 color = Vector4(1);
 		ParticleType type = ParticleType::_particle_default;
 		double masa = 1;
+		float r = 0.1;
 	};
 
 
@@ -42,6 +43,9 @@ public:
 	inline void setPos(Vector3 pos) { _pos.p = pos; }
 	inline void setAccel(Vector3 accel) { _accel = accel; }
 	inline void setDuration(double d) { _duration = d; }
+
+
+	inline void setRotation(PxQuat r) { _pos.q=r; }
 
 	virtual Particle* clone();
 
@@ -82,6 +86,8 @@ protected:
 	Vector3 _force;
 
 	Vector4 color;
+
+	float _r;
 
 	virtual void createRender();
 };

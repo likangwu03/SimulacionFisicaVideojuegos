@@ -36,6 +36,7 @@ void DynamicObject::create()
 	_rb->setAngularVelocity(_infor.w);
 	shape = CreateShape(PxBoxGeometry(_infor.tam));
 	_rb->attachShape(*shape);
+	_rb->setName(" ");
 	_rb->setMass(_infor.masa);
 	if (_infor.densidad != -1) {
 		PxRigidBodyExt::updateMassAndInertia(*_rb, _infor.densidad);

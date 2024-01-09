@@ -18,10 +18,13 @@ public:
 
 	LineGenerator* getLine() { return line; }
 
+	void createWinds(Vector3 p, Vector3 a, float k1, Vector3 v);
+
+	void createFog(Vector3 p, Vector3 a, float f);
+
 protected:
 	LineGenerator* line;
 
 	void create();
-
 };
 

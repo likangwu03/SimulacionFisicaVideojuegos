@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include "def.h"
+#include <cmath>
 class Scene;
 class Object
 {

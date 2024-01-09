@@ -16,7 +16,7 @@ public:
 		bool left=true;
 		bool right=true;
 		bool top=true;
-		bool donw=true;
+		bool down=true;
 	};
 
 	Floor(Scene* s,Vector3 pos, PxQuat q, float w,float h,float d, WallInfor i = WallInfor(),Vector4 c = Vector4(0.3, 0.7, 0.8, 1));

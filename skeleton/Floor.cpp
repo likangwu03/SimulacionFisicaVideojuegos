@@ -13,16 +13,17 @@ Floor::Floor(Scene* s,Vector3 pos, PxQuat q, float w, float h,float d, WallInfor
 	obj_i.q = q;
 	floor = new StaticObject(obj_i);
 
-	if (i.left) createWall(_pos + Vector3(width, height, 0), Vector3(wall_tam, wall_tam, depth+ wall_tam));
+	
+
+	if (i.left) createWall(_pos + Vector3(width, height, 0), Vector3(wall_tam , wall_tam, depth - wall_tam));
 
 
-	if (i.right) createWall(_pos + Vector3(-width, height, 0), Vector3(wall_tam, wall_tam, depth+ wall_tam));
+	if (i.right) createWall(_pos + Vector3(-width, height, 0), Vector3(wall_tam , wall_tam, depth - wall_tam));
 
 
-	if (i.top) createWall(_pos + Vector3(0, height, depth), Vector3(width+ wall_tam, wall_tam, wall_tam));
+	if (i.top) createWall(_pos + Vector3(0, height, depth), Vector3(width + wall_tam , wall_tam, wall_tam ));
 
-	if (i.donw) createWall(_pos + Vector3(0, height, -depth), Vector3(width+ wall_tam, wall_tam, wall_tam));
-
+	if (i.down) createWall(_pos + Vector3(0, height, -depth), Vector3(width + wall_tam , wall_tam, wall_tam ));
 
 }
 

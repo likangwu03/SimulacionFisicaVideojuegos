@@ -8,6 +8,7 @@ class StaticObject :public Object
 {
 public:
 	struct ObjectInfor {
+		bool default = true;
 		Vector3 pos = Vector3(0);
 		PxQuat q = PxQuat(0, PxVec3(1, 0, 0));
 		Vector3 tam = Vector3(10);
@@ -25,6 +26,8 @@ protected:
 	RenderItem* renderItem;
 	PxRigidStatic* _rb;
 	PxShape* shape;
-	ObjectInfor infor;
+	ObjectInfor _infor;
+
+	virtual void create() {};
 };
 

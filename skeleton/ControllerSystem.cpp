@@ -5,6 +5,7 @@ ControllerSystem::ControllerSystem(Scene* scene) :System(scene, SFV::SystemId::_
 {
 	iniObj();
 	ball_pos = ball->getRigid()->getGlobalPose().p;
+	pos = Vector3(0);
 }
 
 void ControllerSystem::iniObj()
@@ -16,7 +17,10 @@ void ControllerSystem::iniObj()
 
 void ControllerSystem::update(double t)
 {
-	canHit = ball->noMove();
+	checkIsOutSide();
+
+	//canHit = ball->noMove();
+	canHit = ball->getRigid()->getLinearVelocity().normalize() < minVel;
 
 	if (!canHit) {
 		//std::cout << ball->getRigid()->getGlobalPose().p.x << " " << ball->getRigid()->getGlobalPose().p.y << " " << ball->getRigid()->getGlobalPose().p.z << "\n";
@@ -28,7 +32,8 @@ void ControllerSystem::update(double t)
 		camera->setDir(-dir.getNormalized());
 		
 	}
-	else if(!hasHit) {
+
+	if(!hasHit && canHit) {
 		line->setActive(true);
 		line->setDuration(p_ini+ p_d*force/maxForce);
 		line->setOrigin(ball->getRigid()->getGlobalPose().p);
@@ -38,6 +43,11 @@ void ControllerSystem::update(double t)
 		dir = PxVec3( x,0,z );
 		line->setMeanVelocity(dir*v);
 	}
+	else {
+		line->setActive(false);
+	}
+
+
 	if (hasHit) {
 		cont += t;
 	}
@@ -61,43 +71,90 @@ void ControllerSystem::keyPress(unsigned char key)
 			ball_pos_hit= ball->getRigid()->getGlobalPose().p;
 			ball->getRigid()->addForce(dir * force);
 			line->setActive(false);
-			angleInDegrees = 0;
-			hasHit = true;
+			//angleInDegrees = 0;
+ 			hasHit = true;
+			cont = 0;
 			cout << "hit\n";
 			break;
-		case '2':
+		case 'Z':
 			if (force < maxForce)force += 1000;
 			cout << force << "\n";
 			break;
-		case '5':
+		case 'X':
 			if (force > minForce)force -= 1000;
 			cout << force << "\n";
 			break;
-		case '1':
+		case 'C':
 			angleInDegrees-=_d;
 			cout << angleInDegrees << "\n";
 			break;
-		case '3':
+		case 'V':
 			angleInDegrees+=_d;
 			cout << angleInDegrees << "\n";
 			break;
 		}
 	}
-	
-}
 
-void ControllerSystem::handleMouse(int button, int state, int x, int y)
-{
-	if (button == 1) {
-		cout <<x<<"  "<<y<< "\n";
+	switch (toupper(key))
+	{
+	case 'B':
+		ball_pos = ball->getRigid()->getGlobalPose().p;
+		PxVec3 dir = camera->getTransform().p - ball_pos;
+		camera->setDir(-dir.getNormalized());
+		break;
 	}
 }
 
-void ControllerSystem::handleMotion(int x, int y)
+void ControllerSystem::NextLevel(PxVec3 ball_p, Vector3 p, float w, float h)
 {
+	ball_pos_hit = PxVec3(ball_p);
+	pos = p;
+	_w = w;
+	_h = h;
+	SetPosToNextLevel();
 }
 
-void ControllerSystem::adjustsCameraPos()
+void ControllerSystem::SetPosToNextLevel()
 {
-	
+	PxTransform t(ball_pos_hit);
+	ball->getRigid()->setGlobalPose(t);
+	//ball->SetPos(ball_pos_hit);
+
+
+	ball->getRigid()->setLinearVelocity(Vector3(0, 0, 0));
+	ball->getRigid()->setAngularVelocity(Vector3(0, 0, 0));
+	cont = 0;
+	hasHit = false;
+
+	PxVec3 diff = ball->getRigid()->getGlobalPose().p - ball_pos;
+	camera->addPos(diff);
+
+	ball_pos = ball->getRigid()->getGlobalPose().p;
+	PxVec3 dir = camera->getTransform().p - ball_pos;
+	camera->setDir(-dir.getNormalized());
 }
+
+void ControllerSystem::checkIsOutSide()
+{
+	PxVec3 p = ball->getRigid()->getGlobalPose().p;
+
+	if (p.x > pos.x - _w && p.x< pos.x + _w && p.z>pos.z - _h && p.z < pos.z + _h && p.y> _y) return;
+
+	PxTransform t(ball_pos_hit);
+	ball->getRigid()->setGlobalPose(t);
+
+	PxVec3 diff = ball->getRigid()->getGlobalPose().p - ball_pos;
+	camera->addPos(diff);
+
+	ball_pos = ball->getRigid()->getGlobalPose().p;
+	PxVec3 dir = camera->getTransform().p - ball_pos;
+	camera->setDir(-dir.getNormalized());
+
+
+	ball->getRigid()->setLinearVelocity(Vector3(0, 0, 0));
+	ball->getRigid()->setAngularVelocity(Vector3(0, 0, 0));
+	cont = 0;
+	hasHit = false;
+	cout << "aaaaffffffffaahit\n";
+}
+

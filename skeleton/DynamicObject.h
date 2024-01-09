@@ -38,6 +38,8 @@ public:
 	double getDuration() { return _infor.duration; }
 	double getTime() { return _cont; }
 
+	Vector3 getTam() { return _infor.tam; }
+
 	PxRigidDynamic* getRigid() { return _rb; }
 
 protected:

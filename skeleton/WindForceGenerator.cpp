@@ -22,5 +22,5 @@ void WindForceGenerator::updateForce(Particle* particle, double t)
 }
 
 bool WindForceGenerator::inArea(Vector3 pos) {
-	return pos.x > _pos.x - _area.x && pos.x<_pos.x + _area.x && pos.z>_pos.z - _area.z && pos.z < _pos.z + _area.z && pos.y>_pos.y && pos.y < _pos.y + _area.y;
+	return pos.x > _pos.x - _area.x && pos.x<_pos.x + _area.x && pos.z>_pos.z - _area.z && pos.z < _pos.z + _area.z && pos.y>_pos.y-_area.y && pos.y < _pos.y + _area.y;
 }

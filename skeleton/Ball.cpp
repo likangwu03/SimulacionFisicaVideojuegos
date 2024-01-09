@@ -4,6 +4,14 @@ Ball::Ball(ObjectInfor infor):DynamicObject(infor){
 	create();
 }
 
+void Ball::SetPos(PxVec3 p)
+{
+	_infor.gScene->removeActor(*_rb);
+	PxTransform t(p);
+	_rb->setGlobalPose(t);
+	_infor.gScene->addActor(*_rb);
+}
+
 void Ball::create()
 {
 
@@ -12,6 +20,9 @@ void Ball::create()
 	_rb = _infor.gPhysics->createRigidDynamic(PxTransform(_infor.pos));
 	_rb->setLinearVelocity(_infor.vel);
 	_rb->setAngularVelocity(_infor.w);
+
+	_rb->setName("ball");
+
 	PxSphereGeometry a;
 	a.radius = _infor.tam.x;
 	shape = CreateShape(a);

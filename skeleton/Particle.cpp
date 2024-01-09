@@ -1,7 +1,7 @@
 #include "Particle.h"
 #include "checkML.h"
 Particle::Particle(ParticleInfor info):Object(), _vel(info.Vel), _accel(info.accel), _duration(info.duration),
-_damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr), _force(Vector3(0)) ,color(info.color){
+_damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr), _force(Vector3(0)) ,color(info.color),_r(info.r){
 	_mass = info.masa;
 	if (info.masa == 0)_inv_mass = 0;
 	else _inv_mass = (1 / info.masa);
@@ -62,9 +62,9 @@ Particle* Particle::clone()
 void Particle::createRender() {
 	if (_type == ParticleType::_particle_default) {
 		PxSphereGeometry a;
-		a.radius = 1;
+		a.radius = _r;
 		PxShape* shape = CreateShape(a);
-		renderItem = new RenderItem(shape, &_pos, Vector4(0.1, 1, 1, 1));
+		renderItem = new RenderItem(shape, &_pos, color);
 	}
 	else if (_type == ParticleType::_particle_F1) {
 		PxSphereGeometry a;
