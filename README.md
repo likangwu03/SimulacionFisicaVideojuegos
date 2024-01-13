@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Mini Golf
+Mini Golf                                     
 Meter la bola en el hoyo , sino pues tecla M
 
 ## Controles
