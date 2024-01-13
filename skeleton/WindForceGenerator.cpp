@@ -16,7 +16,7 @@ void WindForceGenerator::updateForce(Particle* particle, double t)
 
 	Vector3 diff_vel = _vel - particle->getVelocity();
 
-	Vector3 force = _k1 * diff_vel + _k2*abs(diff_vel.magnitude()) * diff_vel;
+	Vector3 force = _k1 * _vel + _k2*abs(diff_vel.magnitude()) * diff_vel;
 
 	particle->addForce(force);
 }

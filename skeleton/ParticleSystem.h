@@ -43,5 +43,6 @@ public:
 	void refresh();
 
 	//template <typename Valor>
-	void addParticle(Particle* p);
+	void addParticle(Particle* p, bool force=true);
+	void addParticle2(Particle* p,bool force=false);
 };

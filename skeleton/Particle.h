@@ -69,6 +69,8 @@ public:
 	}
 
 protected:
+	ParticleInfor my_info;
+
 	ParticleType _type;
 	Vector3 _vel;
 	Vector3 _accel;
@@ -85,9 +87,9 @@ protected:
 
 	Vector3 _force;
 
-	Vector4 color;
+	Vector4 color=Vector4(1);
 
-	float _r;
+	float _r=1;
 
 	virtual void createRender();
 };

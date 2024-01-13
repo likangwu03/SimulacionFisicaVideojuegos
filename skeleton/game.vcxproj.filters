@@ -181,6 +181,9 @@
     <ClCompile Include="FogGenerator.cpp">
       <Filter>Generator</Filter>
     </ClCompile>
+    <ClCompile Include="FireworkGenerator.cpp">
+      <Filter>Generator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -373,6 +376,9 @@
     <ClInclude Include="FogGenerator.h">
       <Filter>Generator</Filter>
     </ClInclude>
+    <ClInclude Include="FireworkGenerator.h">
+      <Filter>Generator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -417,5 +423,8 @@
     <Filter Include="Proyecto final">
       <UniqueIdentifier>{37b7faca-7d1e-44c1-a527-67d7337ee47b}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UML.cd" />
   </ItemGroup>
 </Project>

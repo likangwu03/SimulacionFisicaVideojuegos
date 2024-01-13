@@ -28,6 +28,7 @@ void UniformParticleGenerator::generateParticles()
 
 
 void UniformParticleGenerator::update(double t) {
+	if (!active)return;
 	_cont += t;
 	if (_cont > _frequency) {
 		_cont = 0;

@@ -6,6 +6,7 @@ ControllerSystem::ControllerSystem(Scene* scene) :System(scene, SFV::SystemId::_
 	iniObj();
 	ball_pos = ball->getRigid()->getGlobalPose().p;
 	pos = Vector3(0);
+	inGame = false;
 }
 
 void ControllerSystem::iniObj()
@@ -17,8 +18,9 @@ void ControllerSystem::iniObj()
 
 void ControllerSystem::update(double t)
 {
-	checkIsOutSide();
+	if (!inGame)return;
 
+	checkIsOutSide();
 	//canHit = ball->noMove();
 	canHit = ball->getRigid()->getLinearVelocity().normalize() < minVel;
 
@@ -57,7 +59,9 @@ void ControllerSystem::update(double t)
 		hasHit = false;
 		ball->getRigid()->setLinearVelocity(Vector3(0, 0, 0));
 		ball->getRigid()->setAngularVelocity(Vector3(0, 0, 0));
+#ifdef DEBUG
 		cout << "aaaaaahit\n";
+#endif // DEBUG
 	}
 	
 }
@@ -74,23 +78,33 @@ void ControllerSystem::keyPress(unsigned char key)
 			//angleInDegrees = 0;
  			hasHit = true;
 			cont = 0;
+#ifdef DEBUG
 			cout << "hit\n";
+#endif // DEBUG
 			break;
 		case 'Z':
 			if (force < maxForce)force += 1000;
+#ifdef DEBUG
 			cout << force << "\n";
+#endif // DEBUG
 			break;
 		case 'X':
 			if (force > minForce)force -= 1000;
+#ifdef DEBUG
 			cout << force << "\n";
+#endif // DEBUG
 			break;
 		case 'C':
 			angleInDegrees-=_d;
+#ifdef DEBUG
 			cout << angleInDegrees << "\n";
+#endif // DEBUG
 			break;
 		case 'V':
 			angleInDegrees+=_d;
+#ifdef DEBUG
 			cout << angleInDegrees << "\n";
+#endif // DEBUG
 			break;
 		}
 	}
@@ -114,6 +128,25 @@ void ControllerSystem::NextLevel(PxVec3 ball_p, Vector3 p, float w, float h)
 	SetPosToNextLevel();
 }
 
+void ControllerSystem::gameOver()
+{
+	inGame = false;
+	line->setActive(false);
+}
+
+void ControllerSystem::gameStart()
+{
+	inGame = true;
+}
+
+void ControllerSystem::setCamaraIniPos()
+{
+	
+		camera->setPos(Vector3(200,1000,400));
+
+		camera->setDir(Vector3(0.2, -1, -0.4));
+}
+
 void ControllerSystem::SetPosToNextLevel()
 {
 	PxTransform t(ball_pos_hit);
@@ -126,12 +159,15 @@ void ControllerSystem::SetPosToNextLevel()
 	cont = 0;
 	hasHit = false;
 
-	PxVec3 diff = ball->getRigid()->getGlobalPose().p - ball_pos;
-	camera->addPos(diff);
+	PxVec3 diff = ball->getRigid()->getGlobalPose().p +Vector3(0,100,100);
+	camera->setPos(diff);
 
 	ball_pos = ball->getRigid()->getGlobalPose().p;
+	//PxVec3 dir = camera->getTransform().p - ball_pos;
+	//camera->setDir(-dir.getNormalized());
+
 	PxVec3 dir = camera->getTransform().p - ball_pos;
-	camera->setDir(-dir.getNormalized());
+	camera->setDir(Vector3(0,-1,-1));
 }
 
 void ControllerSystem::checkIsOutSide()
@@ -155,6 +191,8 @@ void ControllerSystem::checkIsOutSide()
 	ball->getRigid()->setAngularVelocity(Vector3(0, 0, 0));
 	cont = 0;
 	hasHit = false;
+#ifdef DEBUG
 	cout << "aaaaffffffffaahit\n";
+#endif // DEBUG
 }
 

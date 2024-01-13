@@ -267,6 +267,7 @@
     <ClCompile Include="ExplosionForceGenerator.cpp" />
     <ClCompile Include="Fan.cpp" />
     <ClCompile Include="Fireword.cpp" />
+    <ClCompile Include="FireworkGenerator.cpp" />
     <ClCompile Include="FireworkSystem.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="FogGenerator.cpp" />
@@ -334,6 +335,7 @@
     <ClInclude Include="ExplosionForceGenerator.h" />
     <ClInclude Include="Fan.h" />
     <ClInclude Include="Fireword.h" />
+    <ClInclude Include="FireworkGenerator.h" />
     <ClInclude Include="FireworkSystem.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="FogGenerator.h" />
@@ -383,6 +385,9 @@
     <ClInclude Include="WhirlwindsSolidForceGenerator.h" />
     <ClInclude Include="WindForceGenerator.h" />
     <ClInclude Include="WindSolidForceGenerator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UML.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -17,7 +17,7 @@ class Fan :public Object {
 public:
 	
 
-	Fan(Scene* s, Vector3 pos, float speed=100, float w=25, float h=3, float d=3, Vector4 c = Vector4(0.3, 0.7, 0.8, 1));
+	Fan(Scene* s, Vector3 pos, float speed=100, float w=25, float h=3, float d=3, Vector4 c = Vector4(0.5, 0.5, 0.5, 1));
 
 	~Fan();
 

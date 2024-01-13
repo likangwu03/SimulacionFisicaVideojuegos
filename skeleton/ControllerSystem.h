@@ -15,6 +15,13 @@ public:
 
 	void NextLevel(PxVec3 ball_p,Vector3 p,float w,float h);
 
+	void gameOver();
+	void gameStart();
+
+	void setCamaraIniPos();
+
+	float getForce() { return force; }
+	float getAngle() { return angleInDegrees - ((int)angleInDegrees / 360) * 360; }
 	
 private:
 	const float maxForce = 30000;
@@ -53,6 +60,7 @@ private:
 	Camera* camera;
 	LineGenerator* line;
 
+	bool inGame;
 
 
 

@@ -1,5 +1,5 @@
 #pragma once
-
+//#define DEBUG
 #include "RenderUtils.hpp"
 
 namespace SFV {

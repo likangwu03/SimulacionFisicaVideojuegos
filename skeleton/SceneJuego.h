@@ -12,6 +12,9 @@
 #include "Hole.h"
 #include "Fan.h"
 
+
+
+
 class SceneJuego :public Scene
 {
 public:
@@ -29,6 +32,13 @@ public:
 
 	virtual void update(double t);
 
+	virtual void keyPress(unsigned char key);
+
+	float getAngle() { return ctrl->getAngle(); }
+	float getForce() { return ctrl->getForce(); }
+
+	int getState() { return (int)state; }
+
 private:
 	const int MAX_LEVEL = 3;
 	const Vector4 color = Vector4(1);
@@ -37,7 +47,7 @@ private:
 	std::vector<PxVec3> Ball_pos_vector;
 	std::vector<Area> Areas;
 
-	int level = 2;
+	int level = -1;
 	bool next_level = false;
 
 
@@ -56,6 +66,10 @@ private:
 
 
 	void reset();
+
+	void gameOver();
+
+	void gameStart();
 
 	void creatFan(Vector3 p,Vector3 area, float k, Vector3 v);
 

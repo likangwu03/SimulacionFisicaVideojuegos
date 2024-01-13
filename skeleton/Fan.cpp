@@ -9,8 +9,8 @@ Fan::Fan(Scene* s, Vector3 pos, float speed, float w, float h, float d, Vector4 
 	i.color = color;
 	i.Pos = pos;
 	
-	obj1 = new BoxParticle(i,w,h,d,color);
-	obj2 = new BoxParticle(i, w, h, d, color);
+	obj1 = new BoxParticle(i,w,h,d);
+	obj2 = new BoxParticle(i, w, h, d);
 
 }
 

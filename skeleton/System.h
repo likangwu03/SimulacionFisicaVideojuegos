@@ -10,7 +10,13 @@ public:
 protected:
 	Scene* _scene;
 	SFV::system_type _type;
+	bool active = true;
 public:
+
+	bool isActive() { return active; }
+
+	void setActive(bool a) {  active=a; }
+
 	virtual void update(double t)=0;
 
 	SFV::system_type getType() {

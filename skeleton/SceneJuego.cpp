@@ -1,35 +1,81 @@
 #include "SceneJuego.h"
-
 SceneJuego::SceneJuego(PxData data) :Scene(data)
 {
+	state = INI;
 	create();
 	createSys();
 	createLevels();
+
+	ctrl->setCamaraIniPos();
 }
 
 void SceneJuego::NextLevel()
 {
+	if (state != GAME) return;
+
 	level++;
 	if (level > MAX_LEVEL) {
-
+		gameOver();
 	}
 	else {
 		//ctrl->NextLevel(Ball_pos_vector[level], Areas[level].p, Areas[level].w, Areas[level].h);
 		next_level = true;
 		//ctrl->NextLevel(Ball_pos_vector[level], Areas[level].p, Areas[level].w, Areas[level].h);
 	}
+#ifdef DEBUG
 	cout << "next level\n";
+#endif // DEBUG
+
 }
 
 void SceneJuego::update(double t)
 {
 	if (next_level) {
 		next_level = false;
+		particle->offFog(level-1);
 		ctrl->NextLevel(Ball_pos_vector[level], Areas[level].p, Areas[level].w, Areas[level].h);
 	}
 	Scene::update(t);
 }
 
+void SceneJuego::keyPress(unsigned char key)
+{
+
+
+	if (state == GAME) {
+		switch (toupper(key))
+		{
+		case 'N':
+			particle->activeFog(level);
+			break;
+		case 'M':
+			NextLevel();
+			break;
+		}
+		for (System* sys : systems) {
+			sys->keyPress(key);
+		}
+	}
+
+	if (state == INI) {
+		switch (toupper(key))
+		{
+		case ' ':
+			gameStart();
+			break;
+		}
+	}
+
+	if (state == OVER) {
+		switch (toupper(key))
+		{
+		case ' ':
+			reset();
+			break;
+		}
+	}
+	
+}
 
 void SceneJuego::createSys()
 {
@@ -44,7 +90,7 @@ void SceneJuego::createSys()
 	ctrl = new ControllerSystem(this);
 	addSystem(ctrl);
 	setSystemHandler(ctrl, "ControllerSystem");
-	ctrl->NextLevel(Ball_pos_vector[level], Areas[level].p, Areas[level].w, Areas[level].h);
+	//ctrl->NextLevel(Ball_pos_vector[level], Areas[level].p, Areas[level].w, Areas[level].h);
 }
 
 void SceneJuego::create()
@@ -62,13 +108,14 @@ void SceneJuego::create()
 	a.h = 250;
 	Areas.push_back(a);
 
-	Ball_pos_vector.push_back(PxVec3(0, 20, -200));
+	Ball_pos_vector.push_back(PxVec3(0, 20, -300));
 	a.p = Vector3(300, 0, -300);
 	a.w = 400;
 	a.h = 180;
 	Areas.push_back(a);
 
 	Ball_pos_vector.push_back(PxVec3(1150, 20, 300));
+	//Ball_pos_vector.push_back(PxVec3(750, 20, -200));
 	a.p = Vector3(1000, 0, 50);
 	a.w = 350;
 	a.h = 350;
@@ -103,12 +150,15 @@ void SceneJuego::createLevels()
 
 void SceneJuego::level1()
 {
-	//Fan* fan = new Fan(this, Vector3(0, 50, 100));
-	//addObject(fan);
-
 	Vector3 level_pos = Vector3(0, 0, 0);
+	particle->createMuelle(level_pos);
 
-	creatFan(level_pos+Vector3(0, 50, 50), Vector3(25, 30, 50), 5, Vector3(0, 0, 0.5));
+	particle->createFog(level_pos+Vector3(0,50,50), Vector3(80,0.1,150),0.1,5,0);
+	
+	//creatFan(level_pos+Vector3(0, 50, 50), Vector3(25, 30, 50), 5, Vector3(0, 0, 0.5));
+
+
+	//particle->createWhirlwinds(2,10,100,Vector3(40,50,40), level_pos+Vector3(0, 50, 50))
 
 	Floor::WallInfor i;
 	i.down = false;
@@ -121,11 +171,14 @@ void SceneJuego::level1()
 	Hole* hole = new Hole(this, level_pos, PxQuat(0, PxVec3(0, 0, 1)), 50, 20, 50,i2);
 
 	addObject(hole, _grp_STATIC);
+
 }
 
 void SceneJuego::level2()
 {
 	Vector3 level_pos = Vector3(350, 0, 0);
+
+	particle->createFog(level_pos + Vector3(0, 50, 150), Vector3(175, 0.1, 175), 0.1, 10, 1);
 
 	creatFan(level_pos + Vector3(150, 50, 50), Vector3(25, 30, 100), 5, Vector3(0, 0, 0.5));
 	creatFan(level_pos + Vector3(-150, 50, 250), Vector3(25, 30, 100), 5, Vector3(0, 0, -0.5));
@@ -143,6 +196,8 @@ void SceneJuego::level2()
 	i.left = false;
 	i.top = false;
 	Hole* hole=new Hole(this, level_pos + Vector3(-150, 0, 0), PxQuat(0, PxVec3(0, 0, 1)), 50, 20, 50, i);
+
+	particle->createMuelle(level_pos + Vector3(-150, 0, 0));
 
 	addObject(hole, _grp_STATIC);
 
@@ -195,11 +250,15 @@ void SceneJuego::level3()
 {
 	Vector3 level_pos = Vector3(0, 0, -400);
 
+	particle->createFog(level_pos + Vector3(350, 50, 100), Vector3(400, 0.1, 150), 0.1, 10, 2);
 
 	Hole::WallInfor info;
 	info.down = false;
 	Hole* hole = new Hole(this, level_pos + Vector3(100 * 6, 0, 200), PxQuat(0, PxVec3(0, 0, 1)), 50, 20, 58, info);
 	addObject(hole, _grp_STATIC);
+
+	particle->createMuelle(level_pos + Vector3(100 * 6, 0, 200));
+
 
 	Floor::WallInfor f0;
 	f0.left = false;
@@ -266,6 +325,12 @@ void SceneJuego::level4()
 {
 	Vector3 level_pos = Vector3(750, 0,-200);
 
+
+	particle->createFog(level_pos+ Vector3(250, 50, 250), Vector3(150, 0.1, 150), 0.1,10, 3);
+
+	particle->createWhirlwinds(2, 10, 5, Vector3(100, 50, 100), level_pos + Vector3(250, 50, 250));
+	solid->createWhirlwinds(0.01, 100, 0.005, Vector3(100, 50, 100), level_pos + Vector3(250, 50, 250));
+
 	Floor::WallInfor i;
 	i.down = false;
 	i.left = false;
@@ -280,10 +345,49 @@ void SceneJuego::level4()
 	i2.top = false;
 	i2.left = false;
 	new Hole(this, level_pos, PxQuat(0, PxVec3(0, 0, 1)), 50, 20, 50, i2);
+
+	particle->createMuelle(level_pos);
+
+	createBox(level_pos + Vector3(200, 30, 0), Vector3(15,15,60), 45);
+	createBox(level_pos + Vector3(200, 30, 400), Vector3(15,15,60), 45);
+	createBox(level_pos + Vector3(0, 30, 400), Vector3(15,15,60), 45);
+
+	createBox(level_pos + Vector3(200, 30, 200), Vector3(15,15,60), -45);
+	createBox(level_pos + Vector3(0, 30, 200), Vector3(15,15,60), -45);
+
+	createBox(level_pos + Vector3(400, 30, 0), Vector3(20), 70);
+	createBox(level_pos + Vector3(300, 30, 200), Vector3(20), 50);
+	createBox(level_pos + Vector3(350, 30, 400), Vector3(20), 20);
+	
+
 }
 
 void SceneJuego::reset()
 {
+	level = -1;
+	particle->setActiveFirework(false);
+	state = INI;
+	next_level = false;
+	//ctrl->setCamaraIniPos();
+
+}
+
+void SceneJuego::gameOver()
+{
+	particle->offFog(level-1);
+	state = OVER;
+	particle->setActiveFirework(true);
+	ctrl->gameOver();
+	ctrl->setCamaraIniPos();
+}
+
+void SceneJuego::gameStart()
+{
+	if (state == GAME)return;
+	state = GAME;
+	ctrl->gameStart();
+	level = -1;
+	NextLevel();
 
 }
 
@@ -310,3 +414,5 @@ void SceneJuego::createBox(Vector3 p, Vector3 area, float r)
 	obj_i.q = PxQuat(r*M_PI/180,Vector3(0,1,0));
 	addObject(new StaticObject(obj_i) , _grp_STATIC);
 }
+
+

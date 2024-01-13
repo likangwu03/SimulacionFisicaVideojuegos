@@ -253,7 +253,8 @@ void setupDefaultWindow(const char *name)
 
 	glutInit(&argc, argv);
 	
-	glutInitWindowSize(512, 512);
+	glutInitWindowSize(1024, 768);
+
 	glutInitDisplayMode(GLUT_RGB|GLUT_DOUBLE|GLUT_DEPTH);
 	int mainHandle = glutCreateWindow(name);
 	glutSetWindow(mainHandle);
@@ -267,8 +268,9 @@ void setupDefaultRenderState()
 	// Setup default render states
 
 	//_________________________________________________FONDO__________________________________________
-	glClearColor(0.3f, 0.4f, 0.5f, 1.0);
-	//glClearColor(0, 0, 0, 0.0);
+
+	glClearColor(0.5, 0.6, 0.8, 1);
+	//glClearColor(1, 1, 5, 0);
 
 
 
@@ -299,8 +301,41 @@ void startRender(const PxVec3& cameraEye, const PxVec3& cameraDir, PxReal clipNe
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// Display text
-	glColor4f(1.0f, 0.2f, 0.2f, 1.0f);
-	drawText(display_text, 0, 0);
+	glColor4f(0.2f, 0.2f, 0.2f, 1.0f);
+
+	switch (gameState)
+	{
+	case 0: 
+		
+		drawText(display_text, glutGet(GLUT_WINDOW_WIDTH) / 2 - display_text.size() * 15, glutGet(GLUT_WINDOW_HEIGHT)/12);
+		break;
+	case 1:
+		if (showControls) {
+			drawText(controls1, 20, 500-10);
+			drawText(controls2, 20, 500-30);
+			drawText(controls3, 20, 500-50);
+			drawText(controls4, 20, 500-70);
+			drawText(controls5, 20, 500-90);
+			drawText(controls6, 20, 500-110);
+			drawText(controls7, 20, 500-130);
+			drawText(controls8, 20, 500-150);
+			drawText(controls9, 20, 500-170);
+			drawText(controls10, 20, 500 - 190);
+			drawText(controls12, 20, 500 - 210);
+		}
+		else {
+			drawText(controls11, 20, 50);
+		}
+		drawText("Angle: " + std::to_string((int)angle), 20, 10);
+		drawText("Force: " + std::to_string((int)force), 20, 30);
+		break;
+	case 2:
+		drawText(display_text2, glutGet(GLUT_WINDOW_WIDTH) / 2 - display_text2.size() * 25, glutGet(GLUT_WINDOW_HEIGHT) / 2);
+		drawText(display_text1, glutGet(GLUT_WINDOW_WIDTH) / 2 - display_text1.size() * 15, glutGet(GLUT_WINDOW_HEIGHT)/ 12);
+		break;
+	default:
+		break;
+	}
 
 	// Setup camera
 	glMatrixMode(GL_PROJECTION);
@@ -416,7 +451,7 @@ void drawText(const std::string& text, int x, int y)
 	int length = text.length();
 
 	for (int i = 0; i < length; i++) {
-		glutBitmapCharacter(GLUT_BITMAP_9_BY_15, (int)text[i]);
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, (int)text[i]);
 	}
 	glPopMatrix();
 	glMatrixMode(GL_PROJECTION);

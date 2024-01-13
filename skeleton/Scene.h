@@ -49,6 +49,8 @@ public:
 
 	void addObject(Object* obj,SFV::grpId_type gId = SFV::_grp_GENERAL);
 
+	void addObject2(Object* obj,SFV::grpId_type gId = SFV::_grp_GENERAL);
+
 	const auto& getObjects(SFV::grpId_type gId = SFV::_grp_GENERAL);
 
 	virtual void init() {};

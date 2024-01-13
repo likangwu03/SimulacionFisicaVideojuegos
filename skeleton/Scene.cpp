@@ -31,6 +31,14 @@ void Scene::addObject(Object* obj, SFV::grpId_type gId) {
 	objsByGroup_[gId].push_back(obj);
 }
 
+void Scene::addObject2(Object* obj, SFV::grpId_type gId) {
+	obj->setAlive(true);
+	obj->setContext(this);
+	objsAux_[gId].push_back(obj);
+}
+
+
+
 const auto& Scene::getObjects(SFV::grpId_type gId) {
 	return objsByGroup_[gId];
 }
@@ -56,7 +64,7 @@ void Scene::refresh() {
 
 void Scene::update(double t) {
 	for (System* sys : systems) {
-		sys->update(t);
+		if(sys->isActive())sys->update(t);
 	}
 
 	for (auto& ents : objsByGroup_) {
@@ -65,7 +73,7 @@ void Scene::update(double t) {
 		}
 	}
 
-	//addAux();
+	addAux();
 }
 
 void Scene::addAux()

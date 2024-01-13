@@ -18,7 +18,32 @@
 #include "SceneJuego.h"
 
 
-std::string display_text = "Activa WhirlwindsSolidForceGenerator: tecla 1";
+std::string display_text = "Press Space to Start";
+std::string display_text1 = "Press Space to Return";
+std::string display_text2 = "You win! :)";
+std::string controls1 = "WASD: move camera";
+std::string controls2 = "Right click: rotate camera";
+std::string controls3 = "Z: increase force";
+std::string controls4 = "X: decrease force";
+std::string controls5 = "C: decrease angle";
+std::string controls6 = "V: increase angle";
+std::string controls7 = "B: camera looks at ball";
+std::string controls8 = "N: turn on or off the fog";
+std::string controls9 = "M: next level";
+std::string controls10 = "SPACE: hit ball";
+std::string controls11 = "Q: show controls";
+std::string controls12 = "Q: hide controls";
+
+
+enum GameState
+{
+	INI,GAME,OVER
+};
+int gameState = INI;
+float angle = 0;
+float force = 0;
+bool showControls = true;
+
 
 
 using namespace physx;
@@ -39,6 +64,18 @@ PxScene* gScene = NULL;
 ContactReportCallback gContactReportCallback;
 
 SceneJuego* scene;
+//Scene* scene;
+
+
+void UpdateData() {
+
+	gameState= scene->getState();
+	if (gameState == GAME) {
+		angle = scene->getAngle();
+		force = scene->getForce();
+	}
+}
+
 
 // Initialize physics engine
 void initPhysics(bool interactive)
@@ -83,6 +120,8 @@ void stepPhysics(bool interactive, double t)
 	scene->update(t);
 	scene->refresh();
 
+	UpdateData();
+
 	gScene->simulate(t);
 	gScene->fetchResults(true);
 
@@ -115,22 +154,10 @@ void keyPress(unsigned char key, const PxTransform& camera)
 
 	switch (toupper(key))
 	{
-		//case 'B': break;
-		//case ' ':	break;
-	case 'Z':
-	{
-		//shoot();
+	case 'Q':
+		showControls = !showControls;
+		break;
 
-		break;
-	}
-	case 'X':
-	{
-		//shoot();
-
-		break;
-	}
-	default:
-		break;
 	}
 }
 
@@ -145,6 +172,7 @@ void onCollision(physx::PxActor* actor1, physx::PxActor* actor2)
 		PX_UNUSED(actor1);
 		PX_UNUSED(actor2);
 		//StaticRigidBody* p1 = static_cast<StaticRigidBody*>(actor1->userData);
+		
 		scene->NextLevel();
 	}
 

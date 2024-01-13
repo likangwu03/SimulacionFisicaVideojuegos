@@ -7,7 +7,7 @@ FireworkSystem::FireworkSystem(std::string name, ParticleSystem* system, int n_p
 	//setModel(nullptr);
 	//setModel(p);
 	fireword = p;
-	setDeviationVel(10);
+	setDeviationVel(50);
 	angulo = std::uniform_real_distribution<float>(0, 2 * SFV::M_PI);
 	addNormalDistribution(-20, 5);
 
@@ -26,7 +26,7 @@ void FireworkSystem::generateParticles1()
 		Fireword* p = (Fireword*)_model_particle->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-		_system->addParticle(p);
+		_system->addParticle2(p);
 		//_scene->addObject(p);
 	}
 }
@@ -39,12 +39,13 @@ void FireworkSystem::generateParticles2()
 		Fireword* p = (Fireword*)_model_particle->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-		_system->addParticle(p);
+		_system->addParticle2(p);
 	}
 }
 
 void FireworkSystem::generateParticles3()
 {
+
 	for (int i = 0; i < _n_particles; ++i) {
 		float d = angulo(gen);
 		float a = normal_distributions[2](gen);
@@ -53,7 +54,7 @@ void FireworkSystem::generateParticles3()
 		Fireword* p = (Fireword*)_model_particle->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-		_system->addParticle(p);
+		_system->addParticle2(p);
 	}
 	for (int i = 0; i < _n_particles; ++i) {
 		float d = angulo(gen);
@@ -63,7 +64,7 @@ void FireworkSystem::generateParticles3()
 		Fireword* p = (Fireword*)_model_particle->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-		_system->addParticle(p);
+		_system->addParticle2(p);
 	}
 }
 
@@ -76,8 +77,9 @@ void FireworkSystem::generateParticles4()
 		Fireword* p = (Fireword*)_model_particle->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-		_scene->addObject(p);
+		_system->addParticle2(p);
 	}
+	
 	for (int i = 0; i < _n_particles; ++i) {
 		float d = angulo(gen);
 		Vector3 v_aux = _velocity + Vector3(20 * sinf(d), 20 * cosf(d), 0);
@@ -85,6 +87,6 @@ void FireworkSystem::generateParticles4()
 		Fireword* p = (Fireword*)_model_particle->clone();
 		p->setPos(_origin);
 		p->setVel(v_aux);
-		_scene->addObject(p);
+		_system->addParticle2(p);
 	}
 }

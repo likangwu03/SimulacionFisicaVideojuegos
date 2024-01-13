@@ -17,7 +17,7 @@ void WindSolidForceGenerator::updateForce(DynamicObject* obj, double t)
 
 	if (fabs(obj->getRigid()->getInvMass()) < 1e-10) return;
 
-	float a = 4 * SFV::M_PI* obj->getTam().x * obj->getTam().x;
+	float a = SFV::M_PI* obj->getTam().x * obj->getTam().x;
 
 	Vector3 force= a*Cd*densidad* abs(_vel.magnitude()) * _vel;
 

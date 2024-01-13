@@ -49,6 +49,29 @@
 
 extern std::string display_text;
 
+
+extern std::string display_text;
+extern std::string display_text1;
+extern std::string display_text2;
+extern std::string controls1 ;
+extern std::string controls2;
+extern std::string controls3;
+extern std::string controls4;
+extern std::string controls5;
+extern std::string controls6;
+extern std::string controls7;
+extern std::string controls8;
+extern std::string controls9;
+extern std::string controls10;
+extern std::string controls11;
+extern std::string controls12;
+
+extern int gameState;
+extern float angle;
+extern float force;
+extern bool showControls;
+
+
 namespace Snippets
 {
 void setupDefaultWindow(const char* name);

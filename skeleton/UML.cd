@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="System">
+    <Position X="29" Y="35.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gAgAAAAAAIAAAASAAAAAABAAAQAIAAAAAAIEIAAEAAA=</HashCode>
+      <FileName>System.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnchoredSpringFG">
+    <Position X="44.25" Y="30.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAA=</HashCode>
+      <FileName>AnchoredSpringFG.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForceGenerator">
+    <Position X="38.25" Y="25" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>gACAIAAAAQAACAAAABAkAABAAgAAAQQAAAAQAAEACAA=</HashCode>
+      <FileName>ForceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParticleForceRegistry">
+    <Position X="36" Y="35.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AEAQAAAAAAAACAAgAAAAAAAAAAAAACAAACAAAAAgAAA=</HashCode>
+      <FileName>ParticleForceRegistry.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpringForceGenerator">
+    <Position X="39.25" Y="30.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAIAAAAEAACAAACAAAAAAAAAAAAAAAAQAAAAAAgAA=</HashCode>
+      <FileName>SpringForceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WhirlwindsForceGenerator">
+    <Position X="47" Y="26.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAEAAAAAAAQAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>WhirlwindsForceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindForceGenerator">
+    <Position X="43.5" Y="25.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAACAQAgAgAAAAAAAAAAAAAAQAAAAAAAAE=</HashCode>
+      <FileName>WindForceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FireworkGenerator">
+    <Position X="41.75" Y="21.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FireworkGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FireworkSystem">
+    <Position X="43" Y="17.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAABAAAAAAAABAAAAAAAgA=</HashCode>
+      <FileName>FireworkSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FogGenerator">
+    <Position X="37" Y="21" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FogGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GaussianParticleGenerator">
+    <Position X="35.75" Y="17.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQEAAAAAAAAAAAIAAQAAAAAAAAAAAAQAEAAA=</HashCode>
+      <FileName>GaussianParticleGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineGenerator">
+    <Position X="45.5" Y="22.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAGAAAIAAAEAAA=</HashCode>
+      <FileName>LineGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParticleGenerator">
+    <Position X="28.25" Y="17.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>gAAAIAQCAYoIEAAJhAAAQIAgAAAAAAIAAAAEIAAECFA=</HashCode>
+      <FileName>ParticleGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformParticleGenerator">
+    <Position X="33" Y="20.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAQAAgIAEAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>UniformParticleGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DragForceGenerator">
+    <Position X="33" Y="25.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAACABAAAAAAAAAAAAAgAAACQAAAAAAAAA=</HashCode>
+      <FileName>DragForceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SolidForceGenerator">
+    <Position X="26.75" Y="25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>gAAAIEAAAQAACAAAABAkAAAAAgAAAQQAAAAQAAEADAA=</HashCode>
+      <FileName>SolidForceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WhirlwindsSolidForceGenerator">
+    <Position X="32.5" Y="30.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAACAAAAAAAAAAAAAQAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>WhirlwindsSolidForceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindSolidForceGenerator">
+    <Position X="28" Y="30.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EBgAAAAAAAAAGAQAAAgAAAAAAAAAAAAAAQAAAAAAAAE=</HashCode>
+      <FileName>WindSolidForceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParticleSystemPF">
+    <Position X="42" Y="34.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>BAEAABAAAwBAAQIAAAAAAAgAAAAAAAAAAAFECCABAAA=</HashCode>
+      <FileName>ParticleSystemPF.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SolidSystemPF">
+    <Position X="42.25" Y="39.75" Width="2.75" />
+    <InheritanceLine Type="SolidSystem" FixedToPoint="true">
+      <Path>
+        <Point X="33.875" Y="39" />
+        <Point X="33.875" Y="38.76" />
+        <Point X="43.562" Y="38.76" />
+        <Point X="43.562" Y="39.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAgAAAAAAAAAAACAAAAAAAAAAAAAECAAAAAA=</HashCode>
+      <FileName>SolidSystemPF.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParticleSystem">
+    <Position X="33" Y="34.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAACUCBAgAAIAACAACBQAIAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>ParticleSystem.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="particleForceRegistry" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SolidForceRegistry">
+    <Position X="35.5" Y="39.5" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>AEAUAAAAAAAACAAgAAAAAAAAAIAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>SolidForceRegistry.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SolidSystem">
+    <Position X="32.75" Y="39" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAACUAAAgBAAAAAAACAAgAAAAAAAAgAAABAAAIECAA=</HashCode>
+      <FileName>SolidSystem.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objForceRegistry" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -41,5 +41,11 @@ void SolidSystemPF::createWinds(Vector3 p, Vector3 a, float k1, Vector3 v)
 	addForce(wind);
 }
 
+void SolidSystemPF::createWhirlwinds(double K, double Y, double k1, Vector3 area, Vector3 pos)
+{
+	WhirlwindsSolidForceGenerator* whirlwinds = new WhirlwindsSolidForceGenerator(K, Y, k1, { 0,0,0 }, area, pos);
+	addForce(whirlwinds);
+}
+
 
 

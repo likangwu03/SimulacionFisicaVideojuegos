@@ -3,7 +3,7 @@
 class BoxParticle :public Particle
 {
 public:
-	BoxParticle(ParticleInfor infor,float w=1, float h=1,float p=1,Vector4 color=Vector4(1,1,1,1));
+	BoxParticle(ParticleInfor infor,float w=1, float h=1,float p=1);
 
 
 protected:
@@ -20,5 +20,8 @@ public:
 	inline float getVolume() {
 		return _width * _height * _depth;
 	}
+
+
+	Particle* clone();
 };
 

@@ -50,8 +50,11 @@ public:
 	physx::PxTransform	getTransform() const;
 
 
-	void setDir(physx::PxVec3 d) { mDir = d; }
+	void setDir(physx::PxVec3 d) { mDir = d, mDir.normalize(); }
 	void addPos(physx::PxVec3 p) { mEye +=p; }
+	void setPos(physx::PxVec3 p) { mEye =p; }
+
+
 
 private:
 	physx::PxVec3	mEye;

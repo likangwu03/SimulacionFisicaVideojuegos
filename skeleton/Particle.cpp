@@ -3,6 +3,9 @@
 Particle::Particle(ParticleInfor info):Object(), _vel(info.Vel), _accel(info.accel), _duration(info.duration),
 _damping(info.damping), _type(info.type), _cont(0), renderItem(nullptr), _force(Vector3(0)) ,color(info.color),_r(info.r){
 	_mass = info.masa;
+
+	my_info = info;
+
 	if (info.masa == 0)_inv_mass = 0;
 	else _inv_mass = (1 / info.masa);
 
@@ -54,7 +57,15 @@ void Particle::integrate(double t)
 
 Particle* Particle::clone()
 {
-	Particle* p = new Particle(_pos.p, _vel, _accel,_mass, _duration, _damping, _type);
+	/*ParticleInfor i;
+	i.Pos = _pos.p;
+	i.Vel = _vel;
+	i.accel = _accel;
+	i.color = color;
+	i.masa = _mass;
+	i.duration = _duration;
+	i.*/
+	Particle* p = new Particle(my_info);
 	return p;
 }
 
@@ -68,9 +79,9 @@ void Particle::createRender() {
 	}
 	else if (_type == ParticleType::_particle_F1) {
 		PxSphereGeometry a;
-		a.radius = 0.5;
+		a.radius = 2.75;
 		PxShape* shape = CreateShape(a);
-		renderItem = new RenderItem(shape, &_pos, Vector4(0.5, 0.8, 0, 1));
+		renderItem = new RenderItem(shape, &_pos, Vector4(0.1, 0.5, 0.9, 1));
 	}
 	else if (_type == ParticleType::_particle_F2) {
 		PxSphereGeometry a;

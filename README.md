@@ -1,8 +1,15 @@
-# SimulacionFisicaVideojuegos
-Repositorio de las prácticas de la asignatura de Simulación Física de Videojuegos
+# Manual del usuario
 
-En la carpeta skeleton estará vuestro código fuente
+## Descripción
 
-Necesitaréis además descomprimir el archivo que se indica a continuación en la raíz del repositorio:
+¡Ayúdame a eliminar la chatarra que hay en el espacio! Controla un cohete y disfruta de una narrativa visual.
 
-Carpetas bin y common https://ucomplutense-my.sharepoint.com/:u:/g/personal/davalejo_ucm_es/EZcsdyIoqTFOrF4hdfkVYk0BJZ9IycJ3QqXQFwaXVrlSKg?e=pfs6IO
+## Controles
+
+En el menú de inicio, para cambiar de color del cohete utiliza las teclas `Q` y `E`. Para seleccionar y empezar el juego, `Enter`.
+
+Durante el estado de juego, para controlar la nave utiliza las teclas `WASD` y `SPACE` para propulsarte. Luego, para lanzar proyectiles con el `Right Click`.
+
+<hr>
+
+Desarrollado por `Yi (Laura) Wang Qiu` con mucho cariño ❤️.

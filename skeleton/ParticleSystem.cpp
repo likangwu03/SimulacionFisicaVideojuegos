@@ -88,11 +88,22 @@ void ParticleSystem::refresh() {
 
 }
 //template <typename Valor>
-void ParticleSystem::addParticle(Particle* p)
+void ParticleSystem::addParticle(Particle* p, bool force)
 {
 	_particles.push_back(p);
 	_scene->addObject(p);
+	if (!force)return;
 	for (auto f : _forceGenerators) {
 		if(f->needAdd())particleForceRegistry.addRegistry(f, p);
+	}
+}
+
+void ParticleSystem::addParticle2(Particle* p, bool force)
+{
+	_particles.push_back(p);
+	_scene->addObject2(p);
+	if (!force)return;
+	for (auto f : _forceGenerators) {
+		if (f->needAdd())particleForceRegistry.addRegistry(f, p);
 	}
 }

@@ -59,10 +59,11 @@ void ParticleSystemP4::MuelleDemo()
 	infor2.duration = -1;
 	infor2.Vel = { 0,0,-5 };
 	infor2.Pos = { 10,0,10 };
-
+	infor2.r = 2;
+	//infor2.masa = 0;
 	Particle* p3 = new Particle(infor2);
 
-	f3 = new AnchoredSpringFG(1, 15, { 10,0,0 });
+	f3 = new AnchoredSpringFG(1, 15, Vector3( 10,0,0 ),true);
 
 	_forceGenerators.push_back(f3);
 
@@ -154,7 +155,8 @@ void ParticleSystemP4::flotacion()
 	infor.accel = { 0,0,0 };
 	infor.duration = -1;
 	infor.damping = 0.7;
-	p = new BoxParticle(infor, 10, 30, 10, Vector4(1, 1, 0, 1));
+	infor.color = Vector4(1, 1, 0, 1);
+	p = new BoxParticle(infor, 10, 30, 10);
 
 	_particles.push_back(p);
 

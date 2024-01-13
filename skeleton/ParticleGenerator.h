@@ -35,6 +35,7 @@ public:
 	virtual void update(double t) = 0;
 
 	void setActive(bool a) { active = a; }
+	bool getActive() { return active; }
 
 protected:
 	int _n_particles = 3; // Number of particles for each generateParticles call(TODO: add randomness ? ? )

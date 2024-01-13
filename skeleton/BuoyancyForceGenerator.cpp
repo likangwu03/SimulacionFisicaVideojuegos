@@ -7,8 +7,8 @@ _height(h),_volume(v),_liquid_density(d)
 	infor.duration = -1;
 	infor.Vel = { 0,0,0 };
 	infor.Pos = { 0,0,0 };
-	
-	_liquid_particle = new BoxParticle(infor, 100, 1, 100,Vector4(0,0.1,0.2,0.5));
+	infor.color = Vector4(0, 0.1, 0.2, 0.5);
+	_liquid_particle = new BoxParticle(infor, 100, 1, 100);
 }
 
 void BuoyancyForceGenerator::updateForce(Particle* particle, double t)
