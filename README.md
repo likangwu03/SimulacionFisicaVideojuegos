@@ -2,14 +2,21 @@
 
 ## Descripción
 
-¡Ayúdame a eliminar la chatarra que hay en el espacio! Controla un cohete y disfruta de una narrativa visual.
+Mini Golf
+Meter la bola en el hoyo , sino pues tecla M
 
 ## Controles
 
-En el menú de inicio, para cambiar de color del cohete utiliza las teclas `Q` y `E`. Para seleccionar y empezar el juego, `Enter`.
+Para empezar el juego, `SPACE`.
 
-Durante el estado de juego, para controlar la nave utiliza las teclas `WASD` y `SPACE` para propulsarte. Luego, para lanzar proyectiles con el `Right Click`.
-
-<hr>
-
-Desarrollado por `Yi (Laura) Wang Qiu` con mucho cariño ❤️.
+`WASD`: movimiento de cámara 
+`Clic`: rotación de cámara  
+`Z`: aumentar la fuerza de golpear la pelota  
+`X`: disminuir  la fuerza de golpear la pelota  
+`C`: disminuir el ángulo donde apunta 
+`V`: aumentar el ángulo donde apunta 
+`B`: cámara apunta a la pelota 
+`N`: activa o desactiva niebla 
+`M`: salta al siguiente nivel
+`SPACE`: golpear la pelota
+`Q`: mostrar o esconder los controles 
